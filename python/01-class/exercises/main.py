@@ -82,7 +82,7 @@ Dividir en Palabras: Dado un texto, dividirlo en palabras usando espacios como s
 	Ejemplo: 'hola mundo python' → ['hola', 'mundo', 'python']
 """
 my_str = 'hola mundo python'
-print(my_str.split())  # -> ['hola', 'mundo', 'python']
+print(my_str.split(' '))  # -> ['hola', 'mundo', 'python']
 
 """
 Reemplazar Espacios por Subrayados: Dada una cadena, reemplazar todos los espacios por subrayados.
