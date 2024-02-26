@@ -1,0 +1,45 @@
+Normalizar Nombres: Dada una cadena con el nombre completo de una persona en minúsculas, convertir la primera letra de cada nombre a mayúscula.
+	Ejemplo: 'juan perez' → 'Juan Perez'
+
+Convertir a Mayúsculas: Dado un título de libro, convertir todo el texto a mayúsculas.
+	Ejemplo: 'cien años de soledad' → 'CIEN AÑOS DE SOLEDAD'
+
+Crear un Identificador: Dada una frase, convertirla a minúsculas y reemplazar los espacios con guiones para crear un identificador web (slug).
+	Ejemplo: 'Hola Mundo Python' → 'hola-mundo-python'
+
+Limpiar Espacios: Dada una cadena con espacios extra al principio y al final, eliminar estos espacios.
+	Ejemplo: ' hola mundo ' → 'hola mundo'
+
+Extraer Dominio de Email: Dado un email, extraer el dominio utilizando el método split().
+	Ejemplo: 'usuario@example.com' → 'example.com'
+
+Reemplazar Caracteres: Dada una cadena que contiene puntos como separadores de palabras, reemplazarlos con espacios.
+	Ejemplo: 'hola.mundo' → 'hola mundo'
+
+Encontrar Posición de Subcadena: Dada una cadena, encontrar la posición de la primera ocurrencia de 'Python'.
+	Ejemplo: 'Aprendiendo Python en OpenAI' → Índice de 'Python'
+
+Verificar si es Numérico: Dada una cadena, verificar si esta cadena es un número.
+	Ejemplo: '1234' → True
+
+Capitalizar Frases: Dada una cadena representando una frase, capitalizar solo la primera letra de la frase.
+	Ejemplo: 'este es un título.' → 'Este es un título.'
+
+Convertir a Minúsculas: Dado un aviso en mayúsculas, convertirlo todo a minúsculas para hacerlo menos agresivo.
+	Ejemplo: '¡ESTE ES UN AVISO IMPORTANTE!' → '¡este es un aviso importante!'
+
+Eliminar Caracteres Específicos: Dada una cadena que incluye comillas al principio y al final, eliminarlas.
+	Ejemplo: '"importante"' → 'importante'
+
+Dividir en Palabras: Dado un texto, dividirlo en palabras usando espacios como separadores.
+	Ejemplo: 'hola mundo python' → ['hola', 'mundo', 'python']
+
+Reemplazar Espacios por Subrayados: Dada una cadena, reemplazar todos los espacios por subrayados.
+	Ejemplo: 'hola mundo python' → 'hola_mundo_python'
+
+Encontrar Palabra Clave: Dada la adena larga, encontrar si la palabra 'clave' está presente y su posición.
+	Ejemplo: 'La palabra clave está aquí.' → Posición de 'clave'
+
+Validar Código Postal: Dada una cadena que representa un código postal, verificar si todos los caracteres son numéricos.
+	Ejemplo: '08021' → Truea
+
