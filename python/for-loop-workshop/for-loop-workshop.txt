@@ -1,0 +1,52 @@
+Ejercicio 1: Impresión de números impares
+Imprime todos los números impares del 1 al 20.
+
+Ejercicio 2: Suma de números negativos
+Dada una lista de números que incluye tanto positivos como negativos, calcula la suma de todos los números negativos.
+
+Ejercicio 3: Multiplicación de elementos en una lista
+Dada una lista de números definidos por ti, calcula el producto de todos los números utilizando un bucle for.
+
+Ejercicio 4: Concatenación de cadenas
+Dada una lista de cadenas (strings) definida por ti, concaténalas todas en una sola cadena utilizando un bucle for.
+
+Ejercicio 5: Contar elementos específicos. Hacer metodo count.
+Dada una lista de numeros o de cadenas, cuenta cuántas veces aparece un elemento en la lista.
+
+Ejercicio 6: Filtrar divisibles
+Dada una lista de números, imprime solo aquellos que son divisibles por un número n definido por ti en una variable externa.
+
+Ejercicio 7: Crear una lista de tuplas
+Utilizando un bucle for, crea una lista de tuplas donde el primer elemento sea el índice y el segundo elemento sea el valor cuadrado del índice. El tamaño es de tu eleccion.
+
+Ejercicio 8: Intersección de listas
+Dados dos listas, utiliza un bucle for para encontrar los elementos comunes a ambas listas.
+
+Ejercicio 9: Patrón de números
+Imprime el siguiente patrón de números utilizando bucles for. Cada línea debe contener números del 1 al número de línea (inclusive).
+
+1
+12
+123
+1234
+12345
+
+# Ejercicio 10: Eliminar duplicados
+# Dada la siguiente lista, utiliza un bucle for para eliminar los elementos duplicados y conservar una lista con elementos únicos.
+
+lista_strings = ["manzana", "banana", "cereza", "manzana", "durazno", "plátano", "cereza", "manzana", "durazno", "banana"]
+
+# Ejercicio 11: Factorial de un numero
+# Calcula el factorial de un número n (crear variable n) utilizando un bucle for.
+
+# Ejercicio 12: Números Fibonacci
+# Genera e imprime los primeros n números de la secuencia Fibonacci.
+## Secuencia Fibonnacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
+
+# Ejercicio 13: Tablas de multiplicar
+# Imprime las tablas de multiplicar del 1 al 10 utilizando bucles for anidados.
+
+
+
+
+

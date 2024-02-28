@@ -1,0 +1,18 @@
+# Ejercicio 1: Potencia de dos hasta un limite.
+# Imprime las potencias de 2 hasta un 100.
+
+# Ejercicio 2: Longitud de un número
+# Calcula la longitud de un número entero dado en una variable externa (cuántos dígitos tiene).
+
+# Ejercicio 3: Patrón de asteriscos inverso
+# Imprime un patrón de asteriscos en orden inverso, comenzando con n asteriscos y disminuyendo a 1.
+
+# Ejercicio 4: Juego de multiplicar
+# Pregunta al usuario el resultado de multiplicar dos números aleatorios (creados por ti) hasta que responda incorrectamente.
+
+# Ejercicio 5: Contador de palabras
+# Dado el siguiente string, cuenta cuántas palabras contiene.
+my_string = "El Arzobispo de Constantinopla se quiere desarzobispoconstantinoplanizar, el desarzobispoconstantiplanizador que lo desarzobispoconstantinoplanice, buen desarzobispoconstantinoplanizador será."
+
+# Ejercicio 6: Divisores de un número
+# Imprime todos los divisores de un número n dado (crear variable externa).
