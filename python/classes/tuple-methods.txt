@@ -1,0 +1,9 @@
+Metodos de Tupla:
+
+count(x) - Devuelve el número de veces que x aparece en la tupla.
+	Tipo de dato devuelto: int (la cantidad de veces que el elemento aparece)
+	¿Muta la tupla?: No, las tuplas son inmutables.
+
+index(x) - Devuelve el índice del primer elemento cuyo valor es x.
+	Tipo de dato devuelto: int (el índice del elemento)
+	¿Muta la tupla?: No, las tuplas son inmutables.

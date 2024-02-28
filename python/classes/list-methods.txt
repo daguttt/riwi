@@ -1,0 +1,41 @@
+Métodos de Lista:
+
+append(element) - Agrega un elemento al final de la lista.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, agrega un elemento al final.
+
+extend(iterable) - Agrega todos los elementos de un iterable (por ejemplo, otra lista) al final.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, agrega múltiples elementos al final.
+
+insert(index, element) - Inserta un elemento en la lista en una posición específica.
+	Tipo de dato devuelto: NoneType
+	¿Muta la lista?: Sí, inserta un elemento en la posición especificada.
+
+remove(element) - Elimina el primer elemento con el valor especificado.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, elimina el primer elemento que coincida con el valor.
+
+pop(index=-1) - Elimina y devuelve el elemento en la posición dada. Si no se especifica índice, elimina y devuelve el último elemento.
+	Tipo de dato devuelto: Elemento eliminado de la lista.
+	¿Muta la lista?: Sí, elimina un elemento de la posición especificada.
+
+clear() - Elimina todos los elementos de la lista.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, elimina todos los elementos.
+
+index(element) - Devuelve el índice del primer elemento con el valor especificado.
+	Tipo de dato devuelto: int (el índice del elemento)
+	¿Muta la lista?: No, solo devuelve información.
+
+count(element) - Devuelve el número de veces que aparece un elemento en la lista.
+	Tipo de dato devuelto: int (la cantidad de veces que el elemento aparece)
+	¿Muta la lista?: No, solo devuelve información.
+
+sort(reverse=False) - Ordena los elementos de la lista in situ. reverse=True ordena la lista en 		orden descendente.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, ordena los elementos.
+
+reverse() - Invierte los elementos de la lista in situ.
+	Tipo de dato devuelto: None
+	¿Muta la lista?: Sí, invierte el orden de los elementos.

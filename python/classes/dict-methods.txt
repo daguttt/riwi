@@ -1,0 +1,41 @@
+Métodos de Diccionario:
+
+get(key) - Devuelve el valor para una clave si existe en el diccionario.
+	Tipo de dato devuelto: Valor asociado con key, o None si key no existe.
+	¿Muta el diccionario?: No, solo accede a datos.
+
+update({key:value}) - Actualiza el diccionario con los pares clave-valor especificados.
+	Tipo de dato devuelto: None
+	¿Muta el diccionario?: Sí, añade o actualiza pares clave-valor.
+
+keys() - Devuelve una vista de todas las claves en el diccionario.
+	Tipo de dato devuelto: Objeto dict_keys con todas las claves.
+	¿Muta el diccionario?: No, solo accede a datos.
+
+values() - Devuelve una vista de todos los valores en el diccionario.
+	Tipo de dato devuelto: Objeto dict_values con todos los valores.
+	¿Muta el diccionario?: No, solo accede a datos.
+
+items() - Devuelve una vista de los pares clave-valor en el diccionario.
+	Tipo de dato devuelto: Objeto dict_items con los pares clave-valor.
+	¿Muta el diccionario?: No, solo accede a datos.
+
+pop(key) - Elimina la clave especificada y devuelve su valor.
+	Tipo de dato devuelto: Valor asociado con la clave eliminada.
+	¿Muta el diccionario?: Sí, elimina un par clave-valor.
+
+popitem() - Elimina y devuelve un par (clave, valor) del diccionario.
+	Tipo de dato devuelto: Tupla (clave, valor) del par eliminado.
+	¿Muta el diccionario?: Sí, elimina el último par clave-valor añadido.
+
+clear() - Elimina todos los elementos del diccionario.
+	Tipo de dato devuelto: None
+	¿Muta el diccionario?: Sí, elimina todos los pares clave-valor.
+
+copy() - Devuelve una copia superficial del diccionario.
+	Tipo de dato devuelto: Nuevo diccionario (copia superficial).
+	¿Muta el diccionario?: No, crea una nueva instancia.
+
+setdefault(key, default) - Devuelve el valor de una clave si está en el diccionario, si no, inserta la clave con un valor predeterminado.
+	Tipo de dato devuelto: Valor asociado con la clave.
+	¿Muta el diccionario?: Sí, puede añadir un nuevo par clave-valor si la clave no existe.

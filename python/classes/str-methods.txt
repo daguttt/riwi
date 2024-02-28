@@ -1,0 +1,17 @@
+Metodos de string:
+
+ capitalize() - Devuelve la cadena con el primer carácter en mayúscula. 
+tipo de dato devuelto: <class 'str'>
+ upper() - Convierte todos los caracteres de la cadena a mayúsculas. 
+tipo de dato devuelto: <class 'str'>
+ lower() - Convierte todos los caracteres de la cadena a minúsculas. 
+tipo de dato devuelto: <class 'str'>
+ strip() - Elimina los espacios en blanco al principio y al final de la cadena. 
+tipo de dato devuelto: <class 'str'>
+ split() - Divide la cadena en una lista de cadenas según un delimitador. 
+tipo de dato devuelto: <class 'list'>
+ replace(old, new) - Reemplaza todas las ocurrencias de una subcadena antigua con una nueva. 
+tipo de dato devuelto: <class 'str'>
+ find(sub) - Busca una subcadena y devuelve el índice más bajo donde se encuentra. Si el valor no es encontrado, el metodo find() retorna -1. tipo de dato devuelto: <class 'str'>
+ isnumeric() - Devuelve True si todos los caracteres en la cadena son numéricos. 
+tipo de dato devuelto: <class 'bool'>
