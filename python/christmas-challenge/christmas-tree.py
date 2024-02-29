@@ -47,9 +47,6 @@ def gen_tree_row(asterisks_amount: int, spaces_amount: int):
     leaves = "*" * asterisks_amount
     spaces = " " * spaces_amount
     return spaces + leaves + '\n'
-# print(gen_tree_row(5, 1))
-
-
 
 def create_christmas_tree(tree_height: int):
     tree = ""
@@ -59,8 +56,17 @@ def create_christmas_tree(tree_height: int):
     # leaves
     for i in range(tree_height):
         spaces_amount = tree_height - 1 - i
+        for _ in range(spaces_amount):
+            tree += " "
         asterisks_amount = 2 * i + 1
-        tree += gen_tree_row(asterisks_amount, spaces_amount)
+        for _ in range(asterisks_amount):
+            tree += "*"
+        tree += '\n'
+
+        # Alternative without inner for
+        # spaces_amount = tree_height - 1 - i
+        # asterisks_amount = 2 * i + 1
+        # tree += gen_tree_row(asterisks_amount, spaces_amount)
 
     # trunk    
     trunk_height = 2 if tree_height >= 5 else 1
@@ -71,20 +77,3 @@ def create_christmas_tree(tree_height: int):
     return tree
 
 print(create_christmas_tree(5))
-
-
-
-
-
-def add_trunk(tree_height):
-    return
-
-
-def gen_tree_row(asterics_amount: int, spaces_amount = 0):
-    leaves = "*" * asterics_amount
-    if spaces_amount == 0:
-        return leaves
-    
-    spaces = " " * spaces_amount
-    return spaces + leaves + spaces
-# print(f'"{gen_leaves_row(5, 1)}"')
