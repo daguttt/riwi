@@ -12,7 +12,7 @@ for element in number_str_list:
     else:
         mapper.setdefault(element, 1)
 
-# -***** (loop only for printing purposes) -*****
+# ! -****** Printing purpose only ******
 for element, times in mapper.items():
     to_print_element = f"'{element}'" if type(element) == str else element
     times_word = 'times' if times > 1 else 'time'
