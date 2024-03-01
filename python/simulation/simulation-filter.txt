@@ -1,0 +1,81 @@
+Ejercicio 1: Gestor de Presupuesto Personal
+
+Descripción del Problema
+
+- Desarrolla un programa que ayude a los usuarios a gestionar su presupuesto mensual. El programa permitirá al usuario agregar, modificar y visualizar gastos e ingresos en diferentes categorías (como alimentos, transporte, alquiler, etc.). Cada registro tendrá un nombre, una cantidad y una categoría.
+
+Requerimientos
+
+*Presentar un menú interactivo con las siguientes opciones:
+
+1. Añadir un ingreso (cantidad positiva) o gasto(cantidad negativa) permitiendo al usuario especificar nombre, cantidad y categoría ().
+2. Modificar la cantidad de un registro.
+    - Modificar un registro(gasto) requiere que el usuario indique el nombre del registro(gasto). Se le mostrarán los detalles actuales y podrá modificar la cantidad.
+3. Visualizar todos los registros.
+    - Visualizar registros organizados por categoría, mostrando el total por categoría y el balance general.
+4. Mostrar el balance general.
+5. Mostrar el balance de manera que:
+	Si el balance general es positivo, mostrar: "Tu balance es positivo. ¡Buen manejo de tus finanzas!"
+	Si el balance general es negativo, indicar: "Tu balance es negativo. Considera revisar tus gastos."
+
+**Almacenar los registros en una lista de diccionarios para facilitar el acceso y modificación de la información.
+monthly_income_expenses = [] ## {"name":"my_expense_or_income", "amount": 1200, "category": "alimentos"}
+
+**Utilizar las siguientes categorias predefinidas
+categories = {"expenses": ["alimentos", "vivienda"], "income": ["work", "freelance"]}
+
+**Utilizar variable de balance generla incializada en 0
+general_balance = 0 
+
+---------------------------------------------------------------------------------------------------
+
+Ejercicio 2: Calculadora de Ahorro de Energía
+
+Descripción del Problema
+
+- Desarrolla un programa en Python que estime el ahorro anual de energía de un usuario al cambiar bombillas incandescentes por LED. El programa solicitará al usuario el número de bombillas cambiadas, el uso diario promedio en horas y el costo por kWh en su localidad.
+
+Requerimientos
+
+1. Solicitar al usuario el número de bombillas que ha cambiado.
+2. Pedir al usuario que introduzca el uso diario promedio de las bombillas en horas. (12 horas por defecto)
+3. Solicitar al usuario el costo por kWh (kilovatio por hora) en su localidad. (150 por defecto)
+4. Calcular el ahorro anual usando la siguiente estimación de consumo y costo entre bombillas incandescentes y LED.
+
+Vi = Voltaje de bombillas incandescentes (230 por defecto)
+Vl = Voltaje de bombillas led (3.5 por defecto)
+Hd = Promedio de horas por dia que la bombilla esta encendida (12 horas por defecto)
+D = Cantidad de dias que la bombilla esta encendida (365 por defecto)
+CWh = Costo por kilovatio hora (150 por defecto)
+
+Ahorro = (Vi - Vl)*Hd*D*CWh
+
+5. Mostrar el ahorro anual estimado.
+
+---------------------------------------------------------------------------------------------------
+
+Ejercicio 3: Convertidor de Unidades de Temperatura
+
+Descripción del Problema
+
+- Escribe una funcion en Python que convierta una temperatura dada por el usuario de Celsius a Fahrenheit o viceversa, según la elección del usuario.
+
+Requerimientos
+
+- Definición de la Función:
+
+	1. Define una función llamada convertir_temperatura.
+	2. La función debe recibir como argumentos la temperatura y la unidad objetivo (C para Celsius, F para Fahrenheit).
+	3. Dentro de la función, utiliza una estructura condicional para realizar la conversión adecuada.
+	4. La función debe retornar la temperatura convertida.
+
+- Uso de la Función:
+
+	1. Solicita al usuario que introduzca una temperatura y la unidad original (C o F).
+	2. Llama a la función convertir_temperatura con los datos proporcionados como argumentos.
+	3. Muestra el resultado de la conversión al usuario con un mensaje amigable.
+
+De Celsius a Fahrenheit:
+	F° = (C°*(9/5))+32
+De Fahrenheit a Celsiu:
+	C° = (F°-32)*(5/9)
