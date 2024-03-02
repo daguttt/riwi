@@ -204,11 +204,12 @@ def show_menu():
     3. Ver todos los registros.
     4. Mostrar tu balance general
     5. Ver mi estado financiero.
+    6. Salir
     Opción: """
     while True:
         try:
             option = int(input(menu_prompt))
-            if option in [1, 2, 3, 4, 5]:
+            if option in [1, 2, 3, 4, 5, 6]:
                 if option == 1:
                     add_record()
                 elif option == 2:
@@ -219,6 +220,9 @@ def show_menu():
                     show_balance()
                 elif option == 5:
                     show_finance_status()
+                elif option == 6:
+                    print()
+                    print("Hasta pronto!")
             else:
                 print_message(
                     "La opción ingresada no se reconoce en el sistema.\nSe te mostrara de nuevo el menú con la opciones...")
