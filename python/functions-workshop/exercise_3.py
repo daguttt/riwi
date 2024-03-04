@@ -7,8 +7,8 @@ Crea una función que cuente cuántas veces aparece un elemento en una lista.
 """
 
 
-def count_ocurrencies(target_list: list[int], number_to_count: int):
-    times_found = target_list.count(number_to_count)
+def count_ocurrencies(number_list: list[int], number_to_count: int):
+    times_found = number_list.count(number_to_count)
     return f"{times_found} (el número {number_to_count} aparece {times_found})"
 
 

@@ -7,9 +7,9 @@ Crea una función que devuelva solo los números pares de una lista.
 """
 
 
-def filter_even_numbers(target_list: list[int]):
+def filter_even_numbers(number_list: list[int]):
     even_numbers = []
-    for number in target_list:
+    for number in number_list:
         if number % 2 == 0:
             even_numbers.append(number)
     return even_numbers

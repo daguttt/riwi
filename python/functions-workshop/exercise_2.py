@@ -7,9 +7,9 @@ Crea una función que sume todos los números hasta n usando un bucle while.
 """
 
 
-def sum_until(n: int):
+def sum_until(target_number: int):
     result = 0
-    for number_to_sum in range(1, n + 1):
+    for number_to_sum in range(1, target_number + 1):
         result += number_to_sum
     return result
 
