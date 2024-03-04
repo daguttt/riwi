@@ -144,7 +144,18 @@ def cancel_booking(username: str):
 
 
 def show_tables_summary():
-    pass
+    available_tables = []
+    for table in tables:
+        if table["state"] == "available":
+            available_tables.append(table)
+    # Generar lista con usuario y mesa
+    print("\nMesas disponibles:")
+    for table in available_tables:
+        print(table["name"])
+
+    print("\nMesas reservadas:")
+    for booking in bookings:
+        print(f"{booking['table']} - {booking['name']}")
 
 
 INVALID_INPUT_MESSAGE = """
@@ -152,8 +163,11 @@ INVALID_INPUT_MESSAGE = """
     Se te mostrara de nuevo el menú con la acciones disponibles...
 """
 
+username = ""
+
 
 def show_menu():
+    global username
     menu_prompt = """
     Bienvenido al restaurante de Daguttt.
     Ingresa el número de la acción que quieres realizar
@@ -161,13 +175,17 @@ def show_menu():
     1. Realizar reserva.
     2. Cancelar reserva.
     3. Mostrar resumen de mesas disponibles y reservadas.
+    4. Salir
     Acción: """
 
     while True:
         try:
             action = int(input(menu_prompt))
-            username = input("Introduce tu nombre: ")
-            if action in [1, 2, 3]:
+            if action in [1, 2, 3, 4]:
+                if action == 4:
+                    break
+
+                username = username or input("Introduce tu nombre: ")
                 if action == 1:
                     book_table(username)
                 elif action == 2:
