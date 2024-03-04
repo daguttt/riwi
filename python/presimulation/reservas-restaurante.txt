@@ -1,0 +1,21 @@
+# Ejercicio 2: Sistema de Reservas para un Restaurante
+
+## Descripción del Problema
+
+Crear un programa para gestionar las reservas de mesas en un restaurante. El restaurante tiene 10 mesas y el programa debe permitir realizar reservas, cancelar reservas y mostrar las mesas disponibles.
+
+tables = [{name: "mesa 1", state: "disponible"}]
+bookings = [] ## sera llenada con la estructura {table: "mesa 1", name: "Juan Perez"}
+
+## Requerimientos
+
+- Presentar un menú interactivo que ofrezca las siguientes opciones:
+  - Realizar reserva.
+  - Cancelar reserva.
+  - Mostrar resumen de mesas disponible y reservadas
+- Permitir al usuario realizar una reserva indicando el nombre del cliente bajo el cual se hace la reserva y el número de mesa("mesa 1" hasta la "mesa 10", mostrando solo las mesas disponibles).
+    - Si todas las mesas ya estan reservadas, mostrar al usuario un mensaje indicando que no hay mesas disponibles y regresar al menú principal.
+- Permitir al usuario cancelar una reserva existente mostrando un resumen de las mesas reservadas y el nombre del cliente que reservó cada mesa.
+- Mostrar un resumen de mesas disponibles y mesas reservadas con los nombres de las reservas.
+- ✅ Utilizar listas y diccionarios para manejar las reservas de las mesas.
+- Asegurar que el programa maneje adecuadamente los casos en los que se ingresen datos no válidos.
