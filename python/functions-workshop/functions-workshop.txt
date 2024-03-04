@@ -1,0 +1,53 @@
+Ejercicio 1: Concatenar Texto de Lista
+Crea una función que tome una lista de cadenas de texto y las concatene en una sola cadena, separadas por espacios.
+
+- Ejemplo de Entrada: ["Hola", "mundo", "Python"]
+- Salida esperada: "Hola mundo Python"
+
+Ejercicio 2: Suma de Números hasta N
+Crea una función que sume todos los números hasta n usando un bucle while.
+
+- Ejemplo de Entrada: 5
+- Salida esperada: 15 (porque 1+2+3+4+5=15)
+
+Ejercicio 3: Contar Ocurrencias en Lista (metodo count)
+Crea una función que cuente cuántas veces aparece un elemento en una lista.
+
+- Ejemplo de Entrada: Lista: [1, 2, 3, 2, 4, 2, 5], Elemento: 2
+- Salida esperada: 3 (el número 2 aparece 3 veces)
+
+Ejercicio 4: Invertir Diccionario
+Crea una función que invierta las llaves y valores de un diccionario. Asume que los valores son únicos.
+
+- Ejemplo de Entrada: {'a': 1, 'b': 2, 'c': 3}
+- Salida esperada: {1: 'a', 2: 'b', 3: 'c'}
+
+Ejercicio 5: Filtrar Números Pares
+Crea una función que devuelva solo los números pares de una lista.
+
+- Ejemplo de Entrada: [1, 2, 3, 4, 5, 6]
+- Salida esperada: [2, 4, 6]
+
+Ejercicio 6: Mayor y Menor en Lista
+Crea una función que encuentre el número mayor y menor en una lista y los devuelva.
+
+- Ejemplo de Entrada: [50, 20, 65, 30]
+- Salida esperada: (65, 20) (65 es el mayor, 20 es el menor)
+
+Ejercicio 7: Generar Diccionario de Conteos
+Crea una función que tome una cadena de texto y devuelva un diccionario con el conteo de cada carácter.
+
+- Ejemplo de Entrada: "banana"
+- Salida esperada: {'b': 1, 'a': 3, 'n': 2}
+
+Ejercicio 9: Eliminar Duplicados de Lista
+Crea una función que elimine los elementos duplicados de una lista y devuelva una nueva lista.
+
+- Ejemplo de Entrada: [1, 2, 2, 3, 3, 3, 4]
+- Salida esperada: [1, 2, 3, 4]
+
+Ejercicio 10: Contar Palabras
+Crea una función que tome una cadena de texto y devuelva un diccionario con el conteo de palabras que aparecen en ella.
+
+- Ejemplo de Entrada: "este es un texto este texto"
+- Salida esperada: {'este': 2, 'es': 1, 'un': 1, 'texto': 2}
