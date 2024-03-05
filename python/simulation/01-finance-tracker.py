@@ -13,7 +13,7 @@ VALUE_ERROR_MESSAGE = "Verifique su entrada. Has ingresado un valor erróneo."
 # -*******************************************************************************-
 
 
-def print_message(message: str | None):
+def print_message(message: str | None = ""):
     if message:
         print()
         print(message)
@@ -58,6 +58,13 @@ def find_register_by_name(record_name: str):
 # print(find_register_by_name("Test3"))
 
 
+def sum_number_list(number_list: list[int]):
+    total = 0
+    for number in number_list:
+        total += number
+    return total
+
+
 # -*******************************************************************************-
 # Features
 # -*******************************************************************************-
@@ -76,17 +83,31 @@ def show_balance():
 
 def show_all_registers():
     print("**************************** REGISTROS ****************************")
-
+    print()
     if len(monthly_income_expenses) == 0:
         return print_message("No tienes registros en este momento.")
 
-    for record in monthly_income_expenses:
-        print_record(
-            name=record["name"],
-            amount=record["amount"],
-            category=record["category"]
-        )
-    print_message("")
+    all_category_names = []
+    for _, category_name in categories.items():
+        all_category_names.extend(category_name)
+
+    for category_name in all_category_names:
+        formatted_category_name = category_name.capitalize()
+        print(f"******** {formatted_category_name} ********")
+        print()
+        amounts_list = []
+        for record in monthly_income_expenses:
+            if record["category"] == category_name:
+                amounts_list.append(record["amount"])
+
+                print(f"{record['name']} | {record['amount']}")
+        print()
+        category_total = sum_number_list(amounts_list)
+        print(f"Total gastado en {formatted_category_name}: {category_total}")
+        print()
+        print()
+                
+    print_message()
 
 
 def update_record_amount():
