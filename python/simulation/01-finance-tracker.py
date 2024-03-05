@@ -122,7 +122,7 @@ def update_record_amount():
     record["amount"] = new_amount
 
 
-def add_register():
+def add_record():
     global general_balance
     amount_prompt = """
     Ingresa el monto del registro.
@@ -181,7 +181,7 @@ def show_menu():
             option = int(input(menu_prompt))
             if option in [1, 2, 3, 4, 5]:
                 if option == 1:
-                    add_register()
+                    add_record()
                 elif option == 2:
                     update_record_amount()
                 elif option == 3:
