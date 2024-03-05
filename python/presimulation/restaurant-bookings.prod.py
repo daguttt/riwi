@@ -1,6 +1,4 @@
-tables = [
-    {"name": "mesa 1", "state": "available"}
-]
+tables = [{"name": "mesa 1", "state": "available"}]
 # {table: "mesa 1", name: "Juan Perez"}
 # ⬇️ sera llenada con la estructura
 bookings = []
@@ -17,12 +15,10 @@ INVALID_INPUT_MESSAGE = """
 # Utils
 # -*******************************************************************************-
 
+
 def init_tables():
     for i in range(1, 9 + 1):
-        new_table = {
-            "name": f"mesa {i + 1}",
-            "state": "available"
-        }
+        new_table = {"name": f"mesa {i + 1}", "state": "available"}
         tables.append(new_table)
 
 
@@ -33,8 +29,7 @@ def get_input(prompt, fn_converter):
             data = fn_converter(user_input)
             break
         except ValueError:
-            print(
-                f"'{user_input}' no es un valor admitido. Inténtalo de nuevo.'")
+            print(f"'{user_input}' no es un valor admitido. Inténtalo de nuevo.'")
             print()
 
     return data
@@ -60,12 +55,14 @@ def list_available_tables() -> bool:
     available_tables = get_available_tables()
     if len(available_tables) == 0:
         print_message(
-            "No hay mesas disponibles para reservar. Todas las mesas están reservadas")
+            "No hay mesas disponibles para reservar. Todas las mesas están reservadas"
+        )
         return False
 
     for table in available_tables:
         print(table["name"].capitalize())
     return True
+
 
 # -*******************************************************************************-
 # Features
@@ -85,7 +82,7 @@ def book_table(username: str):
     # Get table from table list
     prompt = "Indica el número de la mesa que quieres reservar: "
     table_number = get_input(prompt, int)  # 1 -> 10
-    if (table_number < 1 or table_number > 10):
+    if table_number < 1 or table_number > 10:
         return print_message("No tenemos el número de mesa indicado.")
 
     table_index = table_number - 1
@@ -99,10 +96,7 @@ def book_table(username: str):
     table["state"] = "booked"
 
     # Create booking
-    new_booking = {
-        "table": table["name"],
-        "name": username
-    }
+    new_booking = {"table": table["name"], "name": username}
     bookings.append(new_booking)
     print_message("******* Mesa reservada con éxito *******")
 
@@ -122,7 +116,7 @@ def cancel_booking(username: str):
     # Get table to be updated
     prompt = "Indica el número de la mesa reservada que quieres cancelar: "
     selected_table_number = get_input(prompt, int)
-    if (selected_table_number < 1 or selected_table_number > 10):
+    if selected_table_number < 1 or selected_table_number > 10:
         return print_message("No tenemos el número de mesa indicado.")
 
     table_index = selected_table_number - 1
@@ -160,7 +154,8 @@ def show_tables_summary():
     print("------------- Mesas reservadas -------------")
     for booking in bookings:
         print(
-            f"{booking['table'].capitalize()} -> Reserva a nombre de '{booking['name'].capitalize()}'")
+            f"{booking['table'].capitalize()} -> Reserva a nombre de '{booking['name'].capitalize()}'"
+        )
     print_message()
 
 
