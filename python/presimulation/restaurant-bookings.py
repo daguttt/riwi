@@ -79,7 +79,7 @@ def book_table(username: str):
     table_index = table_number - 1
     table = tables[table_index]
 
-    if not (table in available_tables):
+    if table not in available_tables:
         return print_message("La mesa indicada ya está reservada.")
 
     # Actualizando estado de la mesa
