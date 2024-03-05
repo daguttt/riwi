@@ -32,25 +32,25 @@ def get_category_prompt(register_type: Literal["expenses", "incomes"]):
     Número categoria: """
 
 
-def print_registry(name: str, amount: int, category: str):
+def print_record(name: str, amount: int, category: str):
     print()
     print(f"Nombre: {name}")
     print(f"Monto: {amount}")
     print(f"Categoria: {category}")
     print()
-    print(f"-----------------")
+    print("-----------------")
 
 
 # print(get_category_prompt("expenses"))
 
 
-def get_registry_type(amount: int):
+def get_record_type(amount: int):
     return "incomes" if amount > 0 else "expenses"
 
 
-def find_register_by_name(registry_name: str):
-    for index, registry in enumerate(monthly_income_expenses):
-        if registry["name"] == registry_name:
+def find_register_by_name(record_name: str):
+    for index, record in enumerate(monthly_income_expenses):
+        if record["name"] == record_name:
             return monthly_income_expenses[index]
     return None
 
@@ -80,45 +80,46 @@ def show_all_registers():
     if len(monthly_income_expenses) == 0:
         return print_message("No tienes registros en este momento.")
 
-    for registry in monthly_income_expenses:
-        print_registry(
-            name=registry["name"],
-            amount=registry["amount"],
-            category=registry["category"]
+    for record in monthly_income_expenses:
+        print_record(
+            name=record["name"],
+            amount=record["amount"],
+            category=record["category"]
         )
     print_message("")
 
 
-def update_register_amount():
+def update_record_amount():
     name_prompt = """
     Ingresa el nombre del gasto que deseas actualizar.
 
     INFO: Recuerda que los nombres son unicos para cada registro
     Nombre: """
-    registry_name = input(name_prompt)
-    registry = find_register_by_name(registry_name)
-    if not registry:
-        return print_message(f"No existe un gasto con el nombre: '{registry_name}'")
+    record_name = input(name_prompt)
+    record = find_register_by_name(record_name)
+    if not record:
+        return print_message(f"No existe un gasto con el nombre: '{record_name}'")
 
-    if get_registry_type(registry["amount"]) == "incomes":
-        return print_message(f"No puedes modificar los registros que son ingresos")
+    if get_record_type(record["amount"]) == "incomes":
+        return print_message("No puedes modificar los registros que son ingresos")
 
-    print_registry(
-        name=registry["name"],
-        amount=registry["amount"],
-        category=registry["category"]
+    print_record(
+        name=record["name"],
+        amount=record["amount"],
+        category=record["category"]
     )
 
     new_amount_propmt = f"""
-    Ingresa el nuevo monto del gasto {registry['name']} 
+    Ingresa el nuevo monto del gasto {record['name']} 
     
-    Nuevo monto:"""
+    Nuevo monto: """
     try:
         new_amount = int(input(new_amount_propmt))
     except ValueError:
         print_message(VALUE_ERROR_MESSAGE)
 
-    registry["amount"] = new_amount
+    
+    record["amount"] = new_amount
 
 
 def add_register():
@@ -136,25 +137,25 @@ def add_register():
     Nombre: """
 
     try:
-        registry_amount = int(input(amount_prompt))
-        if registry_amount == 0:
+        record_amount = int(input(amount_prompt))
+        if record_amount == 0:
             return print_message("No puedes agregar un registro con el monto en 0")
 
-        registry_name = input(name_prompt)
-        if find_register_by_name(registry_name):
-            return print_message(f"El registro '{registry_name}' ya ha sido añadido")
+        record_name = input(name_prompt)
+        if find_register_by_name(record_name):
+            return print_message(f"El registro '{record_name}' ya ha sido añadido")
 
-        register_type = get_registry_type(registry_amount)
+        register_type = get_record_type(record_amount)
 
         register_category_index = int(
             input(get_category_prompt(register_type)))
         register_category = categories[register_type][register_category_index]
 
-        general_balance += registry_amount
+        general_balance += record_amount
 
         register = {
-            "name": registry_name,
-            "amount": registry_amount,
+            "name": record_name,
+            "amount": record_amount,
             "category": register_category
         }
         monthly_income_expenses.append(register)
@@ -182,7 +183,7 @@ def show_menu():
                 if option == 1:
                     add_register()
                 elif option == 2:
-                    update_register_amount()
+                    update_record_amount()
                 elif option == 3:
                     show_all_registers()
                 elif option == 4:
