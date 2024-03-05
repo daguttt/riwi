@@ -90,6 +90,8 @@ def show_all_registers():
 
 
 def update_record_amount():
+    global general_balance
+
     name_prompt = """
     Ingresa el nombre del gasto que deseas actualizar.
 
@@ -113,13 +115,19 @@ def update_record_amount():
     Ingresa el nuevo monto del gasto {record['name']} 
     
     Nuevo monto: """
+
     try:
         new_amount = int(input(new_amount_propmt))
     except ValueError:
         print_message(VALUE_ERROR_MESSAGE)
 
-    
+    old_record_amount = record["amount"]
+    amounts_difference = abs(old_record_amount) - abs(new_amount)
+
     record["amount"] = new_amount
+    general_balance += amounts_difference
+
+    print_message("****** Monto actualizado correctamente! ******")
 
 
 def add_record():
