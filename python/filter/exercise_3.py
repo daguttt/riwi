@@ -132,8 +132,8 @@ def ask_animal_to_study():
     for study in animal_study_list_per_category:
         message = f"""
     En la {study["category"]}.
-    El porcentaje de animales con patología es: {study["percentages"][0]}%
-    El porcentaje de animales sanos es: {study["percentages"][1]}%
+    El porcentaje de {selected_animal} con patología es: {study["percentages"][0]}%
+    El porcentaje de {selected_animal} sanos es: {study["percentages"][1]}%
         """
         print(message)
 
