@@ -71,7 +71,6 @@ def ask_user_for_ages():
 
 def main():
     ask_user_for_ages()
-    print(ages_list)
 
 
 main()
