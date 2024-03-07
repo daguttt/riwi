@@ -25,11 +25,11 @@ age_categories = [
 # -*******************************************************************************-
 
 
-def get_input(prompt, fn_converter):
+def get_casted_input(prompt, converter):
     while True:
         try:
             user_input = input(prompt)
-            data = fn_converter(user_input)
+            data = converter(user_input)
             break
         except ValueError:
             print(f"'{user_input}' no es un valor admitido. Inténtalo de nuevo.'")
@@ -70,7 +70,7 @@ def ask_animal_amount_per_category(animal_sample: int):
     for category in age_categories:
         print(f"*********** {category['name']} ***********")
 
-        animals_with_patology_amount = get_input(
+        animals_with_patology_amount = get_casted_input(
             f"""
     Ingresa el número de animales con patología para la categoria:
     {category['description']}
@@ -111,7 +111,7 @@ def ask_animal_to_study():
 {list_animals()}
 
     Número: """
-    selected_animal_number = get_input(selected_animal_prompt, int)
+    selected_animal_number = get_casted_input(selected_animal_prompt, int)
     print()
 
     is_invalid_animal_number = (
@@ -142,4 +142,4 @@ def main():
     ask_animal_to_study()
 
 
-main()
+# main()
