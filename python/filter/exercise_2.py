@@ -2,7 +2,6 @@ BASE_BONUS = 5_000_000
 
 print(BASE_BONUS)
 
-ages_list = []
 bonuses_total = 0
 
 # -*******************************************************************************-
@@ -47,7 +46,6 @@ def ask_user_for_ages():
         age = get_input(ages_prompt, int)
         print()
 
-        ages_list.append(age)
         bonus = calculate_bonus(age)
         bonuses_total += bonus
 
