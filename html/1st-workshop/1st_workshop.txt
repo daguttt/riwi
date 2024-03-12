@@ -1,0 +1,59 @@
+1 Taller HTML:
+
+Parte 1: Crear un Blog
+
+Objetivo: Crear una página que funcione como la portada de un blog. Esta deberá incluir un título principal que represente el tema del blog, una breve descripción o mensaje de bienvenida, y un listado de artículos o entradas con su respectivo título, resumen e información de publicación.
+
+Criterios de aceptacion:
+
+- Encabezado del Blog:
+	* La página debe comenzar con un elemento destacado que actúe como el encabezado del blog, incluyendo el nombre del blog y, opcionalmente, un lema o frase que describa el enfoque o tema principal del blog. Este elemento debe ser lo suficientemente prominente para captar la atención inmediatamente.
+- Introducción o Bienvenida:
+	* Inmediatamente después del encabezado, debe incluirse un párrafo que sirva como introducción o mensaje de bienvenida al blog. Este texto debe ofrecer una visión general de lo que el blog trata y qué tipo de contenido pueden esperar los visitantes. Es importante que este mensaje sea claro y conciso para establecer correctamente las expectativas de los lectores.
+- Lista de Entradas o Artículos: 
+	* A continuación de la introducción, se debe presentar una lista de 6 entradas o artículos. Cada entrada debe estar claramente diferenciada y debe incluir:
+		- Título de la Entrada: Debe ser claro y atractivo, captando la esencia del contenido del artículo.
+		- Imagen principal: Debe estar relacionada al tema del articulo.
+		- Contenido de cada articulo o entrada: Un breve párrafo que adelante al lector de qué trata la entrada, incentivando la lectura completa.
+		- Fecha de Publicación: La inclusión de la fecha ayuda a contextualizar el contenido y permite a los lectores identificar las entradas más recientes.
+- Al menos dos articulo debe tratar sobre dos de los siguientes temas:
+	- Quien fue Dennis Ritchie.
+	- Quien fue Grace Hopper.
+	- Quien fue Tim Berners-lee.
+	- La importancia de la programacion web.
+
+Notas Adicionales
+	* Reflexionen sobre cómo las etiquetas básicas de HTML pueden utilizarse para estructurar los distintos tipos de contenido (títulos, párrafos, imagenes).
+	* Consideren la importancia de una organización clara para facilitar a los usuarios la navegación y el acceso al contenido deseado.
+	* Aunque la tarea no especifica el uso de etiquetas semánticas avanzadas, es crucial enfocarse en la usabilidad y accesibilidad del blog para quienes lo visitan.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Parte 2: Crear un Portal de Noticias
+
+Objetivo
+- Desarrollar un portal de noticias que presente varias noticias de manera detallada. Cada noticia deberá contar con un titular destacado, la fecha de publicación, el nombre del autor o autores, y un cuerpo extenso que incluya varios párrafos e imágenes.
+
+
+Criterios de Aceptación
+
+- Encabezado Principal del Portal:
+	* La página debe comenzar con un elemento que sirva de encabezado, conteniendo el nombre del portal de noticias. Este elemento debe ser lo suficientemente prominente como para captar la atención de los visitantes de inmediato.
+
+- Listado de Noticias:
+	* Inmediatamente después del encabezado principal, se deben crear 6 noticias. Cada noticia debe ser fácilmente distinguible de las otras.
+
+- Estructura de Cada Noticia:
+	* Título de la Noticia: Cada noticia debe comenzar con un título claro y destacado, que capte el interés del lector.
+	* Fecha de Publicación y Autor: Justo debajo del título, se debe incluir la fecha en que la noticia fue publicada, junto con el nombre del autor o autores. Esta información debe estar claramente separada del título para evitar confusiones.
+	* Cuerpo de la Noticia: El contenido principal de cada noticia debe estar bien organizado, incluyendo al menos 6 párrafos. Los párrafos deben estructurarse de manera que la narrativa sea fácil de seguir. Si se desea incluir imágenes, deben estar integradas de forma que complementen el texto, sin interrumpir la fluidez de la lectura.
+
+Notas Adicionales:
+	* Consideren cómo pueden utilizar las etiquetas básicas de HTML para diferenciar entre los distintos tipos de contenido (por ejemplo, títulos, párrafos, fechas).
+	* Piensen en la importancia de la estructura y la organización para facilitar la lectura y la navegación dentro del portal.
+	* Aunque no se utilicen etiquetas semánticas específicas, es fundamental crear una página que sea intuitiva y accesible para los usuarios.
+
+- Al menos dos noticias deben tratar sobre dos de los siguientes temas:
+	- Habilidades blandas en el mundo laboral de la programacion web.
+	- Las 3 etapas de la inteligencia artificial.
+	- Que es inteligencia artificial generativa?
