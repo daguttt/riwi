@@ -1,0 +1,70 @@
+Taller 2: Enriqueciendo Nuestra Web con Multimedia, Tablas y Listas
+
+Objetivo General: Basándonos en el trabajo realizado en el Taller 1, el objetivo de este taller es enriquecer nuestra página web incorporando elementos multimedia, así como mejorar la estructura y la presentación del contenido mediante el uso de tablas y listas, siempre asegurando que se mantenga una semántica HTML pura para mejorar la accesibilidad y la estructura del sitio.
+
+Parte 1: Incorporación de Multimedia
+
+Objetivos:
+
+- Incorporar a nuestras 2 páginas web (noticias y blog) elementos multimedia como videos e imagenes, para hacer el contenido más interactivo y atractivo.
+- Utilizar semántica HTML pura para organizar el contenido multimedia de manera lógica y accesible.
+
+Criterios de Aceptación:
+- Inserción de 2 videos de YouTube por articulo y por noticia: Elige un video de YouTube que complemente alguno de los artículos o noticias de tu Taller 1. Deberás insertarlo de manera que se vea integrado con el contenido existente, utilizando la etiqueta <iframe>. Asegúrate de que el video es relevante y aporta valor al contenido al que acompaña.
+- Inserción de 2 videos descargados por articulo y por noticia : Descarga un video relevante de Pixabay que se relacione con alguno de los temas tratados en tu blog o portal de noticias. Incorpora este video a tu sitio web utilizando la etiqueta <video>, permitiendo a los usuarios reproducirlo, pausarlo y controlar el volumen.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Parte 2: Trabajando con Tablas
+Objetivo: Crear un elemento que permita presentar datos o información de manera estructurada y accesible utilizando tablas.
+
+Criterios de Aceptación:
+- Tabla de Contenidos: Diseña una tabla que resuma los artículos y noticias disponibles en tu sitio, para esto crea la seccion en la parte superior de cada articulo o noticia. Esta tabla debe incluir al menos el título del artículo, el autor, la fecha de publicación y una puntuacion falsa de 1 a 5. La tabla debe ser creada con semántica HTML pura, utilizando las etiquetas <table>, <thead>, <tbody>, y <tfoot> 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Parte 3: Listas
+
+Objetivo:
+Utilizar listas para organizar información de manera jerárquica y accesible, integrando conceptos del blog y las noticias para crear un contenido cohesivo.
+
+Criterios de Aceptación:
+
+- Listado: Crea una sección, en cada articulo o noticia, que utilice tanto listas ordenadas como no ordenadas para organizar información relevante. Podría ser una lista de recomendaciones, recursos relacionados, o un resumen de los temas más importantes tratados en tu blog y portal de noticias. Asegúrate de integrar de manera lógica y fluida los puntos relacionados con los artículos y noticias que has desarrollado.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Parte 4: Investigacion e integracion.
+
+Objetivo: Terminar mi sitio y agregarle navegabilidad.
+
+- Menu: Unifica tu pagina web de blog y de noticias, creando los siguientes menus en la parte superior con los siguientes items:
+		- Sección de "portfolio": Esta sección debe ser la pagina principal de tu proyecto y debe ser creada en el archivo portfolio.html donde muestres los proyectos en los que has trabajado. Puede incluir lo siguiente:
+			* Header: Un título atractivo que refleje tu área de especialización, por ejemplo, "Diseño Web y Desarrollo por [Tu Nombre]".
+			* Main:
+				* Introducción: Un breve párrafo que introduzca a los visitantes a tu portafolio, explicando tu enfoque y especialidades.
+				* Galería de proyectos: Un conjunto de imagenes o videos que presenten cada proyecto. Cada elemento debe incluir:
+				* Imagen del proyecto: Una captura de pantalla o imagen representativa del proyecto.
+				* Descripción: Un breve párrafo que explique el proyecto, las tecnologías utilizadas, y tu rol en el mismo.
+				* Enlace al proyecto: redirige a la url "#"
+				* Tecnologías utilizadas: Una lista de las tecnologías, lenguajes de programación, y herramientas que dominas y has utilizado en tus proyectos.
+			* Footer:
+				* Información de contacto: Incluye formas de contactarte, como tu correo electrónico, enlace a tu LinkedIn, y cualquier otra red social profesional.
+				* Derechos de autor: Una nota de derechos de autor para proteger tu trabajo, por ejemplo, "© [Año] [Tu Nombre]. Todos los derechos reservados."
+		- Seccion de "blog": Esta seccion debe dirigir a tu archivo de blog blog.html
+		- Seccion de "news": Esta seccion debe dirigir a tu archivo de news news.html
+		- Seccion de "Sobre nosotros": Esta seccion me debe dirigir a un archivo about-us.html el cual describe un breve resumen de quien soy. Esta descripcion debe llevar minimo los siguientes criterios
+			* Header (titulo, lema o frase que me describa)
+			* Main (Esta seccion es libre de diseñar. Debe tener minimo 3 subtitulos h2, 6 parrafos, 2 imagenes y una lista describiendo una rutina que ejecutan todos los dias, como preparar el desayuno, alistarse para venir a Riwi, salir del trabajo y tomar el bus...)
+			* Footer (Esta seccion debe llevar consigo informacion personal, de contacto, y copyright)
+		- Seccion de "contacto": Seccion que describe informacion de contacto como
+				- email
+				- direccion locativa
+				- correo electronico
+		- Todas las secciones deben llevar un Navbar, este debe ser una lista con 4 items, cada item con una url al archivo pertinente de cada seccion.
+
+
+
+Notas Finales
+- Semántica: Recuerda seguir las buenas prácticas de semántica HTML. Esto no solo incluye usar las etiquetas correctas para cada tipo de contenido (como <header>, <nav>, <section>, <article>, <footer>), sino también asegurarte de que el contenido multimedia, las tablas, y las listas estén bien estructuradas y sean accesibles.
+- Accesibilidad: Considera la accesibilidad al incorporar videos. Por ejemplo, asegúrate de que los videos de YouTube tengan subtítulos y que los videos descargados incluyan una descripción adecuada usando la etiqueta <track> para subtítulos.
+- Integración: Aunque este taller se centra en elementos específicos, es crucial que todo el contenido se sienta integrado y parte de un todo coherente. La navegación entre secciones y la interacción con los elementos multimedia deben ser intuitivas y enriquecer la experiencia general del usuario.
