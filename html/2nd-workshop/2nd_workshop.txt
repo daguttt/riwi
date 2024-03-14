@@ -43,10 +43,10 @@ Objetivo: Terminar mi sitio y agregarle navegabilidad.
 			* Main:
 				* Introducción: Un breve párrafo que introduzca a los visitantes a tu portafolio, explicando tu enfoque y especialidades.
 				* Galería de proyectos: Un conjunto de imagenes o videos que presenten cada proyecto. Cada elemento debe incluir:
-				* Imagen del proyecto: Una captura de pantalla o imagen representativa del proyecto.
-				* Descripción: Un breve párrafo que explique el proyecto, las tecnologías utilizadas, y tu rol en el mismo.
-				* Enlace al proyecto: redirige a la url "#"
-				* Tecnologías utilizadas: Una lista de las tecnologías, lenguajes de programación, y herramientas que dominas y has utilizado en tus proyectos.
+					* Imagen del proyecto: Una captura de pantalla o imagen representativa del proyecto.
+					* Descripción: Un breve párrafo que explique el proyecto, las tecnologías utilizadas, y tu rol en el mismo.
+					* Enlace al proyecto: redirige a la url "#"
+					* Tecnologías utilizadas: Una lista de las tecnologías, lenguajes de programación, y herramientas que dominas y has utilizado en tus proyectos.
 			* Footer:
 				* Información de contacto: Incluye formas de contactarte, como tu correo electrónico, enlace a tu LinkedIn, y cualquier otra red social profesional.
 				* Derechos de autor: Una nota de derechos de autor para proteger tu trabajo, por ejemplo, "© [Año] [Tu Nombre]. Todos los derechos reservados."
