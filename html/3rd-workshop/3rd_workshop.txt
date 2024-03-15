@@ -1,0 +1,241 @@
+Taller 3: Trabajando con Formularios
+
+Objetivo General: Basándonos en el trabajo realizado en el Taller 1 y 2, el objetivo de este taller es enriquecer nuestra página web incorporando un formulario en la seccion de contacto, siempre asegurando que se mantenga una semántica HTML.
+
+------------------------------------------------------------------------------------------------
+Parte 1: Familiarizandonos con formularios:
+
+Objetivos:
+	- Crear formularios HTML con campos de texto, selectores, botones y otros elementos.
+	- Utilizar atributos de validación de formularios HTML.
+	- Utilizar atributos de campos de formulario HTML.
+	- Utilizar etiquetas de entrada de formulario HTML.
+	- Utilizar etiquetas de formulario HTML.
+
+En un proyecto aparte (con varios archivos HTML), crea un formulario para cada uno de los siguientes casos de uso. Asegúrate de que cada formulario cumpla con los criterios de aceptación.
+
+Criterios de Aceptación:
+
+1. Login: Crear un archivo llamado login-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Usuario (<input type="text" required>) 
+		-  Contraseña (<input type="password" required>) 
+		-  Recordarme (<input type="checkbox">) 
+		-  Código de acceso (<input type="number" required min="1000" max="9999">) 
+		-  Fecha última visita (<input type="date" required>)
+		-  Hora de acceso (<input type="time" required>).
+	Botón: Enviar (<input type="submit"> o <button type="submit"></button>)
+
+2. Formulario de contacto: Crear un archivo llamado contact-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre (<input type="text" required maxlength="50">), 
+		-  Teléfono (<input type="tel" required pattern="[0-9]{10}">), 
+		-  Correo Electrónico (<input type="email" required>), 
+		-  Asunto (<select required>), 
+		-  Mensaje (<textarea required maxlength="500">), 
+		-  Aceptar términos y condiciones (<input type="checkbox" required>), 
+		-  Adjuntar CV (<input type="file">), 
+		-  Fecha de disponibilidad (<input type="date" required>).
+	Botón: Enviar (<input type="submit">).
+
+3. Encuesta de satisfaccion: Crear un archivo llamado satisfaction-survey-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre (<input type="text" required maxlength="50">), 
+		-  Correo Electrónico (<input type="email" required>),
+		-  Edad (<input type="number" required min="18" max="99">), 
+		-  Sexo (<input type="radio" required>),
+		-  Correo Electrónico (<input type="email" required>),
+		-  Fecha de uso del servicio (<input type="date" required>),
+		-  ¿Cómo calificaría nuestro servicio? (<input type="range" required min="1" max="5"> o <input type="number" required min="1" max="5">), 
+		-  ¿Recomendaría nuestro servicio? (<input type="checkbox" required>), 
+		-  ¿Qué le gustaría que mejoráramos? (<textarea required maxlength="500">), 
+		-  ¿Qué le gustó de nuestro servicio? (<textarea required maxlength="500">)
+	Botón: Enviar (<input type="submit">).
+
+4. Registro de usuario: Crear un archivo llamado user-registration-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre (<input type="text" required maxlength="50">), 
+		-  Apellido (<input type="text" required maxlength="50">), 
+		-  Correo Electrónico (<input type="email" required>), 
+		-  Contraseña (<input type="password" required minlength="8">), 
+		-  Confirmar contraseña (<input type="password" required minlength="8">), 
+		-  Foto de perfil (<input type="file">)
+		-  Fecha de nacimiento (<input type="date" required>), 
+		-  Sexo (<input type="radio" required>), 
+		-  País (<select required>), 
+		-  Ciudad (<input type="text" required maxlength="50">), 
+		-  Código postal (<input type="number" required>),
+		-  Biografía (<textarea required maxlength="500">), 
+		-  Aceptar términos y condiciones (<input type="checkbox" required>)
+	Botón: Enviar (<input type="submit">).
+
+Nota*: Desde el punto 5 en adelante debes inferir el tipo de input que se debe utilizar para cada campo.
+
+5. Formulario de busqueda de productos: Crear un archivo llamado product-search-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre del producto (required), 
+		-  Filtro por Categoría (multiples opciones a la vez) del producto,
+		-  Filtro por Precio mínimo,
+		-  Filtro por Precio máximo,
+		-  Filtro por Fecha de publicación del producto, 
+		-  Filtro por Fecha de vencimiento, 
+		-  ¿Desea recibir notificaciones?
+		-  Resultados por página (número de resultados a mostrar por página)
+	Botón: Buscar.
+
+6. Reserva online: Crear un archivo llamado online-reservation-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre del cliente (required), 
+		-  Teléfono del cliente (required), 
+		-  Correo Electrónico del cliente (required), 
+		-  Fecha de reserva (required), 
+		-  Hora de reserva (required),
+		-  Número de personas,
+		-  Requerimientos dietéticos especiales,
+		-  ¿Desea recibir notificaciones?
+		-  ¿Desea recibir promociones?
+	Botón: Reservar.
+
+7. Feedback de producto: Crear un archivo llamado product-feedback-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre del cliente (required), 
+		-  Correo Electrónico del cliente (required), 
+		-  Fecha de compra (required), 
+		-  Calificación del producto,
+		-  ¿Recomendaría el producto?
+		-  ¿Qué le gustó del producto?
+		-  ¿Qué le gustaría que mejoráramos?
+	Botón: Enviar.
+
+8. Suscripción a newsletter: Crear un archivo llamado newsletter-subscription-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		-  Nombre del cliente (required),
+		-  Género del cliente (Opciones predefinidas a seleccionar),
+		-  Correo Electrónico del cliente (required),
+		-  Intereses (Opciones predefinidas a seleccionar), 
+		-  Fecha de nacimiento,
+		-  Sexo,
+		-  ¿Desea recibir notificaciones?
+		-  ¿Desea recibir promociones?
+	Botón: Suscribirse.
+
+9. Pedido de comida a domicilio (delivery): Crear un archivo llamado food-delivery-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del cliente (required),
+		- Teléfono del cliente (required),
+		- Correo Electrónico del cliente (required),
+		- Dirección de entrega (required),
+		- Hora de entrega (required),
+		- Tipo de comida (Opciones predefinidas a seleccionar),
+		- Nivel de picante (Opciones predefinidas a seleccionar),
+		- Instrucciones adicionales (opcional),
+		- Cupón de descuento (Opcional),
+	Botón: Enviar.
+
+10. Evaluacion de curso online: Crear un archivo llamado online-course-evaluation-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del estudiante (required),
+		- Correo Electrónico del estudiante (required),
+		- Fecha de inicio del curso (required),
+		- Fecha de finalización del curso (required),
+		- Calificación del curso,
+		- ¿Recomendaría el curso?
+		- ¿Qué le gustó del curso?
+		- ¿Qué le gustaría que mejoráramos?
+		- Sugerencias para futuros cursos (opcional),
+	Botón: Enviar.
+
+11. Registro deportivo: Crear un archivo llamado sports-registration-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del deportista (required),
+		- Apellido del deportista (required),
+		- Correo Electrónico del deportista (required),
+		- Fecha de nacimiento del deportista (required),
+		- Sexo del deportista (required),
+		- País de origen del deportista (required),
+		- Ciudad de origen del deportista (required),
+		- Código postal del deportista (required),
+		- Deporte que practica (required),
+		- Nivel de experiencia (required),
+		- ¿Desea recibir notificaciones?
+		- ¿Desea recibir promociones?
+	Botón: Enviar.
+
+12. Solicitud de prestamo: Crear un archivo llamado loan-request-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del solicitante (required),
+		- Apellido del solicitante (required),
+		- Correo Electrónico del solicitante (required),
+		- Teléfono del solicitante (required),
+		- Monto solicitado (required),
+		- Plazo de pago (required),
+		- Ingresos mensuales (required),
+		- Gastos mensuales (required),
+	Botón: Enviar.
+
+13. Encuesta de preferencias musicales: Crear un archivo llamado music-preferences-survey-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del encuestado (required),
+		- Correo Electrónico del encuestado (required),
+		- Edad del encuestado (required),
+		- Sexo del encuestado (required),
+		- ¿Cuál es su género musical favorito? (Opciones predefinidas a seleccionar),
+		- ¿Cuál es su artista favorito? (Opciones predefinidas a seleccionar),
+		- ¿Cuál es su canción favorita? (Opciones predefinidas a seleccionar),
+		- ¿Cuál es su instrumento musical favorito? (Opciones predefinidas a seleccionar),
+		- ¿Desea recibir notificaciones?
+		- ¿Desea recibir promociones?
+	Botón: Enviar.
+
+14. Inscripcion de cursos online: Crear un archivo llamado online-course-registration-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del estudiante (required),
+		- Apellido del estudiante (required),
+		- Correo Electrónico del estudiante (required),
+		- Fecha de nacimiento del estudiante (required),
+		- Sexo del estudiante (required),
+		- País de origen del estudiante (required),
+		- Ciudad de origen del estudiante (required),
+		- Código postal del estudiante (required),
+		- Curso que desea inscribirse (required),
+		- Nivel de experiencia (required),
+		- ¿Desea recibir notificaciones?
+		- ¿Desea recibir promociones?
+	Botón: Enviar.
+
+15. Reserva de hotel con Expedia: Crear un archivo llamado hotel-reservation-form.html y dentro crear un formulario que contenga los siguientes campos:
+	Campos: 
+		- Nombre del cliente (required),
+		- Apellido del cliente (required),
+		- Correo Electrónico del cliente (required),
+		- Teléfono del cliente (required),
+		- Fecha de llegada (required),
+		- Fecha de salida (required),
+		- Número de habitaciones (required),
+		- Número de adultos (required),
+		- Número de niños (required),
+		- ¿Desea recibir notificaciones?
+		- ¿Desea recibir promociones?
+	Botón: Reservar.
+-------------------------------------------------------------------------------------------------
+
+Parte 2: Incorporación de Formulario a seccion de contacto
+
+Objetivos:
+
+- Incorporar a nuestras 2 páginas web (noticias y blog) elementos multimedia como videos e imagenes, para hacer el contenido más interactivo y atractivo.
+- Utilizar semántica HTML pura para organizar el contenido multimedia de manera lógica y accesible.
+
+Criterios de Aceptación:
+- Creación del Archivo contact.html: Si aún no existe, crea un archivo llamado contact.html. Asegúrate de incluir este archivo en la barra de navegación de tu sitio web para que sea fácilmente accesible desde las otras páginas (noticias y blog).
+
+- Inclusión de Formulario en la Sección de Contacto: El formulario debe ser insertado dentro de la sección de contacto en contact.html. Asegúrate de que el formulario mantenga la semántica HTML, utilizando etiquetas como <form>, <input>, <label>, etc.
+
+- Campos Requeridos en el Formulario:
+	- Nombre (<input type="text" required maxlength="50">)
+	- Correo Electrónico (<input type="email" required>)
+	- Asunto (<select required>)
+	- Mensaje (<textarea required maxlength="500">)
+	- Aceptar términos y condiciones (<input type="checkbox" required>)
+
+Nota*: El formulario no debe ser funcional, si no mas bien, meramente definir los campos descritos en los criterios de aceptacion.
