@@ -1,0 +1,243 @@
+/* -*********************************************************- */
+/* Resets and variables */
+/* -*********************************************************- */
+:root {
+  --main-color: #07f9a2;
+  --second-color: #0a8967;
+  --paragraph-color: #000511;
+  --light-color: #f4f4f4;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-top: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+}
+
+/* -*********************************************************- */
+/* Utils */
+/* -*********************************************************- */
+
+.wrapper {
+  padding: 1rem;
+  max-width: 1096px;
+  margin-inline: auto;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* -*********************************************************- */
+/* Components */
+/* -*********************************************************- */
+
+.btn {
+  border: none;
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--main-color);
+  color: var(--paragraph-color);
+  /* For a elements */
+  text-decoration: none;
+}
+
+.form-control {
+  margin-bottom: 1.5rem;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-control :is(input, textarea) {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--paragraph-color);
+  font-size: 1rem;
+  letter-spacing: -0.0313rem;
+}
+
+.form-control :is(*:focus-visible),
+[type='submit']:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 0.0625rem;
+}
+
+/* -*********************************************************- */
+/* Page styles */
+/* -*********************************************************- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+main > section {
+  margin-bottom: 5rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.wrapper > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* -*********************- */
+/* Header */
+/* -*********************- */
+.header {
+  position: relative;
+  height: 80vh;
+  background-image: url('./assets/background-image-web.avif');
+  background-size: cover;
+}
+
+.header .header-wrapper > * {
+  z-index: 1;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .navbar .logo {
+  max-width: 80px;
+}
+
+.header .navbar nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header .navbar nav ul a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.header .navbar nav ul a:hover {
+  text-decoration: underline;
+}
+
+.header .hero {
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+}
+
+.header .hero h1 {
+  color: var(--light-color);
+  text-align: center;
+}
+
+.header .hero .btn {
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+/* -*********************- */
+/* Services */
+/* -*********************- */
+
+.services .cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 640px) {
+  .services .cards-wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.services .card {
+  min-width: 250px;
+  max-width: 320px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.services .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.services .card .card__content {
+  padding: 16px;
+}
+
+/* -*********************- */
+/* Contact */
+/* -*********************- */
+
+.contact .contact-form {
+  max-width: 550px;
+  margin-inline: auto;
+}
+
+.contact .contact-form [type='submit'] {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  margin-inline: auto;
+  @media screen and (min-width: 1024px) {
+    width: max-content;
+    padding-block: 1rem;
+    padding-inline: 2.5rem;
+  }
+}
