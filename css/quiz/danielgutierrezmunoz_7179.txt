@@ -1,1 +1,417 @@
-g
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 1: ¿Qué propiedad CSS define cómo se posicionan los elementos en la página? Elige una respuesta correcta y describe 2 ejemplos de uso de esta propiedad.
+
+a) display
+b) position
+c) float
+d) alignment
+
+Tu respuesta: b) propiedad `position`.
+Ejemplos de uso:
+    1. Botón "Back to top" posicionado de forma estática en la parte inferior del viewport bien sea al lado derecho o izquierdo de la pantalla.
+    2. Indicador del contador de notificaciones en la esquina superior derecha del icono de notificaciones en alguna aplicación.
+
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 2: ¿Qué significa `box-sizing: border-box`?
+
+a) El tamaño del elemento incluye padding y border.
+b) El tamaño del elemento solo incluye el contenido.
+c) El tamaño del elemento se ajusta automáticamente.
+d) El tamaño del elemento no incluye margins.
+
+Tu respuesta: a) El tamaño del elemento incluye padding y border.
+justificacion: El tamaño establecido a un elemento controlará el tamaño total incluyendo contenido, relleno y borde.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 3: En Flexbox, ¿cómo se alinean los elementos horizontalmente en su contenedor? Suponga flex-direction: row.
+
+a) justify-content
+b) align-items
+c) flex-direction
+d) align-content
+
+Tu respuesta: a) justify-content
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 4: ¿Qué es una media query en CSS?
+
+a) Una consulta para obtener datos de un servidor.
+b) Una regla que aplica estilos según las características del dispositivo como resolucion de pantalla.
+c) Una forma de crear consultas en la base de datos.
+d) Un método para cambiar el orden de los elementos HTML.
+
+Tu respuesta: b) Una regla que aplica estilos según las características del dispositivo como resolucion de pantalla.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 5: ¿Cómo estableces un fondo responsivo que cubra todo el elemento sin perder sus proporciones?
+
+a) background-size: cover;
+b) background-size: contain;
+c) background-size: 100% 100%;
+d) background-repeat: no-repeat;
+
+Tu respuesta: a) background-size: cover;
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 6: ¿Qué es un linear gradient en CSS?
+
+a) Una transición entre dos o más colores a lo largo de una línea recta.
+b) Un tipo de imagen que puede escalar sin perder calidad.
+c) Una función para crear animaciones.
+d) Un filtro que aplica efectos en las imágenes.
+
+Tu respuesta: a) Una transición entre dos o más colores a lo largo de una línea recta.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 7: ¿Cuál de estos es un selector de atributo en CSS?
+
+a) `#id`
+b) `.class`
+c) `[href="https://example.com"]`
+d) `*`
+
+Tu respuesta: c) `[href="https://example.com"]`
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 8: ¿Qué representa la especificidad en CSS?
+
+a) El orden en que se aplican las hojas de estilo.
+b) La importancia de un selector para aplicar sus estilos.
+c) La velocidad con que se cargan los estilos.
+d) El número de elementos que un selector afecta.
+
+Tu respuesta: b) La importancia de un selector para aplicar sus estilos.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 9: ¿Qué hace el selector universal (*) en CSS?
+
+a) Selecciona todos los elementos de un tipo específico.
+b) Selecciona todos los elementos dentro de un contenedor.
+c) Selecciona todos los elementos de la página.
+d) Selecciona todos los elementos que tienen un atributo específico.
+
+Tu respuesta: c) Selecciona todos los elementos de la página.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 10: ¿Qué elemento HTML no es semántico?
+a) `<article>`
+b) `<footer>`
+c) `<div>`
+d) `<section>`
+
+Tu respuesta: c) `<div>`
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 11: ¿Cuál de estos elementos suele contener la metadata como `<title>`, `<meta>`, `<link>`, y `<style>`?
+a) `<footer>`
+b) `<header>`
+c) `<body>`
+d) `<head>`
+
+Tu respuesta: d) `<head>`
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 12: En el contexto de HTML5, ¿qué significa `viewport`?
+a) La herramienta para depurar el código HTML.
+b) La región visible de una página web en el navegador.
+c) Un meta-tag que define el ancho de la página.
+d) El área donde se visualizan los media queries.
+
+Tu respuesta: b) La región visible de una página web en el navegador.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 13: ¿Qué tipo de `<input>` NO es válido en HTML5?
+a) `text`
+b) `radio`
+c) `date`
+d) `reaction`
+
+Tu respuesta: d) `reaction` 
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 14: ¿Qué propiedad CSS `position` se utiliza para que un elemento permanezca fijo en la ventana gráfica mientras se desplaza la página?
+
+a) static
+b) relative
+c) absolute
+d) fixed
+
+Tu respuesta: d) fixed
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 15: ¿Cuál de las siguientes declaraciones es correcta con respecto a `flex-wrap` en Flexbox?
+
+a) Define la dirección en la que se apilan los flex items.
+b) Establece si los flex items se deben envolver o no cuando no hay suficiente espacio.
+c) Alinea los flex items en el eje principal.
+d) Distribuye el espacio alrededor de los flex items.
+
+Tu respuesta: b) Establece si los flex items se deben envolver o no cuando no hay suficiente espacio.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 16: ¿Qué sucede cuando se establece `background-position: center center` en un elemento?
+
+a) El fondo se centra tanto vertical como horizontalmente dentro del elemento.
+b) El fondo se posiciona en la esquina superior izquierda.
+c) El fondo se repite a lo largo del eje central.
+d) El fondo se estira para cubrir todo el elemento.
+
+Tu Respuesta: a) El fondo se centra tanto vertical como horizontalmente dentro del elemento.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 17: ¿Cuál es el propósito del meta-tag viewport en HTML?
+
+a) Para especificar la codificación de caracteres de la página.
+b) Para proporcionar una vista previa de la página en los resultados de búsqueda.
+c) Para controlar la ventana gráfica del dispositivo y mejorar la experiencia móvil.
+d) Para vincular a un favicon.
+
+Tu Respuesta: c) Para controlar la ventana gráfica del dispositivo y mejorar la experiencia móvil.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 18: ¿Qué selector CSS tiene la mayor especificidad?
+
+a) Un selector de id (e.g., #navbar)
+b) Un selector de clase (e.g., .button)
+c) Un selector de tipo (e.g., div)
+d) Un selector de atributo (e.g., [type="text"])
+
+Tu Respuesta: a) Un selector de id (e.g., #navbar)
+
+--------------------------------------------------------------------------------------------------------------
+
+### Considera el siguiente fragmento de HTML y CSS para responder desde la pregunta 19 hasta la pregunta 21:
+
+<html>
+<head>
+  <style>
+    #app .important-text { color: blue; }
+    .content p { color: green; }
+    div p { color: red; }
+    p { color: orange; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="content">
+      <p class="important-text">¿De qué color será este texto?</p>
+    </div>
+  </div>
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------------
+
+### Pregunta 19: Dada la regla de especificidad de CSS, ¿cuál de los siguientes colores se aplicará al párrafo con la clase important-text?
+
+a) Azul, porque el selector ID tiene mayor especificidad que los otros selectores.
+b) Verde, porque el selector de clase .content p está más cerca del elemento en el HTML.
+c) Rojo, porque el selector div p especifica el tipo de elemento padre e hijo directamente.
+d) Naranja, porque el selector p está definido último en el CSS y sobrescribe los demás estilos.
+
+
+Tu Respuesta: a) Azul, porque el selector ID tiene mayor especificidad que los otros selectores.
+
+--------------------------------------------------------------------------------------------------------------
+
+###Pregunta 20: Si se añade una nueva regla CSS al final del <style>, como .content .important-text { color: purple; }, ¿cuál será ahora el color del texto?
+
+a) Azul, ya que la regla con el ID sigue siendo la más específica.
+b) Verde, porque las reglas de clase específica no afectan la regla que contiene el ID.
+c) Morado, ya que esta regla es más específica que la anterior debido a que combina dos clases.
+d) Naranja, porque sigue siendo el selector de elemento definido al final.
+
+Tu Respuesta: a) Azul, ya que la regla con el ID sigue siendo la más específica.
+
+--------------------------------------------------------------------------------------------------------------
+
+###Pregunta 21: Si queremos asegurarnos de que el párrafo tenga siempre el color negro independientemente de las reglas anteriores, ¿cuál de las siguientes opciones aplicaría ese estilo correctamente?
+
+a) Añadir p { color: black !important; } al final del bloque <style>.
+b) Cambiar la clase .important-text a un ID y usar #important-text { color: black; } en el CSS.
+c) Añadir un estilo en línea al párrafo: <p class="important-text" style="color: black;">.
+d) Todas las anteriores asegurarían que el párrafo sea negro.
+
+Tu Respuesta: c) Añadir un estilo en línea al párrafo: <p class="important-text" style="color: black;">.
+Justificación: La a) no ya que no sería buena práctica.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 22: ¿Qué etiqueta HTML se usa para definir una sección independiente o un segmento de contenido que puede ser distribuido de manera independiente del resto del sitio y tener imagenes, parrafos, autor, fechas, rating, etc... como un artículo de blog, una noticia o un widget?
+
+a) <section>
+b) <div>
+c) <article>
+d) <aside>
+
+Tu Respuesta: c) <article>
+
+--------------------------------------------------------------------------------------------------------------
+
+###Pregunta 23: Considera la regla de CSS siguiente:
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a) Establece el modelo de caja de todos los elementos para que el padding y el border se incluyan en el ancho y la altura total del elemento.
+b) Hace que todos los elementos y para todos, todos los pseucoelementos before y after de la página hereden la propiedad box-sizing directamente del elemento raíz <html>.
+c) Reinicia el valor de box-sizing a su valor por defecto para todos los elementos, incluyendo pseudoelementos :before y :after.
+d) Elimina los estilos de padding y border de todos los elementos, asegurando que no afecten al diseño del documento.
+
+Tu Respuesta: b) Hace que todos los elementos y para todos, todos los pseucoelementos before y after de la página hereden la propiedad box-sizing directamente del elemento raíz <html>.
+
+Justificacion: La a) no ya que con el valor `inherit` le decimos a todos los elementos y pseudoelementos (::before, ::after) hereden de su elemento padre que sería el <html>. La c) no ya que el valor por defecto de box-sizing es `content-box`. La d) no ya que no se le está eliminando el `border` ni el `padding` solo se está configurando como esperamos que se comporte el tamaño de los elementos junto con estás propiedades.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 24: Imagina que tienes el siguiente CSS en tu hoja de estilos para adaptar el diseño de un sitio web a diferentes tamaños de pantalla:
+
+/* Estilos por defecto para móviles */
+p {
+  font-size: 14px;
+}
+
+/* Estilos para pantallas más grandes (tablets en adelante) */
+@media (min-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para pantallas de escritorio */
+@media (min-width: 1024px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+Si estás visualizando el sitio en un dispositivo cuyo viewport tiene 800px de ancho, ¿qué tamaño de fuente se aplicará a los párrafos <p>?
+
+a) 14px, porque es el estilo por defecto.
+b) 16px, porque el viewport supera el breakpoint mínimo de 768px.
+c) 18px, porque el viewport supera ambos breakpoints, y se aplica el mayor.
+d) No se puede determinar con la información proporcionada.
+
+Tu respuesta: b) 16px, porque el viewport supera el breakpoint mínimo de 768px.
+
+--------------------------------------------------------------------------------------------------------------
+
+###Pregunta 25: Considera que tienes la siguiente estructura HTML y CSS, y deseas aplicar estilos diferentes para distintos rangos de ancho de dispositivo:
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos por defecto */
+    .menu {
+      background-color: blue;
+      color: white;
+    }
+
+    /* Estilos para dispositivos medianos */
+    @media (min-width: 600px) and (max-width: 899px) {
+      .menu {
+        background-color: green;
+      }
+    }
+
+    /* Estilos para dispositivos grandes */
+    @media (min-width: 900px) {
+      .menu {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu">
+    Menú principal
+  </nav>
+</body>
+</html>
+
+
+Si el viewport del navegador es exactamente 600px de ancho, ¿qué color de fondo tendrá el <nav class="menu">?
+
+a) Azul, porque los estilos por defecto no tienen breakpoints.
+b) Verde, porque el viewport coincide con el breakpoint mínimo de 600px.
+c) Rojo, porque se aplica el estilo para dispositivos grandes.
+d) No se aplica ningún color de fondo porque hay un conflicto de breakpoints.
+
+Tu Respuesta: b) Verde, porque el viewport coincide con el breakpoint mínimo de 600px.
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 26: Dado el siguiente código CSS que aplica Flexbox a un contenedor:
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+Y el siguiente fragmento de HTML:
+
+<div class="container">
+  <div class="child">Item 1</div>
+  <div class="child">Item 2</div>
+  <div class="child">Item 3</div>
+</div>
+
+¿Cómo se distribuirán los elementos .child dentro de .container?
+
+a) Los elementos se distribuirán uniformemente con espacio entre ellos, alineándose al inicio y al final del contenedor.
+b) Los elementos se apilarán uno sobre otro, ignorando el ancho fijo.
+c) Los elementos se extenderán para ocupar todo el ancho del contenedor.
+d) Los elementos se alinearán todos al centro del contenedor.
+
+Tu Respuesta: Ninguna
+
+Justificacion: La respuesta a) es la que más se acerca. Lo que no es correcto en la respuesta es que los elementos se alinean al inicio y al final del contenedor, ese sería el comportamiento de `space-between`. Con la propiedad `space-evely` el espacio disponible del contendedor se distribuirá de forma equitativa entre los elementos y en los extremos del primer y último elemento. La respuesta d) tiene algo de verdad en el sentido de que el espacio distribuido en los extremos del primer y último elemento hace que los elementos se centren pero por la naturaleza de `space-evenly` siguen separados entre sí.
+
+
+--------------------------------------------------------------------------------------------------------------
+
+### Pregunta 25: Considera que quieres centrar un único elemento .box dentro de un contenedor .centered, utilizando Flexbox en el siguiente HTML:
+
+<div class="centered">
+  <div class="box">Centrado</div>
+</div>
+
+¿Cuál sería el conjunto correcto de propiedades CSS para aplicar en .centered para asegurar que .box esté centrado tanto horizontal como verticalmente?
+
+.centered {
+  display: flex;
+  /* Opciones */
+}
+
+a) justify-content: center; align-items: center;
+b) align-content: center; justify-items: center;
+c) justify-items: center; align-self: center;
+d) align-content: stretch; justify-content: space-around;
+
+Tu Respuesta: a) justify-content: center; align-items: center;
+
+--------------------------------------------------------------------------------------------------------------
