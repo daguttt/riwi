@@ -8,18 +8,21 @@
   </head>
   <body>
     <header class="header">
+      <div data-scroll-watcher></div>
       <div class="wrapper header-wrapper">
         <div class="backdrop"></div>
         <div class="navbar">
-          <a href="#" class="logo">
-            <img src="./assets/company-logo.webp" alt="Company Logo" />
-          </a>
-          <nav>
-            <ul>
-              <li><a href="#services">Servicios</a></li>
-              <li><a href="#contact">Contacto</a></li>
-            </ul>
-          </nav>
+          <div class="wrapper">
+            <a href="#" class="logo">
+              <img src="./assets/company-logo.webp" alt="Company Logo" />
+            </a>
+            <nav>
+              <ul>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
         <section class="hero">
           <h1>Los mejores servicios de AI para tu empresa</h1>
@@ -113,6 +116,24 @@
           </form>
         </div>
       </section>
+      <script>
+        (function makeNavbarSticky() {
+          const elementToObserve = document.querySelector(
+            '[data-scroll-watcher]'
+          );
+          const navBarObserverOptions = {};
+          const navBarObserver = new IntersectionObserver(
+            () => {
+              console.log('Sticky!');
+            },
+            {
+              root: null, // -> viewport
+              threshold: 0.0,
+            }
+          );
+          navBarObserver.observe(elementToObserve);
+        })();
+      </script>
     </main>
     <footer></footer>
   </body>
