@@ -1,0 +1,24 @@
+Taller Session 3: Diseño de Galería con Google Fonts
+
+	Objetivo: Crear una galería de imágenes con estilo personalizado usando CSS y mejorar la tipografía mediante Google Fonts.
+
+	Descripción del taller:
+		- Los participantes deberán replicar un diseño de galería proporcionado y personalizarlo con una fuente importada desde Google Fonts. Se espera que integren los aspectos visuales detallados a continuación y sigan las buenas prácticas de diseño web y usabilidad.
+
+	Criterios de aceptación:
+
+	Diseño de Galería:
+		
+	1. La galería debe coincidir con el diseño proporcionado en el enlace: https://shorturl.at/fyEHL
+Las imágenes deben estar dispuestas en una cuadrícula y ser responsivas, adaptándose a diferentes tamaños de pantalla.
+Asegurarse de que la galería mantenga un diseño estético en dispositivos móviles y de escritorio. Las imagenes de la galeria deben ser extraidas o descargadas de la siguiente pagina: https://unsplash.com/photos/blue-click-pen-on-top-of-gray-book-near-clear-drinking-glass-JPHPdqZrB3I
+	2. Se recomienda que la sombra aplicada sea alguna de las presentadas en el siguiente enlace: https://getcssscan.com/css-box-shadow-examples
+	
+	Tipografía:
+
+	1. Importar la fuente "Bellota" desde Google Fonts utilizando la regla @import en el archivo CSS.
+Aplicar la fuente "Bellota" al texto de la página, incluyendo el título, párrafos y cualquier otro elemento textual relevante.
+Personalización del Contenido:
+
+	2. Agregar un párrafo descriptivo debajo del título de la galería. Este párrafo debe contener contenido relevante al tema de la galería y utilizar la fuente "Bellota".
+Incluir una línea de división <hr> debajo del párrafo, la cual debe estar estilizada de manera coherente con el diseño general de la página.
