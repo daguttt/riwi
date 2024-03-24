@@ -2,7 +2,7 @@ Hi there! My name is Daniel Gutierrez Muñoz. I’m 20 years old. I’m from Med
 
 My main motivation to learn English is to get a job at a foreign company. I aspire to achieve the stage where I earn in a different currency through remote work and collaborate with people from various countries.
 
-I face two main challenges when learning English. The first one is vocabulary: As most of the content I consume is programming English content I don’t feel I have a wide set of words to discuss common everyday things. The second challenge I face is time distribution: To be honest, becoming part of Riwi has made me been through the process of getting used to the schedule and I’m still figuring out when to dedicate time to learning English. However, with this assessment I made the decision of doing something I’ve wanted to do long ago. 
+I face two main challenges when learning English. The first one is vocabulary: As most of the content I consume is programming English content I don’t feel I have a wide set of words to discuss common everyday things. The second challenge I face is time distribution: To be honest, becoming part of Riwi has made me been through the process of getting used to the schedule and I’m still figuring out when to dedicate time to learning English. However, with this assessment I made the decision of doing something I’ve wanted to do long ago.
 
 I will use an app called Anki. This app basically allows us to apply the best study techniques proven by science which are active recall and space repetition.
 
