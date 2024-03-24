@@ -45,8 +45,18 @@ main {
 }
 
 h1 {
-  text-align: center;
-  font-weight: 700;
+    text-align: center;
+    font-weight: 700;
+}
+
+h1 + p {
+    text-align: center;
+}
+
+hr {
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
 }
 
 .gallery {
