@@ -81,8 +81,6 @@ html {
 }
 
 body {
-    --wrapper-max-width: 1200px;
-
     margin: 0;
     font-family: var(--font-family);
     font-size: var(--fz-400);
