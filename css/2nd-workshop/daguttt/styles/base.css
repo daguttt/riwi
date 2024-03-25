@@ -1,8 +1,47 @@
 /* -*********************************************************- */
+/* Fonts */
+/* -*********************************************************- */
+@font-face {
+    font-family: Poppins;
+    src: url('../assets/fonts/Poppins-ExtraLight.woff2') format(woff2);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../assets/fonts/Poppins-LightItalic.woff2') format(woff2);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../assets/fonts/Poppins-Regular.woff2') format(woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../assets/fonts/Poppins-SemiBold.woff2') format(woff2);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../assets/fonts/Poppins-Bold.woff2') format(woff2);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* -*********************************************************- */
 /* Variables and Reset */
 /* -*********************************************************- */
 :root {
     --fz-400: 1.125rem;
+    --font-family: Poppins, sans-serif;
 }
 
 html {
@@ -26,8 +65,9 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
     margin: 0;
+    font-family: var(--font-family);
     font-size: var(--fz-400);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 h1,
