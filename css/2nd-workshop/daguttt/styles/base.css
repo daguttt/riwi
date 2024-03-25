@@ -69,6 +69,11 @@ html {
     }
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -124,4 +129,8 @@ select {
     --padding-inline: 1rem;
     width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
     margin-inline: auto;
+}
+
+.flow > :not(:first-child) {
+    margin-top: 1.125em;
 }
