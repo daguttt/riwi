@@ -56,6 +56,7 @@
     --cl-primary-400: #da8e32;
     --cl-secondary-400: #92ebe7;
     --cl-secondary-600: #24c2ba;
+    --cl-secondary-900: #0c413e;
     --cl-accent-400: #799aec;
     --cl-accent-600: #1945b3;
     --cl-light: #f4f4f4;
@@ -176,6 +177,14 @@ select {
     width: 1px;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.hero {
+    min-height: calc(70vh);
+}
+
+.bg-accent {
+    background-color: var(--cl-accent-400);
 }
 
 /* -*********************************************************- */

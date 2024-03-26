@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio - daguttt</title>
         <link rel="stylesheet" href="./styles/base.css" />
+        <link rel="stylesheet" href="./styles/portfolio.css" />
         <script src="./scripts/index.js" defer></script>
     </head>
     <body style="--wrapper-max-width: 1200px">
@@ -29,13 +30,14 @@
                 </nav>
             </div>
         </div>
-        <header class="wrapper">
+        <header class="wrapper hero flow">
             <h1>Daniel Gutiérrez Muñoz</h1>
             <p><strong>Desarrollo Web Fullstack</strong></p>
+            <a href="./contact.html" class="btn primary"> Contáctame </a>
         </header>
-        <main class="wrapper">
-            <section>
-                <article>
+        <main>
+            <section class="introduction bg-accent">
+                <article class="wrapper" style="--max-width: 70ch">
                     <p>
                         Apasionado por la web como plataforma y como herramienta
                         para crear soluciones tecnologícas efectivas, escalables
@@ -46,50 +48,63 @@
                     </p>
                 </article>
             </section>
-            <section class="flow">
+            <section class="projects wrapper">
                 <h2>Proyectos</h2>
-                <article>
-                    <h3>Ardata</h3>
-                    <a href="https://ardatatech.co"
-                        ><img
-                            src="./assets/ardata-project-image.png"
-                            alt="Previsualizacion de la web de Ardata"
-                    /></a>
-                    <p>
-                        Pagina principal del nuevo producto digital de una
-                        empresa desarrolladora de modelos 3D. Busca presentar y
-                        ofrecer el servicio de Configuradores 3D personalizados
-                        para tiendas en linea con tecnología AR.
-                    </p>
-                    <p>
-                        <small>
-                            Astro, TypeScript React.js, TailwindCSS Sketchfab JS
-                            API, 3D Models
-                        </small>
-                    </p>
-                    <p><a href="https://ardatatech.co">Ver proyecto</a></p>
-                </article>
-                <article>
-                    <h3>Ecoactualizate</h3>
-                    <a href="https://daguttt.github.io/ecoactualizate/"
-                        ><img
-                            src="./assets/ecoactualizate-project-image.png"
-                            alt="Previsualizacion del sitio web Ecoactualizate"
-                    /></a>
-                    <p>
-                        Sitio web informativo para un grupo de adolescentes que
-                        tenían una iniciativa para reciclar y cuidar el medio
-                        ambiente.
-                    </p>
-                    <p>
-                        <small>HTML, CSS, JavaScript, Pub, SASS, Figma</small>
-                    </p>
-                    <p>
-                        <a href="https://daguttt.github.io/ecoactualizate/"
-                            >Ver proyecto</a
-                        >
-                    </p>
-                </article>
+                <div class="cards">
+                    <article class="card-item flow">
+                        <h3>Ardata</h3>
+                        <a href="https://ardatatech.co" class="card-image"
+                            ><img
+                                src="./assets/ardata-project-image.png"
+                                alt="Previsualizacion de la web de Ardata"
+                        /></a>
+                        <p>
+                            Pagina principal del nuevo producto digital de una
+                            empresa desarrolladora de modelos 3D. Busca
+                            presentar y ofrecer el servicio de Configuradores 3D
+                            personalizados para tiendas en linea con tecnología
+                            AR.
+                        </p>
+                        <p>
+                            <small>
+                                <i>
+                                    Astro, TypeScript React.js, TailwindCSS
+                                    Sketchfab JS API, 3D Models
+                                </i>
+                            </small>
+                        </p>
+                        <p>
+                            <a href="https://ardatatech.co">Ver proyecto</a>
+                        </p>
+                    </article>
+                    <article class="card-item flow">
+                        <h3>Ecoactualizate</h3>
+                        <a
+                            href="https://daguttt.github.io/ecoactualizate/"
+                            class="card-image"
+                            ><img
+                                src="./assets/ecoactualizate-project-image.png"
+                                alt="Previsualizacion del sitio web Ecoactualizate"
+                        /></a>
+                        <p>
+                            Sitio web informativo para un grupo de adolescentes
+                            que tenían una iniciativa para reciclar y cuidar el
+                            medio ambiente.
+                        </p>
+                        <p>
+                            <small
+                                ><i
+                                    >HTML, CSS, JavaScript, Pub, SASS, Figma</i
+                                ></small
+                            >
+                        </p>
+                        <p>
+                            <a href="https://daguttt.github.io/ecoactualizate/"
+                                >Ver proyecto</a
+                            >
+                        </p>
+                    </article>
+                </div>
             </section>
         </main>
         <footer class="wrapper footer">

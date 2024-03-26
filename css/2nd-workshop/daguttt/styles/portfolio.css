@@ -1,0 +1,44 @@
+.hero {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+}
+
+@media screen and (width >= 600px) {
+    /* .hero {
+        align-content: center;
+        justify-content: start;
+    } */
+}
+
+.introduction {
+    padding-block: 2rem;
+}
+
+.projects {
+    margin-top: 3rem;
+}
+
+.projects .cards {
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+@media screen and (width >= 600px) {
+    .projects .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--cl-primary-100);
+}
+
+.card-item .card-image {
+    display: block;
+    margin-top: 1rem;
+}
