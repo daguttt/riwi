@@ -5,21 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio - daguttt</title>
         <link rel="stylesheet" href="./styles/base.css" />
+        <script src="./scripts/index.js" defer></script>
     </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./news.html">Noticias</a></li>
-                    <li><a href="./about-me.html">Acerca de mi</a></li>
-                    <li><a href="./contact.html">Contacto</a></li>
-                </ul>
-            </nav>
+    <body style="--wrapper-max-width: 1200px">
+        <div class="navbar">
+            <div class="wrapper navbar-wrapper">
+                <h2><a href="./">daguttt.</a></h2>
+                <nav>
+                    <button
+                        class="menu-toggle"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                    >
+                        <span class="sr-only">Menu</span>
+                        <span class="hamburguer" aria-hidden="true"></span>
+                    </button>
+                    <ul class="primary-navigation" id="primary-navigation">
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./news.html">Noticias</a></li>
+                        <li><a href="./about-me.html">Acerca de mi</a></li>
+                        <li><a href="./contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <header class="wrapper">
             <h1>Daniel Gutiérrez Muñoz</h1>
             <p><strong>Desarrollo Web Fullstack</strong></p>
         </header>
-        <main>
+        <main class="wrapper">
             <section>
                 <article>
                     <p>
@@ -32,7 +46,7 @@
                     </p>
                 </article>
             </section>
-            <section>
+            <section class="flow">
                 <h2>Proyectos</h2>
                 <article>
                     <h3>Ardata</h3>
@@ -78,8 +92,7 @@
                 </article>
             </section>
         </main>
-        <footer>
-            <hr />
+        <footer class="wrapper">
             <address>
                 <ul>
                     <li>

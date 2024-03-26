@@ -52,9 +52,13 @@
 
     --cl-body: #1c1305;
     --cl-background: #fcf7f0;
-    --cl-primary: #da8e32;
-    --cl-secondary: #92ebe7;
-    --cl-accent: #6286e3;
+    --cl-primary-100: #f7ead4;
+    --cl-primary-400: #da8e32;
+    --cl-secondary-400: #92ebe7;
+    --cl-secondary-600: #24c2ba;
+    --cl-accent-400: #799aec;
+    --cl-accent-600: #1945b3;
+    --cl-light: #f4f4f4;
 
     --font-family: Poppins, sans-serif;
 }
@@ -85,6 +89,7 @@ body {
     font-family: var(--font-family);
     font-size: var(--fz-400);
     line-height: 1.5;
+    background-color: var(--cl-background);
 }
 
 h1,
@@ -96,6 +101,23 @@ h4 {
 
 p {
     text-wrap: pretty;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cl-accent-600);
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: var(--cl-secondary-600);
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 }
 
 img,
@@ -122,6 +144,15 @@ select {
     font: inherit;
 }
 
+:focus-visible {
+    --outline-size: 0.125rem;
+
+    outline: var(--outline-size) solid var(--cl-secondary-600);
+    box-shadow: 0 0 0.125rem calc(var(--outline-size) * 2)
+        var(--cl-secondary-400);
+    display: inline-block;
+}
+
 /* -*********************************************************- */
 /* Utils */
 /* -*********************************************************- */
@@ -135,4 +166,156 @@ select {
 
 .flow > :not(:first-child) {
     margin-top: 1.125em;
+}
+
+.sr-only {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* -*********************************************************- */
+/* Components */
+/* -*********************************************************- */
+.hamburguer {
+    position: relative;
+    transition: rotate 300ms, opacity 300ms;
+}
+
+.hamburguer,
+.hamburguer::before,
+.hamburguer::after {
+    display: inline-block;
+    width: 1.625rem;
+    height: 0.125rem;
+    background-color: var(--cl-body);
+    border-radius: 0.125rem;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: inherit;
+}
+
+.hamburguer::before {
+    translate: 0 -5px;
+}
+
+.hamburguer::after {
+    translate: 0 5px;
+}
+
+/* -*********************- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    display: grid;
+    place-items: center;
+    min-height: 80px;
+    background-color: var(--cl-background);
+    isolation: isolate;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--cl-primary-100);
+    filter: blur(1rem);
+}
+
+.navbar .navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .navbar-wrapper > h2 a {
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.navbar nav {
+    display: grid;
+    place-items: center;
+}
+
+.navbar .menu-toggle {
+    display: grid;
+    place-content: center;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid var(--cl-body);
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.25rem;
+
+    &:hover {
+        background-color: var(--cl-primary-100);
+    }
+}
+
+@media screen and (width >= 600px) {
+    .navbar .menu-toggle {
+        display: none;
+    }
+}
+
+@media screen and (width < 600px) {
+    .navbar [aria-expanded='true'] .hamburguer {
+        rotate: 45deg;
+    }
+
+    .navbar [aria-expanded='true'] .hamburguer::before {
+        opacity: 0;
+    }
+
+    .navbar [aria-expanded='true'] .hamburguer::after {
+        translate: 0;
+        rotate: -90deg;
+    }
+}
+
+.navbar .primary-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    background-color: var(--cl-background);
+    list-style-type: none;
+}
+
+.navbar .primary-navigation li a {
+    color: inherit;
+}
+
+@media screen and (width < 600px) {
+    .navbar [aria-expanded='true'] + .primary-navigation {
+        display: flex;
+    }
+}
+
+@media screen and (width >= 600px) {
+    .navbar .primary-navigation {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+    }
 }
