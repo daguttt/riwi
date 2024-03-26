@@ -1,0 +1,10 @@
+button[type='submit'] {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+@media screen and (width >= 600px) {
+    button[type='submit'] {
+        width: max-content;
+    }
+}

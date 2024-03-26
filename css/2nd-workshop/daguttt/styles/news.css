@@ -1,0 +1,12 @@
+.hero h1 {
+    font-size: clamp(2.5rem, 10vw + 1rem, 5rem);
+}
+
+.news > * {
+    margin-top: 4rem;
+}
+
+/* Score value */
+table tr td:last-child {
+    text-align: center;
+}

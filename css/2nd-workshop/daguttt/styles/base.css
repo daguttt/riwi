@@ -104,6 +104,11 @@ p {
     text-wrap: pretty;
 }
 
+ol,
+ul {
+    padding-inline-start: 0.5rem;
+}
+
 a {
     text-decoration: none;
     color: var(--cl-accent-600);
@@ -133,9 +138,11 @@ img {
     font-style: italic;
 }
 
-video {
+video,
+iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 input,
@@ -181,10 +188,18 @@ select {
 
 .hero {
     min-height: calc(70vh);
+    display: grid;
+    place-content: center;
+    text-align: center;
 }
 
 .bg-accent {
     background-color: var(--cl-accent-400);
+}
+
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 /* -*********************************************************- */
@@ -342,6 +357,7 @@ select {
 
 .btn {
     padding: 1rem 2rem;
+    border: none;
     border-radius: 0.5rem;
     color: var(--cl-body);
     text-align: center;
@@ -395,6 +411,7 @@ select {
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    padding: 0;
     margin-top: 1.25rem;
     list-style-type: none;
 }
@@ -410,4 +427,25 @@ select {
 
 .footer .rights {
     margin-top: 1rem;
+}
+
+/* -*********************- */
+
+.form-control {
+    margin-bottom: 1.5rem;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control :is(input, textarea) {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--cl-body);
+    font-size: 1rem;
+    letter-spacing: -0.0313rem;
 }

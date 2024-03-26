@@ -1,0 +1,21 @@
+.hero h1 span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.table-of-contents {
+    margin-top: 1.25rem;
+}
+
+/* Score value */
+table tr td:last-child {
+    text-align: center;
+}
+
+.articles > * {
+    margin-top: 4rem;
+}
+
+.articles article :is(img, video) {
+    margin-inline: auto;
+}

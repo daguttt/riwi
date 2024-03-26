@@ -5,13 +5,6 @@
     text-align: center;
 }
 
-@media screen and (width >= 600px) {
-    /* .hero {
-        align-content: center;
-        justify-content: start;
-    } */
-}
-
 .introduction {
     padding-block: 2rem;
 }
