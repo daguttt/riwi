@@ -1,9 +1,24 @@
 (function initMenu() {
-    $menuToggle = document.querySelector('.menu-toggle');
+    const menuToggleSelector = '.menu-toggle';
+    const menuSelector = '.primary-navigation';
+    $menuToggle = document.querySelector(menuToggleSelector);
 
-    $menuToggle.addEventListener('click', () => {
+    document.addEventListener('click', (e) => {
         const isMenuOpened =
             $menuToggle.getAttribute('aria-expanded') === 'true';
+        const isMenuToggleNotClicked = !(
+            e.target.matches(menuToggleSelector) ||
+            e.target.matches(`${menuToggleSelector} *`)
+        );
+        const isMenuNotClicked = !(
+            e.target.matches(menuSelector) ||
+            e.target.matches(`${menuSelector} *`)
+        );
+        if (isMenuToggleNotClicked && isMenuNotClicked && isMenuOpened)
+            return closeMenu();
+
+        if (isMenuToggleNotClicked) return;
+
         isMenuOpened ? closeMenu() : openMenu();
     });
 

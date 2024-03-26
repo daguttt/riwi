@@ -318,6 +318,15 @@ select {
     .navbar [aria-expanded='true'] + .primary-navigation {
         display: flex;
     }
+    .navbar .primary-navigation li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar .primary-navigation li a {
+        padding: 1rem;
+        display: block;
+    }
 }
 
 @media screen and (width >= 600px) {
@@ -327,6 +336,28 @@ select {
         flex-direction: row;
         background-color: transparent;
     }
+}
+
+/* -*********************- */
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: var(--cl-body);
+    text-align: center;
+
+    &:visited {
+        color: var(--cl-body);
+    }
+
+    &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+}
+
+.btn.primary {
+    background-color: var(--cl-primary-400);
 }
 
 /* -*********************- */
