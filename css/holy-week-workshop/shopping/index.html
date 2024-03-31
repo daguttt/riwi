@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Shopping</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./main.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="wrapper">
+                    <div class="navbar__top">
+                        <form action="./" class="form-search">
+                            <input
+                                type="search"
+                                name="query"
+                                id="query"
+                                placeholder="Search..."
+                            />
+                        </form>
+                        <h1>JSY</h1>
+                        <ul class="actions">
+                            <li>Login</li>
+                            <li>Cart (0)</li>
+                        </ul>
+                    </div>
+                    <nav class="navbar__menu">
+                        <button
+                            class="menu-toggle"
+                            aria-controls="primary-navigation"
+                            aria-expanded="false"
+                        >
+                            <span class="sr-only">Menu</span>
+                            <span class="menu-toggle__icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-6 h-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                    />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="primary-navigation" class="primary-navigation">
+                            <ul>
+                                <li><a href="#">Home & Living</a></li>
+                                <li><a href="#">Accesories</a></li>
+                                <li><a href="#">Stationery</a></li>
+                                <li><a href="#">Sale</a></li>
+                                <li><a href="#">Gift Card</a></li>
+                            </ul>
+                            <div class="navbar__search">
+                                <form action="./" class="form-search">
+                                    <input
+                                        type="search"
+                                        name="query"
+                                        id="query"
+                                        placeholder="Search..."
+                                    />
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <section class="hero">
+                <figure class="hero__image">
+                    <img
+                        src="./assets/images/hero.webpasdf"
+                        alt="Colorful Candles"
+                    />
+                </figure>
+                <div class="hero__content">
+                    <h2>Gift of Good Style</h2>
+                    <p>
+                        I'm a paragraph. Click her to add your own text and
+                        edit. It's easy. Just click "Edit Text" or doble click
+                        me to add your own content and make changes to the font.
+                    </p>
+                    <button class="button">Shop Now</button>
+                </div>
+            </section>
+        </header>
+    </body>
+</html>
