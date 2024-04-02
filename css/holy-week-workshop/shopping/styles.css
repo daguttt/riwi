@@ -134,7 +134,7 @@ input[type="search"] {
     top: 0;
     width: 100%;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar > .wrapper {
@@ -295,4 +295,9 @@ input[type="search"] {
 /* Products */
 .products > h2 {
     text-align: center;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 }
