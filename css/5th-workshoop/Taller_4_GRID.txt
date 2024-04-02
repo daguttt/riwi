@@ -76,7 +76,7 @@ Una página web completa para "Café Amanecer" que incluya:
 				- La imagen de tortas o torta debe ubicarse en la columna 3 fila 2
 				- La imagen de Sandwiches o sandwich debe abarcar la ultima fila y la columna 2 y 3.
 		- Seccion de footer:
-				- Utilizando GRID css, crea una grilla de 2x2
+			- Utilizando GRID css, crea una grilla de 2x2
 				- En la seccion fila 1, columna 1, debe haber informacion de politicas de privacidad y copyright, centrada utilizando flexbox dentro de la seccion.
 				- En la seccion fila 1, columna 2, debe haber un formulario alineado con flex-direction: row con flex-box con solo dos elementos, un input de tipo email y un input o boton de tipo submit
 				- En la seccion fila 2, columna 1, debe haber un menu corto que me lleve, a traves de click, a cada una de las secciones de la pagina.
