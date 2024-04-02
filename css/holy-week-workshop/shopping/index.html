@@ -57,20 +57,23 @@
                             </span>
                         </button>
                         <div id="primary-navigation" class="primary-navigation">
-                            <ul>
-                                <li><a href="#">Home & Living</a></li>
-                                <li><a href="#">Accesories</a></li>
-                                <li><a href="#">Stationery</a></li>
-                                <li><a href="#">Sale</a></li>
-                                <li><a href="#">Gift Card</a></li>
-                            </ul>
-                            <div class="navbar__search">
+                            <div class="wrapper">
+                                <ul>
+                                    <li><a href="#">Home & Living</a></li>
+                                    <li><a href="#">Accesories</a></li>
+                                    <li><a href="#">Stationery</a></li>
+                                    <li><a href="#">Sale</a></li>
+                                    <li><a href="#">Gift Card</a></li>
+                                </ul>
                                 <form action="./" class="form-search">
+                                    <label for="query" class="sr-only"
+                                        >Search</label
+                                    >
                                     <input
                                         type="search"
+                                        placeholder="Search ..."
                                         name="query"
                                         id="query"
-                                        placeholder="Search..."
                                     />
                                 </form>
                             </div>
@@ -97,69 +100,65 @@
             </section>
         </header>
         <main>
-            <section class="products">
-                <div class="wrapper">
-                    <h2>Featured Products</h2>
-                    <div class="product-cards">
-                        <div class="product-card">
-                            <div class="product-card__discount">
-                                <p>33%</p>
-                            </div>
-                            <figure>
-                                <img src="" alt="Product Image 1" />
-                            </figure>
-                            <div class="product-card__content">
-                                <h3>Product 1</h3>
-                                <p><del>150.00</del> $100.00</p>
-                                <button class="button primary">
-                                    Add to Cart
-                                </button>
-                            </div>
+            <section class="products wrapper">
+                <h2>Featured Products</h2>
+                <div class="product-cards">
+                    <div class="product-card">
+                        <div class="product-card__discount">
+                            <p>33%</p>
                         </div>
-                        <div class="product-card">
-                            <div class="product-card__discount">
-                                <p>33%</p>
-                            </div>
-                            <figure>
-                                <img src="" alt="Product Image 1" />
-                            </figure>
-                            <div class="product-card__content">
-                                <h3>Product 1</h3>
-                                <p><del>150.00</del> $100.00</p>
-                                <button class="button primary">
-                                    Add to Cart
-                                </button>
-                            </div>
+                        <figure class="product-card__image">
+                            <img
+                                src="./assets/images/products/collection-1_large.webp"
+                                alt="Product Image 1"
+                            />
+                        </figure>
+                        <div class="product-card__content">
+                            <h3>Product 1</h3>
+                            <p><del>$150.00</del> $100.00</p>
+                            <button class="button primary">Add to Cart</button>
                         </div>
-                        <div class="product-card">
-                            <div class="product-card__discount">
-                                <p>33%</p>
-                            </div>
-                            <figure>
-                                <img src="" alt="Product Image 1" />
-                            </figure>
-                            <div class="product-card__content">
-                                <h3>Product 1</h3>
-                                <p><del>150.00</del> $100.00</p>
-                                <button class="button primary">
-                                    Add to Cart
-                                </button>
-                            </div>
+                    </div>
+                    <div class="product-card">
+                        <figure class="product-card__image">
+                            <img
+                                src="./assets/images/products/collection-2_large.webp"
+                                alt="Product Image 2"
+                            />
+                        </figure>
+                        <div class="product-card__content">
+                            <h3>Product 2</h3>
+                            <p>$80.00</p>
+                            <button class="button primary">Add to Cart</button>
                         </div>
-                        <div class="product-card">
-                            <div class="product-card__discount">
-                                <p>33%</p>
-                            </div>
-                            <figure>
-                                <img src="" alt="Product Image 1" />
-                            </figure>
-                            <div class="product-card__content">
-                                <h3>Product 1</h3>
-                                <p><del>150.00</del> $100.00</p>
-                                <button class="button primary">
-                                    Add to Cart
-                                </button>
-                            </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-card__discount">
+                            <p>25%</p>
+                        </div>
+                        <figure class="product-card__image">
+                            <img
+                                src="./assets/images/products/collection-3_large.webp"
+                                alt="Product Image 3"
+                            />
+                        </figure>
+                        <div class="product-card__content">
+                            <h3>Product 3</h3>
+                            <p><del>$200.00</del> $100.00</p>
+                            <button class="button primary">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <figure class="product-card__image">
+                            <img
+                                src="./assets/images/products/collection-4_large.webp"
+                                alt="Product Image 4"
+                            />
+                        </figure>
+                        <div class="product-card__content">
+                            <h3>Product 4</h3>
+                            <p>$100.00</p>
+                            <button class="button primary">Add to Cart</button>
                         </div>
                     </div>
                 </div>

@@ -45,8 +45,14 @@ html {
 body {
     margin: 0;
     font-family: var(--ff-body);
+    line-height: 1.5;
     font-weight: 400;
     color: var(--clr-body);
+}
+
+input,
+button {
+    font: inherit;
 }
 
 img,
@@ -73,19 +79,56 @@ figure {
     margin: 0;
 }
 
-input {
-    font: inherit;
+ul {
+    padding: 0;
 }
+
+ul {
+    padding: 0;
+}
+
+input {
+    padding: 10px 0px 10px 13px;
+    border-radius: 8px;
+    border: 2px solid var(--clr-second);
+}
+
+h1 {
+    font-size: 3.6rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+h4 {
+    font-size: 1.45rem;
+    margin: 0;
+}
+
+h5 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+h6 {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------- */
 
 /* PAGE STYLES */
+
 main section {
     margin-top: 2rem;
-}
-
-input[type="search"] {
-    padding: .75rem 1rem;
-    border: 1px solid var(--clr-second);
-    border-radius: .5rem;
 }
 
 :focus-visible {
@@ -94,6 +137,7 @@ input[type="search"] {
 }
 
 /* Utils */
+
 .sr-only {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -105,15 +149,14 @@ input[type="search"] {
 }
 
 .wrapper {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 4rem, 1200px);
     margin-inline: auto;
 }
 
-
 /* Components */
 .button {
-    border-radius: .25rem;
-    padding: .5rem 1rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
     border: none;
 
     &.outline {
@@ -135,25 +178,31 @@ input[type="search"] {
     width: 100%;
     background-color: white;
     z-index: 2;
+    padding-block: 1rem;
 }
 
 .navbar > .wrapper {
     display: flex;
-    gap: 2rem;
+    gap: 1.25rem;
 }
 
 .navbar__top {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 0.25rem;
     align-items: baseline;
+    width: 100%;
+
+    h1 {
+        font-size: 2.5rem;
+    }
 
     .actions {
         display: flex;
         align-items: center;
         list-style-type: none;
         padding: 0;
-        gap: 2rem;
+        gap: 1rem;
     }
 }
 
@@ -166,7 +215,7 @@ input[type="search"] {
     width: 40px;
     height: 40px;
     padding: 0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     border: none;
     background-color: transparent;
 }
@@ -188,12 +237,15 @@ input[type="search"] {
     display: grid;
     gap: 1rem;
     list-style-type: none;
-    padding: 1rem;
     margin: 0;
 }
 
-.primary-navigation .navbar__search {
-    padding: 1rem;
+.primary-navigation .wrapper > * {
+    padding-block: 1rem;
+}
+
+.primary-navigation .form-search {
+    border-top: 1px solid var(--clr-second);
 }
 
 .navbar__top .form-search {
@@ -219,14 +271,14 @@ input[type="search"] {
         position: static;
         display: flex;
 
-        ul {
+        .wrapper > ul {
             grid-auto-flow: column;
             max-width: max-content;
             margin-inline: auto;
             gap: 2rem;
         }
 
-        .navbar__search {
+        .form-search {
             display: none;
         }
     }
@@ -287,17 +339,55 @@ input[type="search"] {
     }
 
     .hero__content {
-        background-color: var(--clr-main)
+        background-color: var(--clr-main);
     }
-
 }
 
 /* Products */
-.products > h2 {
+.products h2:first-of-type {
     text-align: center;
 }
 
 .product-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+    gap: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-card__discount {
+    --text-max-width: 3ch;
+
+    position: absolute;
+    top: -4%;
+    left: -7%;
+    max-width: fit-content;
+    padding: 0.75rem;
+    background-color: var(--clr-main);
+    border-radius: 50%;
+
+    p {
+        margin: 0;
+    }
+}
+
+.product-card__image {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card__content {
+    display: grid;
+    gap: 0.25rem;
+    justify-items: center;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
 }
