@@ -1,0 +1,45 @@
+/* -*********************************************************- */
+/* VARIABLES */
+
+:root {
+    --clr-primary: #32160b;
+
+    --ff-heading: 'Nunito', sans-serif;
+    --ff-body: 'PT Sans', sans-serif;
+}
+
+/* -*********************************************************- */
+/* RESET */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ff-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--ff-heading);
+    font-weight: 700;
+}
+
+button {
+    font: inherit;
+}
+
+/* -*********************************************************- */
+/* UTILS */
+
+/* -*********************************************************- */
+/* COMPONENTS */
