@@ -1,0 +1,126 @@
+/* Imports */
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+/* Variables */
+
+:root {
+  /* Fonts */
+  --main-font: Roboto;
+
+  /* Colors */
+  --red-color: #f80051;
+  --blue-color: #072d7c;
+  --dark-color: #171a21;
+  --bg-primary-light: #eff6f7;
+
+  /* Spacing */
+  --extra-big-spacing: 80px;
+  --big-spacing: 40px;
+  --normal-spacing: 20px;
+  --small-spacing: 10px;
+
+  /* Box Shadow */
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius */
+  --border-radius: 5px;
+
+  --border-radius-btn-big: 25px;
+  --border-radius-btn-normal: 15px;
+  --border-radius-btn-small: 5px;
+}
+
+/* Reset */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  color: var(--dark-color);
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Utilities */
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.extra-big-spacing {
+  height: var(--extra-big-spacing);
+}
+
+.big-spacing {
+  height: var(--big-spacing);
+}
+
+.normal-spacing {
+  height: var(--normal-spacing);
+}
+
+.small-spacing {
+  height: var(--small-spacing);
+}
