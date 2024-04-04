@@ -1,24 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="nombre" content="Tu nombre"> <!--<meta name="nombre" content="Nicolas Picon" />-->
-    <meta name="descripcion" content="Tu descripción"> <!--<meta name="descripcion" content="Sitio web de Fitness Gym" />-->
-    <meta name="fecha" content="2020-09-01"> <!--<meta name="fecha" content="2020-09-01" />-->
-    <title>Fitness Gym</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-
-<body>
-    <section>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-    </section>
-    
-</body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="nombre" content="Daniel Gutiérrez Muñoz" />
+        <!--<meta name="nombre" content="Nicolas Picon" />-->
+        <meta
+            name="descripcion"
+            content="El mejor sitio para ponerte en forma de forma efectiva y en poco tiempo"
+        />
+        <!--<meta name="descripcion" content="Sitio web de Fitness Gym" />-->
+        <meta name="fecha" content="2020-09-01" />
+        <!--<meta name="fecha" content="2020-09-01" />-->
+        <title>Fitness Gym</title>
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="container">
+                    <!-- Logo -->
+                    <figure class="logo">
+                        <img
+                            src="./assets/logo/logo.png"
+                            alt="Fitness Gym Logo"
+                        />
+                    </figure>
+                    <!-- Menu -->
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Clases</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Iniciar Sesión</a></li>
+                        </ul>
+                    </nav>
+                    <!-- CTA -->
+                    <button class="btn rounded">Hablemos</button>
+                </div>
+            </div>
+            <div class="hero container centered">
+                <h1>FITNESS <span>GYM</span></h1>
+            </div>
+            <div class="overlay"></div>
+        </header>
+        <main>
+            <section class="consulting container section-separation">
+                <header>
+                    <div class="title-wrapper">
+                        <h2>Personal consulting</h2>
+                        <p>Choose your health lifestyle now</p>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Tempora necessitatibus sed eveniet minima laborum
+                        architecto assumenda dolor, totam quam deleniti
+                        voluptate nobis maiores consequatur! Consequatur at
+                        deleniti quasi dolor vitae.
+                        <br /><br />
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Ducimus quam recusandae unde modi veritatis
+                        pariatur?
+                    </p>
+                </header>
+            </section>
+            <section class="services section-separation">
+                <div class="container">
+                    <h2>Our sevices</h2>
+                    <div class="services-cards">
+                        <article class="card">
+                            <img
+                                src="./assets/img/dumbell.svg"
+                                alt="Dumbel Icon"
+                            />
+                            <div class="content">
+                                <h3>Pesas</h3>
+                                <a href="#" class="btn-link">Read more</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="./assets/img/abs.svg" alt="Dumbel Icon" />
+                            <div class="content">
+                                <h3>Abdominales</h3>
+                                <a href="#" class="btn-link">Read more</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img
+                                src="./assets/img/pushup.svg"
+                                alt="Dumbel Icon"
+                            />
+                            <div class="content">
+                                <h3>Prensa neutra</h3>
+                                <a href="#" class="btn-link">Read more</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img
+                                src="./assets/img/strength.svg"
+                                alt="Dumbel Icon"
+                            />
+                            <div class="content">
+                                <h3>Crossfit</h3>
+                                <a href="#" class="btn-link">Read more</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="services-trainer-cards section-separation">
+                    <article class="card-image">
+                        <div class="image">
+                            <img
+                                src="./assets/img/nika.jpg"
+                                alt="Woman performing ab crunches"
+                            />
+                        </div>
+                        <div class="content">
+                            <h3>Marian Kauffman</h3>
+                            <footer>
+                                <p class="subtitle">Pesas</p>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </footer>
+                        </div>
+                    </article>
+                    <article class="card-image">
+                        <div class="image">
+                            <img
+                                src="./assets/img/miguel.jpg"
+                                alt="Woman with pink t-shirt performing zumo squats with a dumbell"
+                            />
+                        </div>
+                        <div class="content">
+                            <h3>John Doe</h3>
+                            <footer>
+                                <p class="subtitle">Resistencia</p>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </footer>
+                        </div>
+                    </article>
+                    <article class="card-image">
+                        <div class="image">
+                            <img
+                                src="./assets/img/borba.jpg"
+                                alt="Woman performing ab crunches"
+                            />
+                        </div>
+                        <div class="content">
+                            <h3>Alejandra Huff</h3>
+                            <footer>
+                                <p class="subtitle">Abdominales</p>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </footer>
+                        </div>
+                    </article>
+                    <article class="card-image">
+                        <div class="image">
+                            <img
+                                src="./assets/img/liz.jpg"
+                                alt="Woman with pink t-shirt performing zumo squats with a dumbell"
+                            />
+                        </div>
+                        <div class="content">
+                            <h3>Serena Liskov</h3>
+                            <footer>
+                                <p class="subtitle">Yoga</p>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section class="courses container section-separation">
+                <header>
+                    <p>Programas</p>
+                    <h2>Courses</h2>
+                </header>
+                <div class="course-cards">
+                    <article class="course-card">
+                        <div class="image">
+                            <img
+                                src="./assets/img/outdoor-fitness.jpg"
+                                alt="Muscular man flexing his biceps with stretched bands"
+                            />
+                        </div>
+                        <div class="content">
+                            <p class="category-and-author">
+                                <span>SPORT</span> - Peter Bowman
+                            </p>
+                            <h3>Outdoor Fitness</h3>
+                            <hr />
+                            <footer>
+                                <div>
+                                    <img
+                                        src="./assets/img/book-icon.svg"
+                                        alt="Book Icon"
+                                    />
+                                    <p>3 lessons</p>
+                                </div>
+                                <div>
+                                    <img
+                                        src="./assets/img/person-icon.svg"
+                                        alt="Person Icon"
+                                    />
+                                    <p>65 students</p>
+                                </div>
+                            </footer>
+                            <div class="price">
+                                <p>
+                                    <del>$29.99</del>
+                                    <span>$9.99</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="course-card">
+                        <div class="image">
+                            <img
+                                src="./assets/img/marathons.jpg"
+                                alt="Muscular man flexing his biceps with stretched bands"
+                            />
+                        </div>
+                        <div class="content">
+                            <p class="category-and-author">
+                                <span>SPORT</span> - Peter Bowman
+                            </p>
+                            <h3>Outdoor Fitness</h3>
+                            <hr />
+                            <footer>
+                                <div>
+                                    <img
+                                        src="./assets/img/book-icon.svg"
+                                        alt="Book Icon"
+                                    />
+                                    <p>3 lessons</p>
+                                </div>
+                                <div>
+                                    <img
+                                        src="./assets/img/person-icon.svg"
+                                        alt="Person Icon"
+                                    />
+                                    <p>65 students</p>
+                                </div>
+                            </footer>
+                            <div class="price">
+                                <p>
+                                    <del>$29.99</del>
+                                    <span>$9.99</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="course-card">
+                        <div class="image">
+                            <img
+                                src="./assets/img/body-building.jpg"
+                                alt="Muscular man flexing his biceps with stretched bands"
+                            />
+                        </div>
+                        <div class="content">
+                            <p class="category-and-author">
+                                <span>SPORT</span> - Peter Bowman
+                            </p>
+                            <h3>Outdoor Fitness</h3>
+                            <hr />
+                            <footer>
+                                <div>
+                                    <img
+                                        src="./assets/img/book-icon.svg"
+                                        alt="Book Icon"
+                                    />
+                                    <p>3 lessons</p>
+                                </div>
+                                <div>
+                                    <img
+                                        src="./assets/img/person-icon.svg"
+                                        alt="Person Icon"
+                                    />
+                                    <p>65 students</p>
+                                </div>
+                            </footer>
+                            <div class="price">
+                                <p>
+                                    <del>$29.99</del>
+                                    <span>$9.99</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section class="solutions section-separation">
+                <div class="container">
+                    <div class="image">
+                        <img
+                            src="./assets/img/healthy_lifestyle.jpg"
+                            alt="Woman listenting to music wearing sports clothes"
+                        />
+                        <p>
+                            <stong>Solutions to help you feel better</stong>
+                        </p>
+                    </div>
+                    <article class="content flow">
+                        <p>HEALTHY LIFESTYLE</p>
+                        <h2>The best platform for sports</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Dolorum fugit ipsum aliquid veniam quam
+                            numquam.
+                        </p>
+                        <ul>
+                            <li>Adipiscing elit, sed do eiusmod</li>
+                            <li>Tempor incididunt labore dolore magna</li>
+                        </ul>
+                        <button class="btn rounded">Ver más</button>
+                    </article>
+                </div>
+                <footer class="partners container section-separation">
+                    <img src="./assets/logo/asic.webp" alt="Asics Logo " />
+                    <img src="./assets/logo/fila.webp" alt="Fila Logo" />
+                    <img src="./assets/logo/rebook.webp" alt="Reebok Logo" />
+                    <img src="./assets/logo/nike.webp" alt="Nike Logo" />
+                    <img src="./assets/logo/rogue.webp" alt="Rogue Logo" />
+                </footer>
+            </section>
+            <section class="testimonials">
+                <p>Testimonios</p>
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="testimonial-cards">
+                    <article class="testimonial-card">
+                        <div class="stars-wrapper">
+                            <img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            />
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Dolorem, molestiae laudantium deleniti vel
+                            dolore enim. Aperiam, voluptas. Natus aliquid
+                            tenetur commodi iusto nobis obcaecati esse dolores.
+                            Saepe illo iure illum?
+                        </p>
+                        <footer>
+                            <p>Susan Bishop</p>
+                            <p>Client</p>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="stars-wrapper">
+                            <img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            />
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Dolorem, molestiae laudantium deleniti vel
+                            dolore enim. Aperiam, voluptas. Natus aliquid
+                            tenetur commodi iusto nobis obcaecati esse dolores.
+                            Saepe illo iure illum?
+                        </p>
+                        <footer>
+                            <p>Miguel Baker</p>
+                            <p>Client</p>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="stars-wrapper">
+                            <img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            /><img
+                                src="./assets/img/star.png"
+                                alt="Start Icon"
+                            />
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Dolorem, molestiae laudantium deleniti vel
+                            dolore enim. Aperiam, voluptas. Natus aliquid
+                            tenetur commodi iusto nobis obcaecati esse dolores.
+                            Saepe illo iure illum?
+                        </p>
+                        <footer>
+                            <p>Mark Sneider</p>
+                            <p>Client</p>
+                        </footer>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <h2>FITNESS <span>GYM</span></h2>
+                <nav>
+                    <p>Secciones principales</p>
+                    <ul>
+                        <li>
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li><a href="#">Clases</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <p>Contacto</p>
+                    <ul>
+                        <li>
+                            Dirección:
+                            <a href="#">1234 Street Address, City, Country</a>
+                        </li>
+                        <li>Telefono:<a href="#">+123 456 7890</a></li>
+                        <li>Email:<a href="#">nicolaspicon98@gmail.com</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </body>
 </html>
