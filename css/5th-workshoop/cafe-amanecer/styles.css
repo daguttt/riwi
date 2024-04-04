@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico:700|Noto%20Sans%20Siddham:400');
 /* -*********************************************************- */
 /* VARIABLES */
 
 :root {
-    --clr-primary: #32160b;
+    --clr-primary-100: #f0e1d3;
+    --clr-primary-400: #cd9767;
+    --clr-primary-700: #473127;
 
-    --ff-heading: 'Nunito', sans-serif;
-    --ff-body: 'PT Sans', sans-serif;
+    --ff-heading: 'Pacifico', serif;
+    --ff-body: 'Noto Sans Siddham', sans-serif;
 }
 
 /* -*********************************************************- */
@@ -40,6 +43,13 @@ button {
 
 /* -*********************************************************- */
 /* UTILS */
+.font-body {
+    font-family: var(--ff-body);
+}
+
+.font-heading {
+    font-family: var(--ff-heading);
+}
 
 /* -*********************************************************- */
 /* COMPONENTS */
