@@ -7,6 +7,14 @@
     --clr-primary-400: #cd9767;
     --clr-primary-700: #473127;
 
+    --fz-900: 4.21rem; /* 67.36px */
+    --fz-800: 3.158rem; /* 50.56px */
+    --fz-700: 2.369rem; /* 37.92px */
+    --fz-600: 1.777rem; /* 28.48px */
+    --fz-500: 1.333rem; /* 21.28px */
+    --fz-400: 1rem; /* 12px */
+    --fz-300: 0.75rem; /* 12px */
+
     --ff-heading: 'Pacifico', serif;
     --ff-body: 'Noto Sans Siddham', sans-serif;
 }
