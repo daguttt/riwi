@@ -4,53 +4,339 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Café amanecer</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
-        />
+        <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
         <header class="header">
+            <div class="navbar wrapper">
+                <nav>
+                    <ul>
+                        <li><a href="#about-us">Acerca de nosotros</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#staff">Staff</a></li>
+                        <li><a href="#customers">Mejores Clientes</a></li>
+                        <li><a href="#products">Mejores Productos</a></li>
+                    </ul>
+                </nav>
+            </div>
             <h1>Cafe Amanec<span>er</span></h1>
+            <div class="overlay"></div>
         </header>
         <main>
-            <section class="about-us wrapper">
-                <figure>
-                    <img
-                        src="https://picsum.photos/id/42/3456/2304"
-                        alt="Placeholder Image"
-                    />
-                </figure>
-                <div class="content">
-                    <h2>¿Quiénes somos?</h2>
-                    <h3>Bienvenidos a esta gran experiencia</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Accusamus quae dicta iure maiores harum repellat rem ut
-                        sequi cupiditate aut eos illo, unde ducimus? Placeat
-                        modi quod, veritatis repellendus iure perferendis odit!
-                        Accusamus sapiente unde aspernatur obcaecati ad voluptas
-                        ipsam delectus adipisci atque minus fugit labore illo
-                        velit, saepe fuga?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Corporis officiis nesciunt similique inventore ipsum
-                        repudiandae, minus, mollitia at eum ipsa ea veniam porro
-                        dolor incidunt quidem sapiente totam ratione laboriosam
-                        magnam. At rem maxime voluptate iusto voluptatum in,
-                        odit reiciendis nam molestiae quasi dolorum ab
-                        exercitationem. Culpa, iusto. Delectus, obcaecati?
-                    </p>
+            <section class="about-us wrapper section-spacer" id="about-us">
+                <h2>Acerca de nosotros</h2>
+                <div class="about-us__content">
+                    <figure>
+                        <img
+                            src="./assets/images/about-us-staff.jpg"
+                            alt="Imagen del Staff de Cafe Amanecer "
+                        />
+                    </figure>
+                    <div class="content">
+                        <h2>¿Quiénes somos?</h2>
+                        <h3>Bienvenidos a esta gran experiencia</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Quos nam maiores necessitatibus veniam quam,
+                            amet recusandae doloremque dicta nesciunt ratione
+                            ipsa earum tenetur atque ullam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Quos nam maiores necessitatibus veniam quam,
+                            amet recusandae doloremque dicta nesciunt ratione
+                            ipsa earum tenetur atque ullam.
+                        </p>
+                    </div>
                 </div>
             </section>
-            <section class="testimonials wrapper"></section>
-            <section class="staff wrapper"></section>
-            <section class="customers wrapper"></section>
-            <section class="products wrapper"></section>
+            <section
+                class="testimonials wrapper section-spacer"
+                id="testimonials"
+            >
+                <h2>Testimonios</h2>
+                <div class="testimonial-cards">
+                    <article class="card">
+                        <div class="card__image">
+                            <img
+                                src="./assets/images/testimonials-andrea.jpg"
+                                alt="Foto de Andrea al tomar su testimonio"
+                            />
+                        </div>
+                        <div class="card__content">
+                            <h3 class="font-body">Andrea</h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Unde, reiciendis?
+                            </p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card__image">
+                            <img
+                                src="./assets/images/testimonials-alexandra.jpg"
+                                alt="Foto de Alexandra al tomar su testimonio"
+                            />
+                        </div>
+                        <div class="card__content">
+                            <h3 class="font-body">Alexandra</h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Unde, reiciendis?
+                            </p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card__image">
+                            <img
+                                src="./assets/images/testimonials-justin.jpg"
+                                alt="Foto de Justin al tomar su testimonio"
+                            />
+                        </div>
+                        <div class="card__content">
+                            <h3 class="font-body">Alexandra</h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Unde, reiciendis?
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section class="staff wrapper section-spacer" id="staff">
+                <h2>Staff</h2>
+                <div class="staff-cards">
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-carlos-ceo.jpg"
+                            alt="Foto Carlos CEO de Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Carlos (CEO)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-daniel-cto.jpg"
+                            alt="Foto Daniel CTO de Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Daniel (CTO)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-juan-barista.jpg"
+                            alt="Foto Juan - Barista en Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Juan (Barista 1)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-carlos-barista.jpg"
+                            alt="Foto Carlos - Barista en Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Carlos (Barista 2)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-esther-barista.jpg"
+                            alt="Foto Esther - Barista en Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Esther (Barista 3)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="./assets/images/staff-carmen-admin-.jpg"
+                            alt="Foto Carmen - Barista en Cafe Amanecer"
+                        />
+                        <figcaption class="card__content">
+                            Carmen (Administradora general)
+                        </figcaption>
+                        <div class="overlay"></div>
+                    </figure>
+                </div>
+            </section>
+            <section class="customers wrapper section-spacer" id="customers">
+                <h2>Mejores Clientes</h2>
+                <div class="customer-cards">
+                    <figure class="card">
+                        <img
+                            src="https://picsum.photos/id/64/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption>Veronica</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="https://picsum.photos/id/64/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption>Veronica</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="https://picsum.photos/id/64/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption>Veronica</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="https://picsum.photos/id/64/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption>Veronica</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img
+                            src="https://picsum.photos/id/64/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption>Veronica</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="products wrapper section-spacer" id="products">
+                <h2>Mejores Productos</h2>
+                <!-- https://picsum.photos/id/2/1200/800 -->
+                <div class="products-grid">
+                    <figure class="product coffe-bean">
+                        <img
+                            src="https://picsum.photos/id/2/1200/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption class="font-heading">
+                            Granos de cafe
+                        </figcaption>
+                    </figure>
+                    <figure class="product warm-coffe">
+                        <img
+                            src="https://picsum.photos/id/2/1200/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption class="font-heading">
+                            Café caliente
+                        </figcaption>
+                    </figure>
+                    <figure class="product cold-coffe">
+                        <img
+                            src="https://picsum.photos/id/2/1200/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption class="font-heading">Café frio</figcaption>
+                    </figure>
+                    <figure class="product cakes">
+                        <img
+                            src="https://picsum.photos/id/2/1200/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption class="font-heading">Tortas</figcaption>
+                    </figure>
+                    <figure class="product sandwiches">
+                        <img
+                            src="https://picsum.photos/id/2/1200/800"
+                            alt="Placeholder Image"
+                        />
+                        <figcaption class="font-heading">Sandwiches</figcaption>
+                    </figure>
+                </div>
+            </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer section-spacer" id="footer">
+            <div class="wrapper">
+                <div class="privacy-policy">
+                    <p>
+                        Copyright © 2024 <br />
+                        Daniel Gutierrez Muñoz. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="newsletter">
+                    <h2>Subscribete a nuestro Newsletter</h2>
+                    <form action="./#footer">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="john.doe@email.com"
+                        />
+                        <button type="submit" class="btn">Subscribirme</button>
+                    </form>
+                </div>
+                <nav class="inpage-navigation">
+                    <ul>
+                        <li><a href="#about-us">Acerca de nosotros</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#staff">Staff</a></li>
+                        <li><a href="#customers">Mejores Clientes</a></li>
+                        <li><a href="#products">Mejores Productos</a></li>
+                    </ul>
+                </nav>
+                <nav class="contact">
+                    <ul>
+                        <li>Correo: <a href="">dagutmu667@gmail.com</a></li>
+                        <li>Dirección: <a href="">Cra 12A #34-56</a></li>
+                    </ul>
+                    <ul class="socials">
+                        <li>
+                            <a href="#">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 1536 1536"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M1248 0q119 0 203.5 84.5T1536 288v960q0 119-84.5 203.5T1248 1536h-188V941h199l30-232h-229V561q0-56 23.5-84t91.5-28l122-1V241q-63-9-178-9q-136 0-217.5 80T820 538v171H620v232h200v595H288q-119 0-203.5-84.5T0 1248V288Q0 169 84.5 84.5T288 0z"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://instagram.com/daguttt_"
+                                target="_blank"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M17.318.077c1.218.056 2.06.235 2.838.537a5.36 5.36 0 0 1 1.956 1.274a5.36 5.36 0 0 1 1.274 1.956c.302.779.481 1.62.537 2.838C23.992 8.192 24 8.724 24 12s-.008 3.808-.077 5.318c-.056 1.218-.235 2.06-.537 2.839a5.36 5.36 0 0 1-1.274 1.955a5.359 5.359 0 0 1-1.956 1.274c-.779.302-1.62.481-2.838.537c-1.51.069-2.041.077-5.318.077c-3.277 0-3.809-.008-5.318-.077c-1.218-.056-2.06-.235-2.839-.537a5.359 5.359 0 0 1-1.955-1.274a5.36 5.36 0 0 1-1.274-1.956c-.302-.779-.481-1.62-.537-2.838C.008 15.81 0 15.278 0 12c0-3.277.008-3.81.077-5.318c.056-1.218.235-2.06.537-2.838a5.36 5.36 0 0 1 1.274-1.956A5.36 5.36 0 0 1 3.843.614C4.623.312 5.464.133 6.682.077C8.19.008 8.722 0 12 0c3.277 0 3.81.008 5.318.077M12 2.667c-3.24 0-3.736.007-5.197.074c-.927.042-1.483.16-1.994.359a2.73 2.73 0 0 0-1.036.673A2.707 2.707 0 0 0 3.1 4.809c-.198.51-.317 1.067-.359 1.994C2.674 8.264 2.667 8.76 2.667 12s.007 3.736.074 5.197c.042.927.16 1.483.359 1.993c.17.436.35.713.673 1.037c.324.324.601.504 1.036.673c.51.198 1.067.317 1.994.359c1.462.067 1.958.074 5.197.074c3.24 0 3.735-.007 5.197-.074c.927-.042 1.483-.16 1.994-.359a2.73 2.73 0 0 0 1.036-.673c.324-.324.504-.601.673-1.036c.198-.51.317-1.067.359-1.994c.067-1.462.074-1.958.074-5.197s-.007-3.735-.074-5.197c-.042-.927-.16-1.483-.359-1.993a2.709 2.709 0 0 0-.673-1.037A2.708 2.708 0 0 0 19.19 3.1c-.51-.198-1.067-.317-1.994-.359c-1.461-.067-1.957-.074-5.197-.074m0 15.555a6.222 6.222 0 1 1 0-12.444a6.222 6.222 0 0 1 0 12.444m0-2.666a3.556 3.556 0 1 0 0-7.112a3.556 3.556 0 0 0 0 7.112m6.222-8.445a1.333 1.333 0 1 1 0-2.667a1.333 1.333 0 0 1 0 2.667"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://twitter.com/daguttt"
+                                target="_blank"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
     </body>
 </html>
