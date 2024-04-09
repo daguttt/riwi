@@ -326,6 +326,7 @@ a:hover {
 .products-grid {
     display: grid;
     gap: 1rem;
+    grid-auto-rows: 380px;
     grid-template-areas:
         'coffe-bean'
         'warm-coffe'
@@ -380,6 +381,10 @@ a:hover {
 
 .warm-coffe {
     grid-area: warm-coffe;
+}
+
+.warm-coffe img {
+    object-position: 50% 72%;
 }
 
 .cold-coffe {
