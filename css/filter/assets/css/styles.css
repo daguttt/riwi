@@ -176,12 +176,12 @@ section h2:first-of-type {
     min-width: 64px;
     background-color: var(--color-primary-light);
     clip-path: polygon(
-        50.78% 4.69%,
-        87.83% 25.33%,
-        89.06% 73.44%,
-        50.78% 95.31%,
-        10.27% 68.58%,
-        11.72% 25.78%
+        50% 5.47%,
+        87.05% 29.24%,
+        88.28% 71.88%,
+        49.22% 93.75%,
+        11.05% 68.58%,
+        11.72% 27.34%
     );
 }
 
@@ -221,7 +221,7 @@ section h2:first-of-type {
     }
 }
 
-@media screen and (min-width: 878px) {
+@media screen and (min-width: 904px) {
     .navbar {
         justify-content: space-between;
     }
