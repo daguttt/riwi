@@ -3,7 +3,7 @@ document.title = title;
 document.querySelector('h1').textContent = title;
 
 // -*******************************************************************************-
-// Exercise
+// Solution
 
 const destiny = prompt('Enter the destiny you want to go');
 const DESTINY_DAILY_COST = 500;
