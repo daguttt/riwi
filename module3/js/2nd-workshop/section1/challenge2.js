@@ -52,7 +52,7 @@ function formatSouvenirList(souvenirList) {
     });
 }
 
-function showSouvernirsToBuy(souvenirList) {
+function askForSouvernirsToBuy(souvenirList) {
     console.log('SUVENIRS DISPONIBLES');
     const formattedSouvenirListToShow = formatSouvenirList(souvenirList);
     const souvenirIndexesToBuyString = prompt(`
@@ -68,12 +68,7 @@ Ingresa el numero de los suvenires que quieres comprar separados por comma ( , )
     const souvenirListToBuy = souvenirList.filter((souvenir, index) =>
         souvenirIndexesToBuy.includes(index)
     );
-
-    console.log({
-        // souvenirIndexesToBuyString,
-        // souvenirIndexesToBuy,
-        souvenirListToBuy,
-    });
+    return souvenirListToBuy;
 }
 
 const mockedSouvenirList = [
@@ -99,4 +94,4 @@ const availableSouvenirList = mockedSouvenirList.filter(
     (souvenir) => souvenir.availability
 );
 
-showSouvernirsToBuy(mockedSouvenirList);
+askForSouvernirsToBuy(mockedSouvenirList);
