@@ -52,7 +52,7 @@ function formatSouvenirList(souvenirList) {
     });
 }
 
-function askForSouvernirsToBuy(souvenirList) {
+function askAndShowForSouvernirsToBuy(souvenirList) {
     console.log('SUVENIRS DISPONIBLES');
     const formattedSouvenirListToShow = formatSouvenirList(souvenirList);
     const souvenirIndexesToBuyString = prompt(`
@@ -71,27 +71,49 @@ Ingresa el numero de los suvenires que quieres comprar separados por comma ( , )
     return souvenirListToBuy;
 }
 
+function canBuySouvenirs(souvenirListToBuy) {
+    const souvenirsToBuyTotal = souvenirListToBuy.reduce((total, souvenir) => {
+        return total + souvenir.cost;
+    }, 0);
+    return souvenirsToBuyTotal <= BUDGET;
+}
+
 const mockedSouvenirList = [
     {
         name: 'Lápiz',
-        cost: 15,
-        availability: false,
+        cost: 450,
+        availability: true,
     },
     {
         name: 'Camiseta',
         cost: 150,
-        availability: true,
+        availability: false,
     },
     {
         name: 'Vaso',
-        cost: 50,
+        cost: 55,
         availability: true,
     },
 ];
 
-// const souvenirList = askForSouvenirs();
-const availableSouvenirList = mockedSouvenirList.filter(
-    (souvenir) => souvenir.availability
-);
+function main() {
+    // const availableSouvenirList = mockedSouvenirList.filter(
+    //     (souvenir) => souvenir.availability
+    // );
 
-askForSouvernirsToBuy(mockedSouvenirList);
+    const souvenirList = askForSouvenirs();
+    const availableSouvenirList = souvenirList.filter(
+        (souvenir) => souvenir.availability
+    );
+    while (true) {
+        const souvenirsToBuy = askAndShowForSouvernirsToBuy(
+            availableSouvenirList
+        );
+        if (canBuySouvenirs(souvenirsToBuy)) {
+            alert('Puedes comprar los suvenirs!');
+            break;
+        }
+        alert('No te alcanza el presupuesto para comprar esos productos');
+    }
+}
+main();
