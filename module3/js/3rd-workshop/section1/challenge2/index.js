@@ -43,20 +43,21 @@ function main() {
     const userPassword = prompt('Enter a password to validate');
     if (!userPassword) return showMessage({ isValid: false });
 
-    let isValid = false;
-
-    isValid = userPassword.length >= 8;
-    console.log('Length', isValid);
+    const hasCorrectLength = userPassword.length >= 8;
+    console.log('Length', hasCorrectLength);
 
     const splitPassword = userPassword.split('');
-    isValid = splitPassword.some(isNumber);
-    console.log('Number', isValid);
+    const hasANumber = splitPassword.some(isNumber);
+    console.log('Number', hasANumber);
 
-    isValid = splitPassword.some(isAlpha);
-    console.log('Letter', isValid);
+    const hasALetter = splitPassword.some(isAlpha);
+    console.log('Letter', hasALetter);
 
-    isValid = splitPassword.some(isSpecialChar);
-    console.log('Special Char', isValid);
+    const hasSpecialChar = splitPassword.some(isSpecialChar);
+    console.log('Special Char', hasSpecialChar);
+
+    const isValid =
+        hasCorrectLength && hasANumber && hasALetter && hasSpecialChar;
 
     isValid = showMessage({ isValid });
 }
