@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Username and Email Generator</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script defer src="./index.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1>Username and Email Generator</h1>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usernames-tbody"></tbody>
+                </table>
+            </div>
+        </main>
+        <template id="user-row">
+            <tr>
+                <td data-cell="username"></td>
+                <td data-cell="email"></td>
+            </tr>
+        </template>
+    </body>
+</html>
