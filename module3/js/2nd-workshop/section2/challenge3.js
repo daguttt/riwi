@@ -30,7 +30,7 @@ function askForNumber(promptMessage) {
 // -*********************************************************-
 // Use cases
 // -*********************************************************-
-function askForForecast() {
+function askForWeatherForecast() {
     const separation = '\n';
     const formattedOptions = weatherOptionList.map(
         (o, index) => `${index}. ${o}.`
@@ -50,7 +50,7 @@ function askForForecast() {
 
 async function main() {
     await changePageTitle();
-    const forecast = askForForecast();
+    const weatherForecast = askForWeatherForecast();
     const hasAvailableSpaceInBag = confirm(
         '¿Tienes espacio disponible en la maleta?'
     );
@@ -66,10 +66,11 @@ async function main() {
     if (bagWeigthLimit > 20) {
         alert('Puedes llevar la cámara y un paraguas en caso de que llueva.');
     } else if (bagWeigthLimit > 15 && bagWeigthLimit <= 20) {
-        if (forecast === WEATHERS.SUNNY) alert('Podrías llevar una cámara.');
+        if (weatherForecast === WEATHERS.SUNNY)
+            alert('Podrías llevar una cámara.');
         else alert('Considera llevar un paraguas');
     } else {
-        if (forecast === WEATHERS.SUNNY)
+        if (weatherForecast === WEATHERS.SUNNY)
             alert(
                 'Asegurate de llevar todo lo necesario para protegete del sol'
             );
