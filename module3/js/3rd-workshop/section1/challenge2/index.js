@@ -59,6 +59,6 @@ function main() {
     const isValid =
         hasCorrectLength && hasANumber && hasALetter && hasSpecialChar;
 
-    isValid = showMessage({ isValid });
+    showMessage({ isValid });
 }
 main();
