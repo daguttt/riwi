@@ -157,4 +157,3 @@ function main() {
 }
 
 main();
-// The best party in the world
