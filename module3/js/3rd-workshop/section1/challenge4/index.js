@@ -1,24 +1,27 @@
-const eventList = [
+const dateFormatter = Intl.DateTimeFormat('en-US');
+
+const mockedEventList = [
     {
         id: 1, // Identificador único
         name: 'Evento 1', // Nombre del Evento
-        date: '2021-12-31', // Fecha del Evento
+        date: new Date('2021-12-31'), // Fecha del Evento
         description: 'Descripción del Evento 1', // Descripción del Evento
     },
     {
         id: 2, // Identificador único
         name: 'Evento 2', // Nombre del Evento
-        date: '2024-05-11', // Fecha del Evento
+        date: new Date('2024-05-11'), // Fecha del Evento
         description: 'Descripción del Evento 2', // Descripción del Evento
     },
     {
         id: 3, // Identificador único
         name: 'Evento 2', // Nombre del Evento
-        date: '2021-12-31', // Fecha del Evento
+        date: new Date('2021-12-31'), // Fecha del Evento
         description: 'Descripción del Evento 2', // Descripción del Evento
     },
 ];
-// const eventList = [];
+const eventList = [];
+
 // -*********************************************************-
 // Utils
 // -*********************************************************-
@@ -36,9 +39,12 @@ function askForNumber(promptMessage) {
 function listEvents(eventList) {
     eventList.forEach((event, index) => {
         console.log(
-            `${index + 1}. ${event.name} | ${event.date} | ${event.description}`
+            `${index + 1}. ${event.name} | ${dateFormatter.format(
+                event.date
+            )} | ${event.description}`
         );
     });
+    console.log();
 }
 
 function main() {
@@ -67,7 +73,7 @@ function main() {
                 const description = prompt(
                     'Introduce la descripción del evento'
                 );
-                eventList.push({
+                mockedEventList.push({
                     id: ++id,
                     name,
                     date: new Date(date),
@@ -76,17 +82,18 @@ function main() {
                 break;
             }
             case '2': {
-                if (!eventList.length) {
+                if (!mockedEventList.length) {
                     alert('No hay eventos agregados');
                     break;
                 }
-                listEvents(eventList);
+                listEvents(mockedEventList);
+                break;
             }
             case '3': {
                 const eventNameToSearch = prompt(
                     'Introduce el nombre que quieres buscar'
                 );
-                const filteredEventList = eventList.filter(
+                const filteredEventList = mockedEventList.filter(
                     (event) => event.name === eventNameToSearch
                 );
                 if (!filteredEventList.length) {
@@ -99,40 +106,51 @@ function main() {
                 break;
             }
             case '4': {
-                listEvents(eventList);
+                listEvents(mockedEventList);
                 const eventIndex = askForNumber(
-                    'Introduce el numero del evento para actualizar'
+                    'Introduce el NÚMERO del evento para actualizar'
                 );
-                const event = eventList[eventIndex - 1];
+                const event = mockedEventList[eventIndex - 1];
                 if (!event) {
-                    console.log(
-                        `No existe un evento con el número: ${eventIndex}`
-                    );
+                    alert(`No existe un evento con el número: ${eventIndex}`);
                     console.log('So, to each, their own xdxd');
                 }
 
                 const newName = prompt(
-                    `El nombre del evento es ${event.name}\n` +
+                    `El nombre actual del evento es: ${event.name}\n` +
                         'Ingresa el nuevo nombre o presiona ENTER para dejarlo igual.'
                 );
                 const newDate = prompt(
-                    `La fecha del evento es ${event.date}\n` +
+                    `La fecha actual del evento es: ${dateFormatter.format(
+                        event.date
+                    )}\n` +
                         'Ingresa la nueva fecha del evento (formato YYYY-MM-DD) o presiona ENTER para dejarla igual.'
                 );
                 const newDescription = prompt(
-                    `La descripcion del evento es ${event.description}\n` +
+                    `La descripcion actual del evento es: ${event.description}\n` +
                         'Ingresa la nueva descripcion del evento o presiona ENTER para dejarlo igual.'
                 );
-                if (newName) {
-                    event.name = newName;
+                Object.assign(event, {
+                    name: newName.trim(),
+                    date: new Date(newDate),
+                    description: newDescription,
+                });
+                break;
+            }
+            case '5': {
+                listEvents(mockedEventList);
+                const eventIndex = askForNumber(
+                    'Introduce el NÚMERO del evento a eliminar'
+                );
+                const event = mockedEventList[eventIndex - 1];
+                if (!event) {
+                    alert(`No existe un evento con el número: ${eventIndex}`);
+                    console.log('So, to each, their own xdxd');
+                    break;
                 }
-                if (newDate) {
-                    event.date = newDate;
-                }
-                if (newDescription) {
-                    event.description = newDescription;
-                }
-                console.log(event);
+                mockedEventList.splice(eventIndex - 1, 1);
+                alert('¡Evento eliminado satisfactoriamente!');
+                break;
             }
         }
     }
