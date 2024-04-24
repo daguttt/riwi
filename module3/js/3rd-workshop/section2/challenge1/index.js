@@ -12,7 +12,8 @@ function askForGrades() {
     const mockedGradesInput = '2, 3.5, 4, 5, 1, 1.5';
     while (true) {
         const gradesInput = prompt(promptMessage);
-        if (gradesInput) return gradesInput.replace(' ', '').split(',');
+        if (gradesInput)
+            return gradesInput.replace(' ', '').split(',').map(Number);
 
         if (gradesInput === null) {
             alert('Calculadora cerrada');
@@ -26,9 +27,7 @@ function askForGrades() {
 function main() {
     const gradeList = askForGrades();
     if (!gradeList) return;
-    const gradesTotal = gradeList
-        .map(Number)
-        .reduce((total, grade) => total + grade);
+    const gradesTotal = gradeList.reduce((total, grade) => total + grade);
     const average = (gradesTotal / gradeList.length).toFixed(2);
     alert(`El promedio de tus calificaciones es: ${average}`);
 }
