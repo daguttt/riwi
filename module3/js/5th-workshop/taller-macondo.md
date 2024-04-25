@@ -52,14 +52,14 @@ Caso 6
 
 llega al hotel y nota que para las actividades dentro del hotel llevan un patrón de vestimenta para cada cosa, se quedara 4 días 
 - amarillo
- 	- ir a la piscina, el agua huele raro, pero no le pone importancia
-		-si se mete, empieza a sentirse ahogado, demasiado cloro, muere (terminan las vacaciones)
-		-si no, no pasa nada
+  - ir a la piscina, el agua huele raro, pero no le pone importancia.
+    - si se mete, empieza a sentirse ahogado, demasiado cloro, muere (terminan las vacaciones)
+    - si no, no pasa nada
 
 - verde
-	- caminatas, y agüita para el camino, 
-		-si elige ir toda la caminata, ira a una hermosa cascada y se tomara fotos
-		-si no, llegará a cierto punto, y se devolverá solo, y den noche se pierde
+	- caminatas, y agüita para el camino.
+	- si elige ir toda la caminata, ira a una hermosa cascada y se tomara fotos
+	- si no, llegará a cierto punto, y se devolverá solo, y den noche se pierde
 - roja
 	- actividades en la playa
 		- voleibol, juega y la pasa genial
