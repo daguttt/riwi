@@ -29,6 +29,11 @@ function showCurrentBudget() {
     );
 }
 
+function getRandomNumber(minNum, maxNum) {
+    const difference = maxNum - minNum;
+    return Math.floor(Math.random() * (difference + 1) + minNum);
+}
+
 // -*********************************************************-
 // Use cases
 // -*********************************************************-
@@ -163,10 +168,126 @@ function case4() {
     );
 }
 
+// -*********************-
+// Case 5
+const ROCK_PAPER_SCISSORS = Object.freeze({
+    PAPER: 'Paper',
+    SCISSORS: 'Scissors',
+    ROCK: 'Rock',
+});
+
+function computeRoundRockPaperScissors() {
+    const randomNumber = Math.random();
+    if (randomNumber > 2 / 3) return ROCK_PAPER_SCISSORS.PAPER;
+    if (randomNumber > 1 / 3 && randomNumber < 2 / 3)
+        return ROCK_PAPER_SCISSORS.ROCK;
+    if (randomNumber < 1 / 3) return ROCK_PAPER_SCISSORS.SCISSORS;
+}
+
+function case5() {
+    const TAXI_DRIVE_CHARGE = 300_000;
+    const taxiDriverChoice = computeRoundRockPaperScissors();
+    const userChoice = computeRoundRockPaperScissors();
+    showMessage(
+        'Jugando Piedra, Papel o Tijeras...<br>' +
+            `Hildebrando: ${userChoice}<br>` +
+            `Taxista: ${taxiDriverChoice}`
+    );
+    if (taxiDriverChoice === userChoice)
+        return showMessage('Es un empate. No pasa nada');
+
+    const isTaxiDriveWinner =
+        (taxiDriverChoice === ROCK_PAPER_SCISSORS.PAPER &&
+            userChoice === ROCK_PAPER_SCISSORS.ROCK) ||
+        (taxiDriverChoice === ROCK_PAPER_SCISSORS.ROCK &&
+            userChoice === ROCK_PAPER_SCISSORS.SCISSORS) ||
+        (taxiDriverChoice === ROCK_PAPER_SCISSORS.SCISSORS &&
+            userChoice == ROCK_PAPER_SCISSORS.PAPER);
+    if (isTaxiDriveWinner) {
+        budget -= TAXI_DRIVE_CHARGE;
+        showMessage(
+            `<span class="red">El taxista gana. Cobra ${amountFormatter.format(
+                TAXI_DRIVE_CHARGE
+            )}</span>`
+        );
+        showCurrentBudget();
+    } else
+        showMessage(
+            '<span class="green">Hildebrando gana. No paga nada</span>'
+        );
+}
+
+// -*********************-
+// Case 6
+const CLOTHING_COLORS = Object.freeze({
+    YELLOW: 'amarilla',
+    GREEN: 'verde',
+    RED: 'roja',
+    BLUE: 'azul',
+});
+function computeRandomClothingColor() {
+    const clothingColorList = Object.values(CLOTHING_COLORS);
+    const randomIndex = getRandomNumber(0, clothingColorList.length - 1);
+    return clothingColorList[randomIndex];
+}
+
+function case6() {
+    const days = 'Día '
+        .repeat(4)
+        .split(' ')
+        .map((day, i) => `${day} ${i + 1}`);
+
+    let isDead = false;
+    let daysAlive = 1;
+
+    for (const day of days) {
+        showMessage(day);
+        const randomColor = computeRandomClothingColor();
+        switch (randomColor) {
+            case CLOTHING_COLORS.YELLOW: {
+                showMessage('Día de piscina');
+                const wantsToGetInThePool = confirm(
+                    '¿Quieres entrar a la piscina?'
+                );
+                if (wantsToGetInThePool) {
+                    isDead = true;
+                    showMessage('<i>"Demasiado cloro!!"</i>');
+                }
+                showMessage('Pasando al siguiente día...');
+                daysAlive++;
+                break;
+            }
+            case CLOTHING_COLORS.GREEN: {
+                showMessage('Día de caminata');
+                const wantsToCompleteHike = confirm(
+                    '¿Harás la caminata completa?'
+                );
+
+                wantsToCompleteHike
+                    ? showMessage(
+                          'Iras a una hermosa cascada y te tomaras fotos'
+                      )
+                    : showMessage(
+                          'Llegarás hasta cierto punto, después te perderás.'
+                      );
+                break;
+            }
+            case CLOTHING_COLORS.RED: {
+                showMessage('Día de caminata');
+                showMessage(
+                    'Jueas voleibol, nadas en el mar, montas moto y la pasas genial'
+                );
+            }
+        }
+    }
+}
+
 function main() {
     case1();
     case2();
     case3();
     case4();
+    case5();
+    case6();
 }
 main();
