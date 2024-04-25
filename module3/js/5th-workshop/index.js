@@ -15,42 +15,75 @@ function askForNumber(promptMessage) {
     }
 }
 
-function showCurrentBudget() {
-    return `Presupuesto: ${amountFormatter.format(budget)}\n`;
+function showMessage(message) {
+    document.body.innerHTML += `<p>${message}</p>`;
 }
+
+let timesShowedBudget = 0;
+function showCurrentBudget(currentBudget) {
+    showMessage(
+        `${++timesShowedBudget}. Presupuesto: ${amountFormatter.format(
+            budget
+        )}\n`
+    );
+}
+
 // -*********************************************************-
 // Use cases
 // -*********************************************************-
-function case1() {
-    const optionMessageLines = [
-        'Comprar un almohabana.',
-        'Comprar un subway con gaseosa.',
-        'No comprar nada.',
-    ];
-    const option = askForNumber(
-        '¿Qué deseas comprar para tu viaje?:\n' +
-            optionMessageLines
-                .map((line, index) => `${index + 1}. ${line}`)
-                .join('\n')
-    );
-    const lastLineIndex = optionMessageLines.length - 1;
-    if (option === lastLineIndex) {
-        console.log(
-            showCurrentBudget() +
-                'Te tocará comprar algo cuando llegues a medellín'
+// -*********************-
+// Case 1
+const optionsToBuy = [
+    {
+        title: 'Comprar un almohabana con gaseosa.',
+        price: 15_000,
+        message: 'Te caerá mal porque llevas mucho tiempo en el stand.',
+    },
+    {
+        title: 'Comprar un subway con gaseosa.',
+        price: 23_000,
+        message: 'Quedarás llenito y bien',
+    },
+    {
+        title: 'No comprar nada.',
+        price: 0,
+        message: 'Te tocará comprar algo en Medellín',
+    },
+];
+
+function askForOptionToBuy() {
+    const optionsFormattedMessage = optionsToBuy
+        .map((option, index) => `${index + 1}. ${option.title}`)
+        .join('\n');
+
+    while (true) {
+        const option = askForNumber(
+            '¿Qué deseas comprar para tu viaje?:\n' + optionsFormattedMessage
         );
-    } else if (option === 1) {
-        budget -= 15_000;
-        console.log(
-            showCurrentBudget() +
-                'Te caera mal porque llevas mucho tiempo en el stand'
-        );
-    } else if (option === 2) {
-        budget -= 23_000;
-        console.log(showCurrentBudget() + 'Quedarás llenito y bien');
+        const isValidOption =
+            option && option > 0 && option <= optionsToBuy.length;
+        if (isValidOption) return option;
+        alert('Opción inválida. Intenta de nuevo');
     }
-    console.log(showCurrentBudget());
 }
+
+function case1() {
+    const option = askForOptionToBuy();
+    const optionIndex = option - 1;
+
+    switch (option) {
+        case 1:
+            budget -= 15_000;
+        case 2:
+            budget -= 23_000;
+    }
+    showMessage(optionsToBuy[optionIndex].title);
+    showMessage(optionsToBuy[optionIndex].message);
+    showCurrentBudget(budget);
+}
+
+// -*********************-
+// Case 2
 
 function case2() {
     const suitcaseSizes = {
