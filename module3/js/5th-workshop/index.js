@@ -3,7 +3,8 @@ const amountFormatter = new Intl.NumberFormat('es-US', {
     style: 'currency',
 });
 
-let budget = 2_500_000;
+const SALARY = 2_500_000;
+let currentBudget = SALARY;
 
 // -*********************************************************-
 // Utils
@@ -24,7 +25,7 @@ let timesShowedBudget = 0;
 function showCurrentBudget() {
     showMessage(
         `${++timesShowedBudget}. Presupuesto: <span class="blue">
-            ${amountFormatter.format(budget)}
+            ${amountFormatter.format(currentBudget)}
         </span>\n`
     );
 }
@@ -79,10 +80,10 @@ function case1() {
 
     switch (option) {
         case 1:
-            budget -= 15_000;
+            currentBudget -= 15_000;
             break;
         case 2:
-            budget -= 23_000;
+            currentBudget -= 23_000;
             break;
     }
     const optionToBuy = optionsToBuy[optionIndex];
@@ -148,7 +149,7 @@ function case3() {
         ''
     );
 
-    budget -= WIFI_COST_HOURLY;
+    currentBudget -= WIFI_COST_HOURLY;
     showMessage(
         `La contraseña desencriptada es: <code>${airportPassword}</code>. La hora vale: <span class="red">
             ${amountFormatter.format(WIFI_COST_HOURLY)}
@@ -204,17 +205,18 @@ function case5() {
         (taxiDriverChoice === ROCK_PAPER_SCISSORS.SCISSORS &&
             userChoice == ROCK_PAPER_SCISSORS.PAPER);
     if (isTaxiDriveWinner) {
-        budget -= TAXI_DRIVE_CHARGE;
+        currentBudget -= TAXI_DRIVE_CHARGE;
         showMessage(
             `<span class="red">El taxista gana. Cobra ${amountFormatter.format(
                 TAXI_DRIVE_CHARGE
             )}</span>`
         );
         showCurrentBudget();
-    } else
+    } else {
         showMessage(
             '<span class="green">Hildebrando gana. No paga nada</span>'
         );
+    }
 }
 
 // -*********************-
@@ -231,33 +233,52 @@ function computeRandomClothingColor() {
     return clothingColorList[randomIndex];
 }
 
+function askForActivityToDo(activityList) {
+    const activitiesFormattedMessage = activityList
+        .map((activity, index) => `${index + 1}. ${activity}`)
+        .join('\n');
+
+    while (true) {
+        const option = askForNumber(
+            '¿Qué actividad deseas hacer el hotel?:\n' +
+                activitiesFormattedMessage
+        );
+        const isValidOption =
+            option && option > 0 && option <= optionsToBuy.length;
+        if (isValidOption) return activityList[option - 1];
+        alert('Opción inválida. Intenta de nuevo');
+    }
+}
+
 function case6() {
-    const days = 'Día '
-        .repeat(4)
-        .split(' ')
+    showMessage('<b>Llegada al hotel</b>');
+    const days = Array(4)
+        .fill('Día')
         .map((day, i) => `${day} ${i + 1}`);
 
     let isDead = false;
-    let daysAlive = 1;
+    let daysAlive = 0;
 
-    for (const day of days) {
+    daysFor: for (const day of days) {
         showMessage(day);
+
         const randomColor = computeRandomClothingColor();
         switch (randomColor) {
             case CLOTHING_COLORS.YELLOW: {
+                daysAlive++;
                 showMessage('Día de piscina');
                 const wantsToGetInThePool = confirm(
                     '¿Quieres entrar a la piscina?'
                 );
                 if (wantsToGetInThePool) {
+                    showMessage('<i>"Demasiado cloro!!" (Muere)</i>');
                     isDead = true;
-                    showMessage('<i>"Demasiado cloro!!"</i>');
+                    break daysFor;
                 }
-                showMessage('Pasando al siguiente día...');
-                daysAlive++;
                 break;
             }
             case CLOTHING_COLORS.GREEN: {
+                daysAlive++;
                 showMessage('Día de caminata');
                 const wantsToCompleteHike = confirm(
                     '¿Harás la caminata completa?'
@@ -273,13 +294,78 @@ function case6() {
                 break;
             }
             case CLOTHING_COLORS.RED: {
-                showMessage('Día de caminata');
-                showMessage(
-                    'Jueas voleibol, nadas en el mar, montas moto y la pasas genial'
-                );
+                daysAlive++;
+                showMessage('Día de actividades en la playa');
+                const ACTIVITIES_IN_BEACH = Object.freeze({
+                    VOLLEYBALL: 'Voleibol',
+                    SWIM: 'Nadar',
+                    DRINK_COCTELS: 'Tomar cocteles',
+                });
+                const activityList = Object.values(ACTIVITIES_IN_BEACH);
+                const chosenActivity = askForActivityToDo(activityList);
+                switch (chosenActivity) {
+                    case ACTIVITIES_IN_BEACH.VOLLEYBALL: {
+                        showMessage('Juegas voleibol y la pasas genial');
+                        break;
+                    }
+                    case ACTIVITIES_IN_BEACH.SWIM: {
+                        showMessage('Nadas en el mar y montaS moto');
+                        break;
+                    }
+                    case ACTIVITIES_IN_BEACH.DRINK_COCTELS: {
+                        showMessage(
+                            'Tomas cocteles, sientes un fuerte dolor de cabeza, pierdes la vision<br>' +
+                                '¡Chirrinchi adulterado! Te devuelves de emergencias, terminando tus vacaciones.'
+                        );
+                        break daysFor;
+                    }
+                }
+                break;
+            }
+            case CLOTHING_COLORS.BLUE: {
+                daysAlive++;
+                showMessage('Día de actividades en el hotel');
+                const ACTIVITIES_IN_HOTEL = Object.freeze({
+                    BINGO: 'Bingo',
+                    BAILAR: 'Bailar',
+                    CASINO: 'Casino',
+                });
+                const activityList = Object.values(ACTIVITIES_IN_HOTEL);
+                const chosenActivity = askForActivityToDo(activityList);
+                switch (chosenActivity) {
+                    case ACTIVITIES_IN_HOTEL.BAILAR: {
+                        showMessage('Bailas y la pasas muy bien.');
+                        break;
+                    }
+                    case ACTIVITIES_IN_HOTEL.BINGO: {
+                        const earnings = 1_000_000;
+                        showMessage(
+                            `Juegas bingo, lo ganas. Ganas ${earnings}`
+                        );
+                        currentBudget += earnings;
+                        showCurrentBudget();
+                        break;
+                    }
+                    case ACTIVITIES_IN_HOTEL.CASINO: {
+                        showMessage(
+                            'Juegas casino, apuestas, pierdes dinero y solo te queda el viaje de regreso.'
+                        );
+                        currentBudget -= 1_500_000;
+                        break daysFor;
+                    }
+                }
             }
         }
+        showMessage('Pasando al siguiente día...');
     }
+    showMessage(
+        '<strong>Resultados</strong><br>' +
+            `Dias en Macondo: ${daysAlive}<br>` +
+            `Hildebrando ${isDead ? 'murió' : 'pudo regresar'}<br>` +
+            `Dinero gastado: ${amountFormatter.format(
+                SALARY - currentBudget
+            )}. Dinero total: ${amountFormatter.format(currentBudget)}`
+    );
 }
 
 function main() {
