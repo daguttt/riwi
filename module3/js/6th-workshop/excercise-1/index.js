@@ -1,4 +1,4 @@
-function showCodeImageToUser() {
+function setTimerToCheckImage() {
     const $timerSpan = document.querySelector('#timer > span');
     let counter = 5;
     return new Promise((resolve) => {
@@ -87,7 +87,7 @@ function askQuestionsAboutBlockVar() {
 }
 
 async function main() {
-    await showCodeImageToUser();
+    await setTimerToCheckImage();
     const thinksCodeWorkSuccessfully = confirm(
         '¿El código de la imagén funciona?'
     );
