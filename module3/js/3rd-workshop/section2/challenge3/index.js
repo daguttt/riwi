@@ -188,7 +188,7 @@ const countProductsByName = function (productNameToCheck) {
 
 const duplicateProduct = function () {
     listProducts(products);
-    if (!products) return;
+    if (!products.length) return;
     const productIndex = askForProductIndexById(
         'Ingresa el ID del producto que deseas DUPLICAR'
     );
@@ -267,7 +267,7 @@ const searchProducts = function () {
 
 const updateProduct = function () {
     listProducts(products);
-    if (!products) return;
+    if (!products.length) return;
     const productIndex = askForProductIndexById(
         'Ingresa el ID del producto que deseas ACTUALIZAR'
     );
@@ -317,7 +317,7 @@ const updateProduct = function () {
 
 const deleteProduct = function () {
     listProducts(products);
-    if (!products) return;
+    if (!products.length) return;
     const productIndex = askForProductIndexById(
         'Ingresa el ID del producto que deseas ELIMINAR'
     );
@@ -336,7 +336,7 @@ const deleteProduct = function () {
 
 const increaseProductQuantity = function () {
     listProducts(products);
-    if (!products) return;
+    if (!products.length) return;
     const productIndex = askForProductIndexById(
         'Ingresa el ID del producto del cuál se compró mercancía'
     );
@@ -354,16 +354,60 @@ const increaseProductQuantity = function () {
     alert(`¡Cantidad de '${productToUpdate.name}' incrementada correctamente!`);
 };
 
+const checkProductQuantity = function (product) {
+    return product.quantity > 0;
+};
+
 const checkProductAvailability = function () {
     const productIndex = askForProductIndexById(
         'Ingresa el ID del producto del que deseas conocer su disponibilidad.'
     );
-    const { quantity, name: productName } = products[productIndex];
-    if (quantity === 0) return alert('Producto agotado');
-    alert(`La cantidad de '${productName} disponible es: ${quantity}`);
+    const productToCheck = products[productIndex];
+    const isProductAvailable = checkProductQuantity(productToCheck);
+    if (!isProductAvailable) return alert('Producto agotado');
+    alert(
+        `La cantidad de '${productToCheck.name} disponible es: ${productToCheck.quantity}`
+    );
 };
 
-const sellProduct = function () {};
+const sellProduct = function () {
+    listProducts(products);
+    if (!products.length) return;
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto que se va a COMPRAR'
+    );
+    const productToSell = products[productIndex];
+    const isProductAvailable = checkProductQuantity(productToSell);
+    if (!isProductAvailable)
+        return alert(
+            `No hay existencias disponibles de '${productToSell.name}'`
+        );
+
+    const MINIMUM_QUANTITY_TO_SELL = 1;
+    let quantityToSell;
+    while (true) {
+        quantityToSell =
+            askForNumber(
+                `La cantidad del producto es: ${productToSell.quantity}\n` +
+                    `Ingresa la cantidad que se va a vender de '${productToSell.name}' o presiona ENTER (por defecto: ${MINIMUM_QUANTITY_TO_SELL})`,
+                {
+                    allowedNullish: true,
+                }
+            ) || MINIMUM_QUANTITY_TO_SELL;
+        const canBuyProduct =
+            quantityToSell > 0 && quantityToSell <= productToSell.quantity;
+        if (canBuyProduct) break;
+        alert(
+            `Cantidad mínima: ${MINIMUM_QUANTITY_TO_SELL} -> Cantidad máxima: ${productToSell.quantity}. Inténtalo de nuevo.`
+        );
+    }
+
+    productToSell.quantity -= quantityToSell;
+    alert(
+        '¡Compra realizada con éxito!\n' +
+            `Nuevo disponible de '${productToSell.name}': ${productToSell.quantity}`
+    );
+};
 
 const getInventoryTotalPrice = function () {};
 
