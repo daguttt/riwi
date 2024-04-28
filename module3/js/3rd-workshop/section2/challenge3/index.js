@@ -20,6 +20,7 @@ const mockedProduct3 = {
     description: 'Descripción del Producto 1',
 };
 
+// const products = [];
 const products = [mockedProduct1, mockedProduct2, mockedProduct3];
 const blacklistedProducts = [];
 const amountFormatter = new Intl.NumberFormat('es-US', {
@@ -409,7 +410,24 @@ const sellProduct = function () {
     );
 };
 
-const getInventoryTotalPrice = function () {};
+const getInventoryTotalPrice = function () {
+    if (!products.length)
+        return alert(
+            `No hay productos en el inventario aún. Total: ${amountFormatter.format(
+                0
+            )}`
+        );
+
+    const inventoryTotalPrice = products.reduce(
+        (total, product) => product.price + total,
+        0
+    );
+    alert(
+        `El valor total de todo el inventario es: ${amountFormatter.format(
+            inventoryTotalPrice
+        )}`
+    );
+};
 
 const generateGeneralReport = function () {};
 
