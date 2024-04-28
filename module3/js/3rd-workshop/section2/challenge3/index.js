@@ -334,7 +334,25 @@ const deleteProduct = function () {
         blacklistedProducts.splice(blacklistedProductIndex, 1);
 };
 
-const increaseProductQuantity = function () {};
+const increaseProductQuantity = function () {
+    listProducts(products);
+    if (!products) return;
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto del cuál se compró mercancía'
+    );
+    const productToUpdate = products[productIndex];
+    let quantityToIncrease;
+    while (true) {
+        quantityToIncrease = askForNumber(
+            `La cantidad del producto es: ${productToUpdate.quantity}\n` +
+                `Ingresa la cantidad que se compró de '${productToUpdate.name}' (min: 1)`
+        );
+        if (quantityToIncrease > 1) break;
+        alert('La cantidad minima para añadir es 1');
+    }
+    productToUpdate.quantity += quantityToIncrease;
+    alert(`¡Cantidad de '${productToUpdate.name}' incrementada correctamente!`);
+};
 
 const checkProductAvailability = function () {};
 
