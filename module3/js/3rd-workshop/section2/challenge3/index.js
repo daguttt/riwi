@@ -22,14 +22,20 @@ const mockedProduct3 = {
 
 const products = [mockedProduct1, mockedProduct2, mockedProduct3];
 const blacklistedProducts = [];
+const amountFormatter = new Intl.NumberFormat('es-US', {
+    style: 'currency',
+    currency: 'USD',
+});
 
 // -*********************************************************-
 // Utils
 // -*********************************************************-
-function askForNumber(promptMessage) {
+function askForNumber(promptMessage, options = {}) {
     while (true) {
-        const input = Number(prompt(promptMessage));
-        if (!Number.isNaN(input)) return input;
+        const rawInput = prompt(promptMessage);
+        if (options?.allowedNullish && !rawInput) return rawInput;
+        const castedInput = parseInt(rawInput);
+        if (!Number.isNaN(castedInput)) return castedInput;
         alert('El valor ingresado no es número');
     }
 }
@@ -93,11 +99,11 @@ const blackListedWords = [
     'palabra5',
 ];
 const sanitizeProduct = function (product) {
-    let isSanitized = false;
+    let shouldBeBlacklisted = false;
     const descriptionWords = product.description.split(' ');
     const sanitizedWords = descriptionWords.map((word) => {
         if (blackListedWords.includes(word)) {
-            isSanitized = true;
+            shouldBeBlacklisted = true;
             return '*'.repeat(word.length);
         }
         return word;
@@ -108,7 +114,7 @@ const sanitizeProduct = function (product) {
         description: sanitizedDescription,
     };
     return {
-        isSanitized,
+        shouldBeBlacklisted,
         sanitizedProduct,
     };
 };
@@ -119,12 +125,23 @@ const generateIdForProduct = function () {
     return idForProducts++;
 };
 
+const addProductToBlacklist = function (productToBlacklist) {
+    const blacklistedProduct = blacklistedProducts.find(
+        (product) => product.id === productToBlacklist.id
+    );
+    const isAlreadyBlacklisted = blacklistedProduct !== undefined;
+    if (!isAlreadyBlacklisted)
+        return blacklistedProducts.push(productToBlacklist);
+
+    Object.assign(blacklistedProduct, productToBlacklist);
+};
+
 const addProduct = function () {
     const product = askForProduct();
     product.id = generateIdForProduct();
 
-    const { isSanitized, sanitizedProduct } = sanitizeProduct(product);
-    if (isSanitized) blacklistedProducts.push(product);
+    const { shouldBeBlacklisted, sanitizedProduct } = sanitizeProduct(product);
+    if (shouldBeBlacklisted) addProductToBlacklist(product);
     products.push(sanitizedProduct);
 
     console.log({
@@ -151,13 +168,13 @@ const listProducts = function (products) {
     });
 };
 
-const askForProductById = function () {
+const askForProductIndexById = function (promptMessage) {
     while (true) {
-        const productId = askForNumber(
-            'Ingresa el ID del producto que deseas duplicar'
+        const productId = askForNumber(promptMessage);
+        const productIndex = products.findIndex(
+            (product) => product.id === productId
         );
-        const product = products.find((product) => product.id === productId);
-        if (product) return product;
+        if (productIndex > -1) return productIndex;
         alert('ID inválido. Intentalo de nuevo.');
     }
 };
@@ -172,7 +189,10 @@ const countProductsByName = function (productNameToCheck) {
 const duplicateProduct = function () {
     listProducts(products);
     if (!products) return;
-    const productToDuplicate = askForProductById();
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto que deseas DUPLICAR'
+    );
+    const productToDuplicate = products[productIndex];
     const productBaseName = productToDuplicate.name.replace(/\sCopy\s*\d*/, '');
     const timesProductIsRepeated = countProductsByName(productBaseName);
     const duplicatedProduct = {
@@ -245,11 +265,76 @@ const searchProducts = function () {
     listProducts(filteredProducts);
 };
 
-const updateProduct = function () {};
+const updateProduct = function () {
+    listProducts(products);
+    if (!products) return;
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto que deseas ACTUALIZAR'
+    );
+    const productToUpdate = products[productIndex];
 
-const updateProductQuantity = function () {};
+    const newName = prompt(
+        `El nombre del producto es: ${productToUpdate.name}\n` +
+            'Ingresa el NUEVO nombre del producto o presiona ENTER para dejarlo tal cuál.'
+    );
+    const newPrice = askForNumber(
+        `El precio del producto es: ${amountFormatter.format(
+            productToUpdate.price
+        )}\n` +
+            'Ingresa el NUEVO precio del producto o presiona ENTER para dejarlo tal cuál.',
+        {
+            allowedNullish: true,
+        }
+    );
+    const newQuantity = askForNumber(
+        `La cantidad del producto es: ${productToUpdate.quantity}\n` +
+            'Ingresa la NUEVA cantidad del producto o presiona ENTER para dejarla tal cuál.',
+        {
+            allowedNullish: true,
+        }
+    );
+    const newDescription = prompt(
+        `La descripción del producto es: ${productToUpdate.description}\n` +
+            'Ingresa la NUEVA descripción del producto o presiona ENTER para dejarla tal cuál.'
+    );
 
-const removeProduct = function () {};
+    const updatedProduct = {
+        ...productToUpdate,
+        name: newName || productToUpdate.name,
+        price: newPrice || productToUpdate.price,
+        quantity: newQuantity || productToUpdate.quantity,
+        description: newDescription || productToUpdate.description,
+    };
+
+    const { shouldBeBlacklisted, sanitizedProduct } =
+        sanitizeProduct(updatedProduct);
+    if (shouldBeBlacklisted) addProductToBlacklist(updatedProduct);
+
+    Object.assign(productToUpdate, sanitizedProduct);
+
+    alert('¡Producto actualizado con exito!');
+};
+
+const deleteProduct = function () {
+    listProducts(products);
+    if (!products) return;
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto que deseas ELIMINAR'
+    );
+    // Delete from `products`
+    const { id: productId } = products[productIndex];
+    products.splice(productIndex, 1);
+    alert('¡Producto eliminado satisfactoriamente!');
+
+    // Delete from `blacklistedProducts` (if needed)
+    const blacklistedProductIndex = blacklistedProducts.findIndex(
+        (bProduct) => bProduct.id === productId
+    );
+    if (blacklistedProductIndex > -1)
+        blacklistedProducts.splice(blacklistedProductIndex, 1);
+};
+
+const increaseProductQuantity = function () {};
 
 const checkProductAvailability = function () {};
 
@@ -279,9 +364,9 @@ const inventoryFeatures = [
     { title: 'Actualizar un producto.', featureFn: updateProduct },
     {
         title: 'Actualizar cantidad un producto. (Compra de inventario)',
-        featureFn: updateProductQuantity,
+        featureFn: increaseProductQuantity,
     },
-    { title: 'Eliminar un producto.', featureFn: removeProduct },
+    { title: 'Eliminar un producto.', featureFn: deleteProduct },
     {
         title: 'Verificar existencia de un producto.',
         featureFn: checkProductAvailability,
