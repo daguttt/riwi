@@ -411,6 +411,11 @@ const sellProduct = function () {
 };
 
 const getInventoryTotalPrice = function () {
+    if (!products.length) return 0;
+    return products.reduce((total, product) => product.price + total, 0);
+};
+
+const showInventoryTotalPrice = function () {
     if (!products.length)
         return alert(
             `No hay productos en el inventario aún. Total: ${amountFormatter.format(
@@ -418,10 +423,7 @@ const getInventoryTotalPrice = function () {
             )}`
         );
 
-    const inventoryTotalPrice = products.reduce(
-        (total, product) => product.price + total,
-        0
-    );
+    const inventoryTotalPrice = getInventoryTotalPrice();
     alert(
         `El valor total de todo el inventario es: ${amountFormatter.format(
             inventoryTotalPrice
@@ -429,7 +431,49 @@ const getInventoryTotalPrice = function () {
     );
 };
 
-const generateGeneralReport = function () {};
+const generateGeneralReport = function () {
+    if (!products.length)
+        return alert(`No hay productos en el inventario aún.`);
+
+    alert('Revisa la consola para ver el reporte general del inventario...');
+    const totalProducts = products.length;
+    const inventoryTotalPrice = getInventoryTotalPrice();
+    const biggestPrice = Math.max(...products.map((product) => product.price));
+    const lowestPrice = Math.min(...products.map((product) => product.price));
+    const totalMostExpensiveProducts = products.filter(
+        (product) => product.price === biggestPrice
+    ).length;
+    const totalCheapestProducts = products.filter(
+        (product) => product.price === lowestPrice
+    ).length;
+
+    const quantities = products.map((product) => product.quantity);
+    const biggestQuantityOfProducts = Math.max(...quantities);
+    const lowestQuantityOfProducts = Math.min(...quantities);
+    const totalMostAvailableProducts = products.filter(
+        (product) => product.quantity === biggestQuantityOfProducts
+    ).length;
+    const totalLeastAvailableProducts = products.filter(
+        (product) => product.quantity === lowestQuantityOfProducts
+    ).length;
+    const totalBlaclistedProducts = blacklistedProducts.length;
+    const reportLinesMsg = [
+        `La cantidad de productos es: ${totalProducts}`,
+        `Valor total del inventario: ${amountFormatter.format(
+            inventoryTotalPrice
+        )}`,
+        `Cantidad de productos más caros: ${totalMostExpensiveProducts} (Precio: ${amountFormatter.format(
+            biggestPrice
+        )})`,
+        `Cantidad de productos más baratos: ${totalCheapestProducts} (Precio: ${amountFormatter.format(
+            lowestPrice
+        )})`,
+        `Cantidad de productos con mayor cantidad: ${totalMostAvailableProducts} (Cantidad: ${biggestQuantityOfProducts})`,
+        `Cantidad de productos con menor cantidad: ${totalLeastAvailableProducts} (Cantidad: ${lowestQuantityOfProducts})`,
+        `Cantidad de productos con malas palabras en la descripción: ${totalBlaclistedProducts}`,
+    ].join('\n');
+    console.log(reportLinesMsg);
+};
 
 const inventoryFeatures = [
     {
@@ -461,7 +505,7 @@ const inventoryFeatures = [
     { title: 'Vender un producto.', featureFn: sellProduct },
     {
         title: 'Ver valor total del inventario',
-        featureFn: getInventoryTotalPrice,
+        featureFn: showInventoryTotalPrice,
     },
     { title: 'Generar reporte general', featureFn: generateGeneralReport },
     { title: 'Salir.', featureFn: null },
