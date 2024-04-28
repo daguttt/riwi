@@ -438,8 +438,9 @@ const generateGeneralReport = function () {
     alert('Revisa la consola para ver el reporte general del inventario...');
     const totalProducts = products.length;
     const inventoryTotalPrice = getInventoryTotalPrice();
-    const biggestPrice = Math.max(...products.map((product) => product.price));
-    const lowestPrice = Math.min(...products.map((product) => product.price));
+    const prices = products.map((product) => product.price);
+    const biggestPrice = Math.max(...prices);
+    const lowestPrice = Math.min(...prices);
     const totalMostExpensiveProducts = products.filter(
         (product) => product.price === biggestPrice
     ).length;
