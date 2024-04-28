@@ -354,7 +354,14 @@ const increaseProductQuantity = function () {
     alert(`¡Cantidad de '${productToUpdate.name}' incrementada correctamente!`);
 };
 
-const checkProductAvailability = function () {};
+const checkProductAvailability = function () {
+    const productIndex = askForProductIndexById(
+        'Ingresa el ID del producto del que deseas conocer su disponibilidad.'
+    );
+    const { quantity, name: productName } = products[productIndex];
+    if (quantity === 0) return alert('Producto agotado');
+    alert(`La cantidad de '${productName} disponible es: ${quantity}`);
+};
 
 const sellProduct = function () {};
 
