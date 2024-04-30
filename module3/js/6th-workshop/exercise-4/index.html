@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Funciones Declaradas vs Expresadas</title>
+        <script defer src="./index.js"></script>
+        <style>
+            body {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                    'Helvetica Neue', sans-serif;
+            }
+            code {
+                padding: 2px;
+                background-color: lightgray;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Funciones Declaradas vs Expresadas</h1>
+            <p>
+                ¿Qué sucedió cuando intestaste llamar a las funciones antes de
+                su declaración?
+            </p>
+            <ul>
+                <li>
+                    La función declarada se llama sin problema ya que las
+                    funciones declaradas son elevadas con toda su definición lo
+                    que permite que podamos acceder a ella antes de su
+                    declaración.
+                </li>
+                <li>
+                    La función expresada se llama provocando un error
+                    <code>ReferenceError</code> capturandose en el bloque catch.
+                    Al ser expresada con <code>const</code>, la variable que
+                    guarda la funcion es elevada como non-initiliazed lo que
+                    levanta la excepción al intentar acceder a ella antes de su
+                    declaración.
+                </li>
+            </ul>
+            <p>
+                ¿Cómo difieren los resultados entre la función declarada y la
+                función expresada?
+            </p>
+            <ul>
+                <li>
+                    Difieren en que la función expresada levanta una excepción
+                    <code>ReferenceError</code> capturandose en el bloque catch
+                    ya que no puede ser accedida antes de su declaración.
+                </li>
+            </ul>
+            <p>
+                ¿Qué indica esto sobre cómo el JavaScript maneja estas dos
+                diferentes declaraciones de funciones
+            </p>
+            <ul>
+                <li>
+                    La funciones declaradas son elevadas con toda su definición.
+                    Las funciones expresadas son elevadas e inicializadas con
+                    undefined or non-initialized dependiendo de la
+                    <i>keyword</i>
+                    usada para declarar la variable que guarda la función
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
