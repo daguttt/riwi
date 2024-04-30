@@ -7,7 +7,7 @@
 // -*********************************************************-
 
 const handleAsynchronicity = function (callback, promise) {
-    promise.then(callback);
+    promise.then(callback).catch();
 };
 
 function main() {

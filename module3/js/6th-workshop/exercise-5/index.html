@@ -48,6 +48,16 @@
                 diferentes tipos de información dependiendo del resultado de la
                 promesa?
             </p>
+            <ul>
+                <li>
+                    Sí, podemos encadenar el metodo <code>.catch()</code> a la
+                    promesa pasada como parametro para ejecutar otro callback
+                    que se le puede pasar a
+                    <code>handleAsynchronicity</code>
+                    (<code>callbackOnError</code>) ejecutandose en caso de que
+                    la promesa sea rechazada
+                </li>
+            </ul>
         </main>
     </body>
 </html>
