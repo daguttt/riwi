@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Loop y Web APIs</title>
+        <script defer src="./index.js"></script>
+        <style>
+            body {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                    'Helvetica Neue', sans-serif;
+            }
+            code {
+                padding: 2px;
+                background-color: lightgray;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Event Loop y Web APIs</h1>
+            <p>
+                ¿Por qué "Mensaje 2: Con timeout de 0 segundos" no se muestra
+                inmediatamente después de "Mensaje 1: Inmediatamente", a pesar
+                de tener un retardo de 0 segundos?
+            </p>
+            <ul>
+                <li>
+                    Porque el setTimeout crea un timer por debajo usando las
+                    WepAPIs. La WebAPI se encarga de comunicarse con el sistema
+                    operativo y eso toma cierto tiempo (algunos milisegundos).
+                    El sistema opertivo crea el timer este se termina
+                    inmediatamente haciendo que la WebAPI encole un macrotarea
+                    la cual será añadida al Callstack en el caso de que esté
+                    vacio y no haya más microtareas.
+                </li>
+            </ul>
+            <p>
+                ¿Que nos dicen este comportamiento sobre el event loop, las
+                macro y micro tareas, y la forma en que JavaScript maneja las
+                operaciones asíncronas?
+            </p>
+            <ul>
+                <li>
+                    Nos dice que es importante que tener en cuenta que algunas
+                    tareas que podemos programar en JavaScript toman cierto
+                    tiempo y que dependiendo del tipo de tarea subsecuente que
+                    se cree, debemos saber que herramienta usar para que la
+                    lógica siguiente y dependiente de lo anterior, se ejecute en
+                    el orden que esperamos.
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
