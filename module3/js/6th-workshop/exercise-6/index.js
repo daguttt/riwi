@@ -4,5 +4,5 @@ setTimeout(() => {
 }, 0);
 
 setTimeout(() => {
-    console.log('Mensaje 2: Con timeout de 0 segundos.');
+    console.log('Mensaje 3: Con timeout de 0 segundos.');
 }, 1000);
