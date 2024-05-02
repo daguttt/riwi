@@ -2,18 +2,18 @@
 const url = './data.json'; // Cambiar por la ruta correcta
 // const mockedBooking1 = {
 //     id: 1,
-//     roomNumber: 104,
+//     roomNumber: 102,
 //     startingDate: new Date('2024-05-09T13:00:00'),
 //     endingDate: new Date('2024-05-13T16:00:00'),
-//     hostFullname: 'Daniel Gutiérrez Muñoz',
-//     guestCount: 3,
+//     hostFullname: 'Daniel',
+//     guestCount: 2,
 // };
 // const mockedBooking2 = {
 //     id: 2,
 //     roomNumber: 108,
 //     startingDate: new Date('2024-05-09T13:00:00'),
 //     endingDate: new Date('2024-05-13T16:00:00'),
-//     hostFullname: 'Daniel Gutiérrez Muñoz',
+//     hostFullname: 'Camilo',
 //     guestCount: 3,
 // };
 // const mockedBooking3 = {
@@ -33,13 +33,12 @@ const url = './data.json'; // Cambiar por la ruta correcta
 //     guestCount: 2,
 // };
 
-const bookings = [];
-// const bookings = [
-//     mockedBooking1,
-//     mockedBooking2,
-//     mockedBooking3,
-//     mockedBooking4,
-// ];
+const bookings = [
+    // mockedBooking1,
+    // mockedBooking2,
+    //     mockedBooking3,
+    //     mockedBooking4,
+];
 
 // -*********************************************************-
 // Utils
@@ -179,14 +178,14 @@ function askForRoomToBook(rooms, roomTypes) {
         }),
     });
 
-    return { room: rooms[chosenRoomIndex], guestCount };
+    return { room: availableRooms[chosenRoomIndex], guestCount };
 }
 
 function bookRoom(rooms, roomTypes) {
     const { room, guestCount } = askForRoomToBook(rooms, roomTypes);
     if (!room) return;
     createBooking(room.number, room.number, guestCount);
-    room.availability = true;
+    room.availability = false;
 }
 
 async function checkRoomAvailability(rooms) {
@@ -267,22 +266,20 @@ function showBookingsByHost(rooms, roomTypes) {
     });
 }
 
-function askForBookingIndex() {
+function cancelBooking(rooms) {
     const hostFullname = prompt('Ingresa el nombre del huesped');
     const hostBookings = bookings.filter(
         (booking) => booking.hostFullname === hostFullname
     );
 
-    if (!hostBookings.length) {
-        alert(
+    if (!hostBookings.length)
+        return alert(
             `El huesped ${hostFullname} no tiene reservas a su nombre en el momento`
         );
-        return null;
-    }
 
-    const bookingIndex = askForAnIndexFrom({
+    const bookingIndexToCancel = askForAnIndexFrom({
         promptMessage: 'Ingresa el numero de la reserva a cancelar.',
-        optionsArray: bookings.map(
+        optionsArray: hostBookings.map(
             (booking) =>
                 `Reserva: Habitación ${
                     booking.roomNumber
@@ -291,15 +288,8 @@ function askForBookingIndex() {
                 )}' hasta '${booking.endingDate.toLocaleDateString('es-CO')}'`
         ),
     });
-
-    return bookingIndex;
-}
-
-function cancelBooking(rooms) {
     // Change room availability
-    const bookingIndex = askForBookingIndex();
-    if (bookingIndex === null) return;
-    const booking = bookings[bookingIndex];
+    const booking = hostBookings[bookingIndexToCancel];
 
     for (const room of rooms) {
         if (room.number === booking.roomNumber) {
@@ -308,17 +298,35 @@ function cancelBooking(rooms) {
         }
     }
 
-    bookings.splice(bookingIndex, 1);
+    bookings.splice(bookingIndexToCancel, 1);
     alert(
         `¡Reserva de la habitación '${booking.roomNumber}' cancelada con exito!`
     );
 }
 
 function editBooking() {
-    const bookingIndex = askForBookingIndex();
-    console.log({ bookingIndex });
-    if (bookingIndex === null) return;
-    const booking = bookings[bookingIndex];
+    const hostFullname = prompt('Ingresa el nombre del huesped');
+    const hostBookings = bookings.filter(
+        (booking) => booking.hostFullname === hostFullname
+    );
+
+    if (!hostBookings.length)
+        return alert(
+            `El huesped ${hostFullname} no tiene reservas a su nombre en el momento`
+        );
+
+    const bookingIndexToEdit = askForAnIndexFrom({
+        promptMessage: 'Ingresa el numero de la reserva a editar.',
+        optionsArray: hostBookings.map(
+            (booking) =>
+                `Reserva: Habitación ${
+                    booking.roomNumber
+                }. Desde '${booking.startingDate.toLocaleDateString(
+                    'es-CO'
+                )}' hasta '${booking.endingDate.toLocaleDateString('es-CO')}'`
+        ),
+    });
+    const booking = hostBookings[bookingIndexToEdit];
 
     const { startingDate, endingDate } = askForBookingDates();
     booking.startingDate = startingDate;
