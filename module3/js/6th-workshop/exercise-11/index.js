@@ -409,18 +409,18 @@ function main() {
     // Llamar a la función para cargar y mostrar el contenido de data.json
     cargarYMostrarData()
         .then(({ rooms, roomTypes }) => {
-            rooms.find(
-                (room) => room.number === mockedBooking1.roomNumber
-            ).availability = false;
-            rooms.find(
-                (room) => room.number === mockedBooking2.roomNumber
-            ).availability = false;
-            rooms.find(
-                (room) => room.number === mockedBooking3.roomNumber
-            ).availability = false;
-            rooms.find(
-                (room) => room.number === mockedBooking4.roomNumber
-            ).availability = false;
+            // rooms.find(
+            //     (room) => room.number === mockedBooking1.roomNumber
+            // ).availability = false;
+            // rooms.find(
+            //     (room) => room.number === mockedBooking2.roomNumber
+            // ).availability = false;
+            // rooms.find(
+            //     (room) => room.number === mockedBooking3.roomNumber
+            // ).availability = false;
+            // rooms.find(
+            //     (room) => room.number === mockedBooking4.roomNumber
+            // ).availability = false;
             showMenu(rooms, roomTypes);
         })
         .catch((error) => {
