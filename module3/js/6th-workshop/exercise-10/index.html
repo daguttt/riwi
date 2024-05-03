@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Visualización del Event Loop</title>
+        <script defer src="./index.js"></script>
+        <style>
+            * {
+                margin: 0;
+            }
+
+            html {
+                font-size: 110%;
+            }
+
+            body {
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                    'Helvetica Neue', sans-serif;
+            }
+
+            main {
+                --content-max-width: 70ch;
+                --padding: 1.75rem;
+                width: min(var(--content-max-width), 100% - var(--padding));
+                margin-inline: auto;
+                padding-block: var(--padding);
+            }
+
+            main > * + * {
+                margin-top: 1em;
+            }
+
+            code {
+                padding: 2px;
+                background-color: lightgray;
+                font-size: 1rem;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Visualización del Event Loop</h1>
+            <img src="./base-code.png" alt="Código base para evaluar" />
+            <h2>
+                ¿Qué tareas se consideran macrotareas y cuáles son microtareas?
+            </h2>
+            <ul>
+                <li>
+                    Los callbacks de los<code>setTimeout()</code> son
+                    <strong>macrotareas</strong>
+                </li>
+                <li>
+                    Los callbacks de los<code>.then()</code> son
+                    <strong>microtareas</strong>
+                </li>
+            </ul>
+
+            <h2>
+                ¿Cómo se relacionan las macrotareas y microtareas con el event
+                loop?
+            </h2>
+            <img
+                src="./micro-macro-with-event-loop.png"
+                alt="Imagen ilustrando como el event loop prioriza microtareas sobre macrotareas."
+            />
+            <p>
+                El Event Loop prioriza las microtareas sobre macrotareas. Es
+                decir, se va a encargar de apilar las microtareas que haya antes
+                de si quiera revisar si hay macrotareas.
+            </p>
+
+            <h2>
+                ¿Qué sucede cuando una microtarea genera una nueva macrotarea
+                dentro de ella?
+            </h2>
+            <img
+                src="./micro-generates-macro.png"
+                alt="Imagen ilustrando como una microtarea genera otra macrotarea"
+            />
+            <p>
+                La macrotarea generada es procesada por la Web API y al terminar
+                es encolada detrás de las macrotareas que haya pendientes
+            </p>
+
+            <h2>
+                ¿Cómo se manejan las promesas y los setTimeout en relación con
+                el event loop?
+            </h2>
+            <img
+                src="./promises-settimeout-event-loop.jpeg"
+                alt="Imagen ilustrando como las promesas crean microtareas y los setTimeouts macrotareas"
+            />
+            <p>
+                El Event Loop maneja la promesas primero al ser
+                <b>microtareas</b> y los <code>setTimeouts</code> al ser
+                <b>macrotareas</b> cuando ya no hayan más microtareas y se haya
+                renderizado (si fuere necesario).
+            </p>
+        </main>
+    </body>
+</html>
