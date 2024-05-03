@@ -17,15 +17,16 @@ function askForNumber(promptMessage, options = {}) {
 
 function main() {
     const delay = askForNumber(
-        '¿Cuánto tiempo quieres que se demore para mostrar los datos?'
+        '¿Cuánto tiempo quieres que se demore para mostrar los posts?'
     );
+    console.log(`Esperando ${delay} segundos para mostrar los posts...`);
     setTimeout(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((res) => {
                 if (res.ok) return res.json();
                 throw new Error('Error en la petición de los datos');
             })
-            .then(console.log)
+            .then((posts) => console.log('Posts: ', posts))
             .catch((err) => console.error(err));
     }, delay * 1000);
 }
