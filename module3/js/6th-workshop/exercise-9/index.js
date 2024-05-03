@@ -27,6 +27,6 @@ function main() {
             })
             .then(console.log)
             .catch((err) => console.error(err));
-    }, delay);
+    }, delay * 1000);
 }
 main();
