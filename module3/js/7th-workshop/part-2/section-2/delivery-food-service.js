@@ -11,17 +11,14 @@ function Client(name, email, password, address, phone) {
     Person.call(this, name, email, password);
     this.address = address;
     this.phone = phone;
-    this.points = 0;
 }
 Client.prototype = Object.create(Person.prototype);
 Client.prototype.constructor = Client;
-Client.prototype.accumulatePoints = function (points) {
-    console.log(`Acumulando ${points} puntos.`);
-    this.points += points;
+Client.prototype.makeOrder = function () {
+    console.log('Realizando pedido');
 };
-Client.prototype.exchangePoints = function (points) {
-    console.log(`Cajeando ${points} puntos.`);
-    this.points -= points;
+Client.prototype.showOrderHistory = function () {
+    console.log('Mostrando historial de pedidos');
 };
 
 function DeliveryPerson(name, email, password, vehicle, availability) {
@@ -108,4 +105,21 @@ QRMenu.prototype = Object.create(Menu.prototype);
 QRMenu.prototype.constructor = QRMenu;
 QRMenu.prototype.generateQRCode = function () {
     console.log('Generando QR');
+};
+
+function Order(client, restaurant, details, state) {
+    this.client = client;
+    this.restaurant = restaurant;
+    this.details = details;
+    this.state = state;
+}
+Order.prototype.updateState = function (newState) {
+    this.state = newState;
+};
+Order.prototype.computeTotal = function () {
+    let total = 0;
+    this.details.forEach((detail) => {
+        total += detail.quantity * detail.plate.price;
+    });
+    return total;
 };
