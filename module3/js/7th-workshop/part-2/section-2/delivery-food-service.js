@@ -54,11 +54,10 @@ Plate.prototype.getInfo = function () {
     return `${this.name} - ${this.price} - ${this.ingredients}`;
 };
 
-function Restaurant(name, address, menuQr) {
+function Restaurant(name, address, menu) {
     this.name = name;
     this.address = address;
-    this.menuQr = menuQr;
-    this.menu = new Menu();
+    this.menu = menu;
 }
 Restaurant.prototype.addPlate = function (plate) {
     this.menu.addPlate(plate);
@@ -117,9 +116,43 @@ Order.prototype.updateState = function (newState) {
     this.state = newState;
 };
 Order.prototype.computeTotal = function () {
-    let total = 0;
-    this.details.forEach((detail) => {
-        total += detail.quantity * detail.plate.price;
-    });
-    return total;
+    return this.details.reduce((total, detail) => {
+        return total + detail.quantity * detail.plate.price;
+    }, 0);
 };
+
+function OrderDetail(plate, quantity) {
+    this.plate = plate;
+    this.quantity = quantity;
+}
+
+const client = new Client(
+    'Daniel',
+    'dagutmu667@gmail.com',
+    'password',
+    'Calle 123',
+    '123456789'
+);
+const deliveryPerson = new DeliveryPerson(
+    'Pedro',
+    'pedro@gmail',
+    'password',
+    'Moto',
+    true
+);
+const plate = new Plate('Platillo 1', 100, ['ingrediente 1', 'ingrediente 2']);
+const restaurant = new Restaurant(
+    'Restaurante 1',
+    'Calle 123',
+    new PhysicalMenu()
+);
+
+restaurant.addPlate(plate);
+
+const order = new Order(
+    client,
+    restaurant,
+    [new OrderDetail(plate, 2)],
+    'En preparación'
+);
+console.log(`El total de la orden es: ${order.computeTotal()}`);
