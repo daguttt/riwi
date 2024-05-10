@@ -84,7 +84,7 @@ function ExchangeOrder(user, product, date) {
 }
 ExchangeOrder.prototype.confirmOrder = function () {
     console.log(
-        `Confirmando pedido de '${this.product.name}' para ${this.user.name}.`
+        `Confirmando pedido de '${this.product.name}' para ${this.user.name} canjeando: ${this.product.points}.`
     );
 };
 ExchangeOrder.prototype.cancelOrder = function () {
@@ -100,3 +100,17 @@ function Activity(type, awardedPoints) {
 Activity.prototype.complete = function () {
     console.log(`Completando actividad de '${this.type}'.`);
 };
+
+const user = new User('Daniel', 'dagutmu667@gmail.com', 'password');
+const physicalProduct = new PhysicalProduct('Laptop', 100, 10, 1000);
+const digitalProduct = new DigitalProduct(
+    'Book',
+    10,
+    5,
+    'https://example.com/book?id=1'
+);
+const admin = new Admin('Pedro', 'pedro@gmail', 'password');
+const activity = new Activity('Ver anuncios', 100);
+user.accumulatePoints(activity.awardedPoints);
+const order = new ExchangeOrder(user, physicalProduct, new Date());
+order.confirmOrder();
