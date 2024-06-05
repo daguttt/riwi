@@ -1,0 +1,29 @@
+{
+  "roles": [
+    {
+      "id": "1",
+      "name": "admin"
+    },
+    {
+      "id": "2",
+      "name": "visitor"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Daniel",
+      "email": "daniel@gmail.com",
+      "password": "Daniel12345",
+      "birthdate": "2003-05-17T21:00:00",
+      "roleId": "1"
+    },
+    {
+      "id": "dece",
+      "name": "Matias",
+      "email": "matias@gmail.com",
+      "birthday": "2006-05-15",
+      "password": "Matias12345"
+    }
+  ]
+}
