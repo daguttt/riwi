@@ -5,12 +5,8 @@
     "main": "app/index.js",
     "scripts": {
         "start": "webpack serve --mode development --open",
+        "server": "json-server ./server/db.json --port 4000",
         "build": "webpack --mode production"
-    },
-    "dependencies": {
-        "quill": "^2.0.2",
-        "quill-delta-to-html": "^0.12.1",
-        "three.js": "^0.77.1"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",
