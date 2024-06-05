@@ -6,7 +6,9 @@
     "scripts": {
         "start": "webpack serve --mode development --open",
         "start:server": "json-server ./server/db.json --port 4000",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "format:run": "prettier -w .",
+        "format:check": "prettier -c ."
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",
@@ -19,6 +21,7 @@
         "image-webpack-loader": "^8.1.0",
         "json-server": "^1.0.0-beta.0",
         "mini-css-extract-plugin": "^2.9.0",
+        "prettier": "3.3.1",
         "style-loader": "^3.0.0",
         "webpack": "^5.0.0",
         "webpack-cli": "^4.0.0",

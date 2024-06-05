@@ -38,6 +38,9 @@ importers:
       mini-css-extract-plugin:
         specifier: ^2.9.0
         version: 2.9.0(webpack@5.91.0(webpack-cli@4.10.0))
+      prettier:
+        specifier: 3.3.1
+        version: 3.3.1
       style-loader:
         specifier: ^3.0.0
         version: 3.3.4(webpack@5.91.0(webpack-cli@4.10.0))
@@ -2461,6 +2464,11 @@ packages:
   prepend-http@2.0.0:
     resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
+
+  prettier@3.3.1:
+    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -5932,6 +5940,8 @@ snapshots:
 
   prepend-http@2.0.0:
     optional: true
+
+  prettier@3.3.1: {}
 
   pretty-error@4.0.0:
     dependencies:
