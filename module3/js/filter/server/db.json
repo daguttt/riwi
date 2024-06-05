@@ -1,29 +1,68 @@
 {
-  "roles": [
-    {
-      "id": "1",
-      "name": "admin"
-    },
-    {
-      "id": "2",
-      "name": "visitor"
-    }
-  ],
-  "users": [
-    {
-      "id": "1",
-      "name": "Daniel",
-      "email": "daniel@gmail.com",
-      "password": "Daniel12345",
-      "birthdate": "2003-05-17T21:00:00",
-      "roleId": "1"
-    },
-    {
-      "id": "dece",
-      "name": "Matias",
-      "email": "matias@gmail.com",
-      "birthday": "2006-05-15",
-      "password": "Matias12345"
-    }
-  ]
+    "roles": [
+        {
+            "id": "1",
+            "name": "admin"
+        },
+        {
+            "id": "2",
+            "name": "visitor"
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "name": "Daniel",
+            "email": "daniel@gmail.com",
+            "password": "Daniel12345",
+            "birthdate": "2003-05-17T21:00:00",
+            "roleId": "1"
+        },
+        {
+            "id": "dece",
+            "name": "Matias",
+            "email": "matias@gmail.com",
+            "birthday": "2006-05-15",
+            "password": "Matias12345"
+        }
+    ],
+    "flights": [
+        {
+            "id": "1",
+            "number": 101,
+            "origin": "JFK",
+            "destination": "LAX",
+            "departure": "2024-07-02T08:00:00",
+            "arrival": "2024-07-02T12:00:00",
+            "capacity": 100
+        },
+        {
+            "id": "2",
+            "number": 102,
+            "origin": "JFK",
+            "destination": "MIA",
+            "departure": "2024-07-02T12:00:00",
+            "arrival": "2024-07-02T17:00:00",
+            "capacity": 120
+        },
+        {
+            "id": "3",
+            "number": 103,
+            "origin": "MIA",
+            "destination": "CDG",
+            "departure": "2024-07-02T10:00:00",
+            "arrival": "2024-07-02T15:00:00",
+            "capacity": 80
+        },
+        {
+            "id": "4",
+            "number": 104,
+            "origin": "CDG",
+            "destination": "LAX",
+            "departure": "2024-07-02T06:00:00",
+            "arrival": "2024-07-02T20:00:00",
+            "capacity": 150
+        }
+    ],
+    "bookings": []
 }

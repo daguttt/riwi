@@ -1,0 +1,15 @@
+.dashboardWrapper {
+  display: grid;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .dashboardWrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.cardFlight {
+  background-color: #9999;
+  margin-bottom: 2rem;
+}

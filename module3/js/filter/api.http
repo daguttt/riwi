@@ -21,3 +21,4 @@ Content-Type: application/json
 ### -*******************************************************************************-
 # FLIGHTS ROUTES
 # Get flights
+GET {{host}}/flights

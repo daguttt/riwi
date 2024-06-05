@@ -1,4 +1,4 @@
-import { PrivateLayout } from './layouts/private-layout';
+import { PrivateLayout } from './layouts/private/private-layout';
 import { routes } from './routes';
 
 export function navigateTo(targetPath) {
