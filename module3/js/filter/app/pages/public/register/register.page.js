@@ -83,6 +83,9 @@ export function RegisterPage() {
             email: $emailControl.value,
             birthday: $birthdayControl.value,
             password: $passwordControl.value,
+            // Support just for visitor registration
+            // TODO: Replace magic string with enum
+            roleId: '2',
         });
 
         // Redirect the user directly to dashboard once registered
