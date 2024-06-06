@@ -1,4 +1,5 @@
 import { navigateTo } from '../../../Router';
+import { USER_ROLES } from '../../../constants';
 import { emailValidator } from '../../../helpers/email-validator';
 import { register } from '../../../services/auth/register.service';
 import { getUsers } from '../../../services/get-users.service';
@@ -84,8 +85,7 @@ export function RegisterPage() {
             birthday: $birthdayControl.value,
             password: $passwordControl.value,
             // Support just for visitor registration
-            // TODO: Replace magic string with enum
-            roleId: '2',
+            roleId: USER_ROLES.VISITOR,
         });
 
         // Redirect the user directly to dashboard once registered

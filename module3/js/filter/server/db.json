@@ -23,7 +23,8 @@
             "name": "Matias",
             "email": "matias@gmail.com",
             "birthday": "2006-05-15",
-            "password": "Matias12345"
+            "password": "Matias12345",
+            "roleId": "2"
         }
     ],
     "flights": [
@@ -64,5 +65,12 @@
             "capacity": 150
         }
     ],
-    "bookings": []
+    "bookings": [
+        {
+            "id": "9821",
+            "flightId": "2",
+            "userId": "dece",
+            "bookingDate": "2024-06-05T23:28:16.324Z"
+        }
+    ]
 }

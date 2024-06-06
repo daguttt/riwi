@@ -22,3 +22,27 @@ Content-Type: application/json
 # FLIGHTS ROUTES
 # Get flights
 GET {{host}}/flights
+
+
+###
+# Delete flight by id
+@flightId = 3
+DELETE {{host}}/flights/{{flightId}}
+
+
+### -*******************************************************************************-
+# BOOKINGS ROUTES
+# Book a flight
+@userId = dece
+POST {{host}}/bookings
+Content-Type: application/json
+
+{
+  "flightId": "2",
+  "userId": "{{userId}}",
+  "bookingDate": "2024-06-05T23:28:16.324Z"
+}
+
+###
+# Get booking by user id
+GET {{host}}/bookings?userId=dece&_embed=flight
