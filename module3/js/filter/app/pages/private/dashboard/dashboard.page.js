@@ -1,4 +1,6 @@
+import { navigateTo } from '../../../Router';
 import { USER_ROLES } from '../../../constants';
+import { getUserFromLocalStorage } from '../../../helpers/get-user-from-local-storage';
 import { bookFlight } from '../../../services/book-flight.service';
 import { deleteFlight } from '../../../services/deleteFlight.service';
 import { getBookingsByUserId } from '../../../services/get-bookings.service';
@@ -8,10 +10,7 @@ import globalStyles from '../../../styles/global.css';
 import styles from './dashboard.css';
 
 export function DashboardPage() {
-    const userAsString = localStorage.getItem('user');
-    if (!userAsString) throw new Error('No user in localStorage');
-    const user = JSON.parse(userAsString);
-
+    const user = getUserFromLocalStorage();
     const html = /*html*/ `
         <div class="${globalStyles.wrapper} ${styles.dashboardWrapper}">
             <main>
@@ -80,11 +79,15 @@ export function DashboardPage() {
             const $addButton = document.getElementById('add-btn');
             if (!$addButton) throw new Error('Add button not rendered');
             $addButton.addEventListener('click', async () => {
-                console.log('Adding a flight');
+                navigateTo('/dashboard/flights/create');
             });
             // Add listener to edit flights
             document.addEventListener('click', async (event) => {
                 if (!event.target.matches('.editBtn')) return;
+                const $button = event.target;
+                const flightId = $button.dataset.flightId;
+
+                navigateTo(`/dashboard/flights/edit?id=${flightId}`);
             });
             // Add listener to delete flights
             document.addEventListener('click', async (event) => {

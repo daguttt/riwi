@@ -30,6 +30,20 @@ GET {{host}}/flights
 DELETE {{host}}/flights/{{flightId}}
 
 
+###
+# Get flight by id
+@flightId = 5
+GET {{host}}/flights/{{flightId}}
+
+
+###
+# Update flight by id
+@flightId = 5
+PATCH {{host}}/flights/{{flightId}}
+
+
+
+
 ### -*******************************************************************************-
 # BOOKINGS ROUTES
 # Book a flight
