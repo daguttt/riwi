@@ -71,7 +71,7 @@ export function DashboardPage() {
 
                 // Re render bookings
                 const userBookings = await getBookingsByUserId({ userId });
-                renderBookings({ bookings });
+                renderBookings({ bookings: userBookings });
             });
             renderBookings({ bookings: userBookings });
         }
@@ -98,6 +98,10 @@ export function DashboardPage() {
                 if (!isSureToDelete) return;
 
                 await deleteFlight({ flightId });
+
+                // Rerender flights
+                const flights = await getFlights();
+                renderFlights({ flights, userRole: user.roleId });
             });
         }
         // -*********************-
@@ -115,6 +119,9 @@ function renderFlights({ flights, userRole }) {
         `;
         return;
     }
+
+    // Replace any previous content
+    $flightsWrapper.innerHTML = '';
 
     const $flightsFragment = document.createDocumentFragment();
     flights.forEach((flight) => {
@@ -177,6 +184,9 @@ function renderBookings({ bookings }) {
         `;
         return;
     }
+
+    // Replace any previous content
+    $bookingsWrapper.innerHTML = '';
 
     const $bookingsFragment = document.createDocumentFragment();
     bookings.forEach((booking) => {
