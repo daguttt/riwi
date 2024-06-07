@@ -32,6 +32,8 @@ export function PrivateLayout(contentHtml, contentLogic) {
         if (!event.target.matches('[data-link-url]')) return;
         const $link = event.target;
         const url = $link.dataset.linkUrl;
-        navigateTo(url);
+
+        const shouldNavigate = window.location.pathname !== url;
+        if (shouldNavigate) navigateTo(url);
     });
 }
